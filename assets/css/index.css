@@ -133,14 +133,14 @@
     
 
     .brand-logo{
-      height: 36px;
+      height: 40px;
       width: auto;
       display: block;
     }
     .brand-tag{
       color: rgba(21,55,85,.70);
       font-weight: 800;
-      font-size: 13px;
+      font-size: 14px;
       letter-spacing: .01em;
       white-space: nowrap;
     }
@@ -275,7 +275,7 @@ display: grid;
 
     @media (max-width: 820px){
       .brand-tag{ display:none; }
-      .brand-logo{ height: 32px; }
+      .brand-logo{ height: 34px; }
     }
 .brand:hover{ text-decoration: none; }
 
@@ -527,6 +527,20 @@ display: grid;
       line-height: 1.06;
       text-shadow: 0 12px 30px rgba(0,0,0,.45);
       max-width: 24ch;
+    }
+    .shine-text{
+      display: inline-block;
+      color: #fff;
+      background: linear-gradient(120deg, rgba(255,255,255,.9) 0%, rgba(120,190,255,.95) 25%, rgba(255,255,255,.9) 50%, rgba(120,190,255,.75) 70%, rgba(255,255,255,.9) 100%);
+      background-size: 240% 100%;
+      animation: text-shine 12s ease-in-out infinite;
+    }
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+      .shine-text{
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
     }
     .hero-inner p{
       margin: 0;
@@ -829,8 +843,8 @@ display: grid;
       margin-top: 22px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      max-width: 1120px;
+      gap: 18px;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -842,6 +856,7 @@ display: grid;
       background: #fff;
       box-shadow: 0 10px 24px rgba(0,0,0,.06);
       transition: transform .18s ease, box-shadow .18s ease;
+      min-height: 540px;
     }
     @media (hover:hover) and (pointer:fine){
       .team-card:hover{
@@ -850,13 +865,14 @@ display: grid;
       }
     }
     .team-card img{
-      width: min(180px, 100%);
+      width: min(260px, 100%);
       height: auto;
       display: block;
-      margin: 16px auto 0;
+      margin: 18px auto 6px;
       border-radius: 12px;
       border: 1px solid rgba(21,55,85,.10);
       background: rgba(222,232,241,.35);
+      transition: filter .18s ease, transform .18s ease;
     }
     .team-bar{
       display:flex;
@@ -894,11 +910,12 @@ display: grid;
       left: 0;
       right: 0;
       top: 0;
-      bottom: 44px; /* keep the name bar visible */
-      padding: 14px 12px;
+      bottom: 56px; /* keep the name bar visible */
+      padding: 18px 14px 20px;
+      overflow: auto;
       display: flex;
       align-items: flex-end;
-      background: linear-gradient(180deg, rgba(7,26,42,0) 18%, rgba(7,26,42,.92) 100%);
+      background: linear-gradient(180deg, rgba(7,26,42,0) 10%, rgba(7,26,42,.94) 100%);
       opacity: 0;
       transform: translateY(6px);
       transition: opacity .18s ease, transform .18s ease;
@@ -907,13 +924,24 @@ display: grid;
     .team-overlay p{
       margin: 0;
       color: rgba(255,255,255,.92);
-      font-size: 12.5px;
-      line-height: 1.45;
+      font-size: 13px;
+      line-height: 1.5;
     }
     @media (hover:hover) and (pointer:fine){
       .team-card:hover .team-overlay{
         opacity: 1;
         transform: translateY(0);
+      }
+      .team-card:hover img{
+        filter: blur(2px) brightness(0.65);
+      }
+      .team-card:hover .team-bar{
+        background: var(--orange);
+        color: #111;
+      }
+      .team-card:hover .team-bar .mini{
+        background: rgba(0,0,0,.10);
+        border-color: rgba(0,0,0,.10);
       }
     }
     .team-card:focus-visible{
@@ -923,6 +951,23 @@ display: grid;
     .team-card:focus-visible .team-overlay{
       opacity: 1;
       transform: translateY(0);
+    }
+    .team-card:focus-visible img{
+      filter: blur(2px) brightness(0.65);
+    }
+    .team-card:focus-visible .team-bar{
+      background: var(--orange);
+      color: #111;
+    }
+    .team-card:focus-visible .team-bar .mini{
+      background: rgba(0,0,0,.10);
+      border-color: rgba(0,0,0,.10);
+    }
+
+    @keyframes text-shine{
+      0%{ background-position: 200% 0; }
+      50%{ background-position: 0% 0; }
+      100%{ background-position: -200% 0; }
     }
 
     /* Contact form */

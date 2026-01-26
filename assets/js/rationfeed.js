@@ -61,6 +61,15 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     })();
 
+    // Config toggles
+    (function () {
+      const config = window.RATION_CONFIG || {};
+      if (!config.hideFeedingSystems) return;
+
+      const systems = document.getElementById("feedingSystems");
+      if (systems) systems.style.display = "none";
+    })();
+
     (function () {
       const $ = (id) => document.getElementById(id);
 

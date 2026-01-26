@@ -62,6 +62,20 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     })();
 
+    // Config toggles
+    (function () {
+      const config = window.RATION_CONFIG || {};
+      if (!config.hideHomeContactForm) return;
+
+      const contactSection = document.getElementById("contact");
+      if (contactSection) contactSection.style.display = "none";
+
+      document.querySelectorAll("a[href='#contact']").forEach((link) => {
+        link.style.display = "none";
+        link.setAttribute("aria-hidden", "true");
+      });
+    })();
+
     // Contact form -> mailto
     (function(){
       const form = document.getElementById('contactForm');

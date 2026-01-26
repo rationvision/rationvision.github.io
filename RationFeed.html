@@ -1,225 +1,1342 @@
-<!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2FRGMW17TQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#153755" />
 
-  gtag('config', 'G-2FRGMW17TQ');
-</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="INTUITIVE">
-    <meta name="description" content="">
-    <title>RationFeed</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="RationFeed.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 6.16.5, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+  <title>RationFeed — Precision feeding for land-based aquaculture</title>
+  <meta name="description" content="RationFeed counts uneaten pellets in real-time and automatically adjusts feeding to appetite — less waste, cleaner water." />
+
+  <style>
+    :root{
+      --navy: #153755;
+      --ice:  #DEE8F1;
+      --orange: #F2953F;
+
+      --bg: #ffffff;
+      --surface: #F6FAFD;
+      --ink: #071A2A;
+      --muted: #314657;
+      --line: rgba(21,55,85,.14);
+
+      --header-h: 72px;
+
+      --container: 1120px;
+      --radius: 18px;
+      --radius-sm: 14px;
+      --shadow: 0 14px 40px rgba(0,0,0,.08);
+      --shadow-sm: 0 8px 22px rgba(0,0,0,.08);
+
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    .skip-link{
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--bg);
+      text-decoration: none;
+      transform: translateY(-220%);
+      transition: transform .15s ease;
+      z-index: 3000;
+    }
+    .skip-link:focus{ transform: translateY(0); }
+
+    :is(a, button, input, select, textarea, summary):focus-visible{
+      outline: 3px solid var(--ink);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 6px rgba(242,149,63,.22);
+      border-radius: 12px;
+    }
+
+    a{
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: rgba(242,149,63,.55);
+      text-decoration-thickness: 2px;
+      text-underline-offset: .18em;
+    }
+    a:hover{ text-decoration-color: rgba(242,149,63,.95); }
+
+    .container{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .section{
+      padding: clamp(50px, 5vw, 80px) 0;
+    }
+    .section.alt{
+      background: linear-gradient(180deg, var(--surface), #ffffff);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* Header */
+    .header{
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      border-bottom: 1px solid rgba(21,55,85,.18);
+      background: rgba(222,232,241,.65);
+      backdrop-filter: blur(12px);
+      transition: background .15s ease, box-shadow .15s ease;
+    }
+    .header[data-scrolled="true"]{
+      background: rgba(222,232,241,.86);
+      box-shadow: var(--shadow-sm);
+    }
+    .header-inner{
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 14px;
+    }
+    .brand:hover{ text-decoration: none; }
+
+    .brand-mark{
+      width: 36px;
+      height: 36px;
+      border-radius: 14px;
+      background:
+        radial-gradient(circle at 22% 22%, rgba(255,255,255,.55), rgba(255,255,255,0) 58%),
+        linear-gradient(135deg, var(--navy), rgba(21,55,85,.78));
+      border: 1px solid rgba(7,26,42,.14);
+      box-shadow: 0 0 0 4px rgba(21,55,85,.12);
+      flex: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-mark::after{
+      content:"";
+      position:absolute;
+      inset:-40% -30%;
+      background: linear-gradient(135deg, rgba(242,149,63,.26), transparent 55%);
+      transform: rotate(18deg);
+    }
+
+    .brand-text{
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+    .brand-text strong{
+      font-weight: 880;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .brand-text span{
+      margin-top: 2px;
+      color: var(--muted);
+      font-weight: 680;
+      font-size: 13px;
+      letter-spacing: .01em;
+    }
+
+    .nav-desktop{
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(21,55,85,.16);
+      background: rgba(255,255,255,.55);
+    }
+
+    .nav-link{
+      position: relative;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 999px;
+      color: rgba(21,55,85,.85);
+      font-weight: 780;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      transition: background .12s ease, color .12s ease;
+    }
+    .nav-link:hover{
+      background: rgba(21,55,85,.08);
+      color: var(--navy);
+    }
+    .nav-link::after{
+      content:"";
+      position:absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 6px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--navy), var(--orange));
+      border-radius: 999px;
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .14s ease, opacity .14s ease;
+      pointer-events: none;
+    }
+    .nav-link[aria-current="page"]{
+      color: var(--navy);
+      background: rgba(21,55,85,.10);
+    }
+    .nav-link[aria-current="page"]::after{
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .nav-cta{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: none;
+    }
+
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 1px solid transparent;
+      cursor: pointer;
+      line-height: 1;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .btn.primary{
+      background: var(--orange);
+      color: #111;
+      border-color: rgba(7,26,42,.12);
+      box-shadow: 0 10px 20px rgba(242,149,63,.25);
+    }
+    .btn.primary:hover{ background: #f5a455; }
+
+    .btn.ghost{
+      border-color: rgba(21,55,85,.22);
+      background: rgba(255,255,255,.55);
+      color: var(--navy);
+    }
+    .btn.ghost:hover{ background: rgba(21,55,85,.06); }
+
+    .menu-btn{
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(21,55,85,.18);
+      background: rgba(255,255,255,.55);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+    }
+    .menu-btn svg{ width: 20px; height: 20px; }
+    .header[data-open="true"] .menu-btn{
+      background: rgba(21,55,85,.08);
+      border-color: rgba(21,55,85,.22);
+    }
+
+    .mobile-drawer{
+      border-top: 1px solid rgba(21,55,85,.16);
+      background: rgba(222,232,241,.92);
+      backdrop-filter: blur(12px);
+
+      max-height: 0;
+      overflow: clip;
+      opacity: 0;
+      transform: translateY(-4px);
+      pointer-events: none;
+      visibility: hidden;
+      transition:
+        max-height .22s ease,
+        opacity .18s ease,
+        transform .18s ease,
+        visibility 0s linear .22s;
+    }
+    .header[data-open="true"] .mobile-drawer{
+      max-height: 520px;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      visibility: visible;
+      transition:
+        max-height .22s ease,
+        opacity .18s ease,
+        transform .18s ease;
+    }
+    .mobile-nav{
+      padding: 12px 0 18px;
+      display: grid;
+      gap: 6px;
+    }
+    .mobile-link{
+      text-decoration: none;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: rgba(21,55,85,.88);
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      transition: background .12s ease, color .12s ease;
+    }
+    .mobile-link:hover{
+      background: rgba(21,55,85,.10);
+      color: var(--navy);
+    }
+    .mobile-link[aria-current="page"]{
+      background: rgba(21,55,85,.12);
+      color: var(--navy);
+    }
+    .mobile-cta{
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+      padding: 8px 12px 0;
+    }
+
+    /* Hero */
+    .hero{
+      padding: clamp(34px, 4.2vw, 62px) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset: -240px -200px auto -200px;
+      height: 520px;
+      background:
+        radial-gradient(closest-side at 20% 35%, rgba(21,55,85,.14), transparent 65%),
+        radial-gradient(closest-side at 70% 20%, rgba(242,149,63,.10), transparent 60%),
+        radial-gradient(closest-side at 90% 55%, rgba(21,55,85,.10), transparent 60%);
+      pointer-events:none;
+      z-index: 0;
+    }
+
+    .hero-grid{
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: clamp(18px, 4vw, 42px);
+      align-items: center;
+    }
+
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(21,55,85,.16);
+      background: rgba(222,232,241,.75);
+      font-weight: 900;
+      letter-spacing: .02em;
+      font-size: 13px;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+    .pill .dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--orange));
+    }
+
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4.2vw, 46px);
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      color: var(--navy);
+    }
+    .subhead{
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(16px, 1.5vw, 18px);
+      max-width: 62ch;
+    }
+
+    .hero-actions{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .mini-list{
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+    .mini-list li{
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+    .check{
+      width: 18px; height: 18px;
+      border-radius: 6px;
+      background: rgba(21,55,85,.10);
+      border: 1px solid rgba(21,55,85,.16);
+      display: grid;
+      place-items: center;
+      margin-top: 2px;
+      flex: none;
+    }
+    .check svg{ width: 14px; height: 14px; }
+    .check path{ stroke: var(--navy); }
+
+    .hero-image{
+      border-radius: var(--radius);
+      border: 1px solid rgba(21,55,85,.16);
+      background: linear-gradient(180deg, rgba(222,232,241,.95), rgba(255,255,255,.90));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      padding: 14px;
+    }
+    .hero-image img{
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+    }
+    .hero-image .caption{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .grid-2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .grid-3{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card{
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(21,55,85,.14);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.02);
+    }
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .kicker{
+      margin: 0 0 8px;
+      font-weight: 950;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: rgba(21,55,85,.70);
+      font-size: 12px;
+    }
+    h2{
+      margin: 0 0 12px;
+      font-size: clamp(22px, 2.4vw, 30px);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--navy);
+    }
+    .lead{
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+
     
+    /* Combined text + image card (for explanatory media) */
+    .media-card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(21,55,85,.14);
+      background: linear-gradient(180deg, rgba(222,232,241,.78), rgba(255,255,255,.92));
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      align-items: center;
+      box-shadow: 0 1px 0 rgba(0,0,0,.02);
+    }
+    .media-text h3{
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+    }
+    .media-text p{
+      margin: 0;
+      color: var(--muted);
+      max-width: 74ch;
+    }
+    .media-figure{
+      margin: 0;
+    }
+    .media-figure img{
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: contain;
+      display: block;
+      border-radius: 16px;
+      border: 1px solid rgba(21,55,85,.10);
+      background: rgba(255,255,255,.90);
+      padding: 12px;
+    }
+    .media-figure figcaption{
+      margin-top: 10px;
+      color: rgba(21,55,85,.86);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .graph-wrap{
+      border-radius: var(--radius);
+      border: 1px solid rgba(21,55,85,.14);
+      background: linear-gradient(180deg, rgba(222,232,241,.95), rgba(255,255,255,.90));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      padding: 14px;
+    }
+    .graph-wrap img{
+      width: 100%;
+      height: auto;
+      display:block;
+      border-radius: 14px;
+      border: 1px solid rgba(21,55,85,.10);
+      background: #0b1420;
+    }
+    .graph-caption{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     
+
     
+    /* Testimonials */
+    .testimonials-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .quote-card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(21,55,85,.16);
+      background: linear-gradient(180deg, rgba(222,232,241,.65), rgba(255,255,255,.96));
+      padding: 18px;
+      box-shadow: 0 18px 46px rgba(0,0,0,.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .quote-card::before{
+      content:"";
+      position:absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--orange);
+      opacity: .95;
+    }
+    .quote-head{
+      display:flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .quote-logo{
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(21,55,85,.14);
+      background: rgba(255,255,255,.80);
+      display:grid;
+      place-items:center;
+      font-weight: 950;
+      font-size: 12px;
+      color: rgba(21,55,85,.70);
+      flex: none;
+    }
+    .quote-company{
+      font-weight: 950;
+      color: var(--navy);
+      font-size: 13px;
+      line-height: 1.1;
+    }
+    .quote-meta{
+      margin-top: 3px;
+      color: rgba(21,55,85,.75);
+      font-weight: 900;
+      font-size: 12px;
+    }
+    .quote-text{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    @media (max-width: 760px){
+      .calc{ grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 860px){
+      .testimonials-grid{ grid-template-columns: 1fr; }
+    }
+
+.steps{
+      display: grid;
+      gap: 12px;
+    }
+    .step{
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 14px;
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(21,55,85,.14);
+      background: rgba(255,255,255,.92);
+    }
+    .step-num{
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      border: 1px solid rgba(21,55,85,.16);
+      background: rgba(222,232,241,.9);
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+    .step h3{ margin: 0 0 6px; color: var(--navy); }
+    .step p{ margin: 0; color: var(--muted); }
+
+    .chips{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .chip{
+      border: 1px solid rgba(21,55,85,.14);
+      background: rgba(255,255,255,.75);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 900;
+      color: rgba(21,55,85,.85);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .calc{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .form{
+      display: grid;
+      gap: 10px;
+    }
+    .field{
+      display: grid;
+      gap: 6px;
+    }
+    label{
+      font-weight: 900;
+      font-size: 13px;
+      color: rgba(21,55,85,.80);
+    }
+    input{
+      width: 100%;
+      border: 1px solid rgba(21,55,85,.16);
+      border-radius: 12px;
+      padding: 12px 12px;
+      font: inherit;
+      background: rgba(255,255,255,.92);
+    }
+    input::placeholder{ color: #8a97a3; }
+
+    .calc-out{
+      border-radius: var(--radius);
+      border: 1px solid rgba(21,55,85,.16);
+      background: linear-gradient(180deg, rgba(222,232,241,.95), rgba(255,255,255,.85));
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .calc-out h3{ margin: 0 0 10px; color: var(--navy); }
+    .metric{
+      display: grid;
+      gap: 6px;
+      padding: 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(21,55,85,.12);
+      margin-bottom: 10px;
+    }
+    .metric:last-child{ margin-bottom: 0; }
+    .metric .label{
+      color: rgba(21,55,85,.70);
+      font-weight: 950;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+    }
+    .metric .value{
+      font-weight: 950;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+      color: var(--navy);
+    }
+    .fine{
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    footer{
+      border-top: 1px solid rgba(21,55,85,.14);
+      padding: 28px 0;
+      background: linear-gradient(180deg, #ffffff, rgba(222,232,241,.35));
+    }
+    .footer-grid{
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .small{
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footer-card{
+      border: 1px solid rgba(21,55,85,.14);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: rgba(255,255,255,.75);
+    }
+    .footer-card p{ margin: 0 0 10px; }
+    .footer-card p:last-child{ margin: 0; }
+
     
-    
-    
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "WebSite6152742",
-		"logo": "images/94479_Ration_Flat_R_AC_02-Cropped.png"
-}</script>
-    <meta name="theme-color" content="#c97f47">
-    <meta property="og:title" content="RationFeed">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-path-to-root="./" data-include-products="false" class="u-body u-overlap u-overlap-contrast u-overlap-transparent u-xl-mode" data-lang="en"><header class="u-clearfix u-custom-color-5 u-header u-sticky u-sticky-aa0d u-header" id="sec-35d6"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="./" class="u-image u-logo u-image-1" data-image-width="1319" data-image-height="542" title="Ration">
-          <img src="images/94479_Ration_Flat_R_AC_02-Cropped.png" class="u-logo-image u-logo-image-1">
+    /* Mild hover interactions (desktop only) */
+    .card,
+    .step,
+    .media-card{
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+      will-change: transform;
+    }
+
+    @media (hover:hover) and (pointer:fine){
+      /* Informational cards */
+      #problem .card:hover,
+      #solution .grid-3 .card:hover,
+      #features .card:hover,
+      #support .card:hover,
+      #solution .media-card:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 18px 46px rgba(0,0,0,.10);
+        border-color: rgba(21,55,85,.22);
+      }
+
+      #problem .card:hover,
+      #solution .grid-3 .card:hover,
+      #features .card:hover,
+      #support .card:hover{
+        background: rgba(255,255,255,.98);
+      }
+
+      /* Steps: a bit subtler */
+      #how .step:hover{
+        transform: translateY(-1px);
+        box-shadow: 0 14px 34px rgba(0,0,0,.10);
+        border-color: rgba(21,55,85,.20);
+        background: rgba(255,255,255,.96);
+      }
+
+      /* Media card: gentle highlight */
+      #solution .media-card:hover{
+        background: linear-gradient(180deg, rgba(222,232,241,.90), rgba(255,255,255,.94));
+      }
+    }
+
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      
+      .footer-grid{ grid-template-columns: 1fr; }
+      .media-card{ grid-template-columns: 1fr; }
+      }
+    @media (max-width: 760px){
+      .calc{ grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 860px){
+      .nav-desktop{ display:none; }
+      .nav-cta{ display:none; }
+      .menu-btn{ display:inline-flex; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      *{ transition: none !important; }
+    }
+
+    :is(section, footer){ scroll-margin-top: calc(var(--header-h) + 18px); }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header" id="siteHeader" data-open="false" data-scrolled="false">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="RationFeed home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <strong class="brand-name"><span class="brand-ration">Ration</span><span class="brand-feed">FEED</span></strong></span>
         </a>
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1.25rem; letter-spacing: 0px;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="#" style="">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="#" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="./#sec-9c20" style="padding: 10px 20px;">Products</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="RationFeed.html">RationFeed</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="RationOva.html">RationOva</a>
-</li></ul>
-</div>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="./#sec-1e31" style="padding: 10px 20px;">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="./#sec-1e31" style="padding: 10px 20px;">Contact</a>
-</li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./#sec-9c20">Products</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RationFeed.html">RationFeed</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RationOva.html">RationOva</a>
-</li></ul>
-</div>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./#sec-1e31">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./#sec-1e31">Contact</a>
-</li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+
+        <nav class="nav-desktop" aria-label="Primary navigation">
+          
+          <a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="#solution" data-navlink>Overview</a>
+          <a class="nav-link" href="#how" data-navlink>How it works</a>
+          <a class="nav-link" href="#features" data-navlink>Features</a>
+          <a class="nav-link" href="#proof" data-navlink>Control</a>
+          <a class="nav-link" href="#support" data-navlink>Support</a>
+          <a class="nav-link" href="#contact" data-navlink>Contact</a>
+        </nav>
+
+        <div class="nav-cta" aria-label="Header actions">
+          <a class="btn ghost" href="service-support.html">Service &amp; Support</a>
+          <a class="btn primary" href="mailto:sales@ration.is?subject=RationFeed%20demo%20request">Request a demo</a>
+        </div>
+
+        <button class="menu-btn" type="button" id="menuBtn"
+          aria-expanded="false" aria-controls="mobileDrawer" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="#153755" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="container">
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          
+          <a class="mobile-link" href="index.html">Home</a>
+<a class="mobile-link" href="#solution" data-navlink>Overview</a>
+          <a class="mobile-link" href="#how" data-navlink>How it works</a>
+          <a class="mobile-link" href="#features" data-navlink>Features</a>
+          <a class="mobile-link" href="#proof" data-navlink>Control</a>
+          <a class="mobile-link" href="#support" data-navlink>Support</a>
+          <a class="mobile-link" href="#contact" data-navlink>Contact</a>
+
+          <div class="mobile-cta" aria-label="Mobile actions">
+            <a class="btn primary" href="mailto:sales@ration.is?subject=RationFeed%20demo%20request">Request a demo</a>
+            <a class="btn ghost" href="service-support.html">Service &amp; Support</a>
           </div>
         </nav>
-      </div><style class="u-sticky-style" data-style-id="aa0d">.u-sticky-fixed.u-sticky-aa0d, .u-body.u-sticky-fixed .u-sticky-aa0d {
-box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4) !important
-}</style></header>
-    <section class="u-align-center u-clearfix u-container-align-center u-image u-shading u-section-1" src="" data-image-width="1280" data-image-height="853" id="sec-b399">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-text u-title u-text-1">RationFeed</h1>
-        <p class="u-align-center u-large-text u-text u-text-variant u-text-2">Optimize feed, maximize growth, and boost margins in land-based aquaculture<br>
-        </p>
       </div>
-    </section>
-    <section class="u-clearfix u-custom-color-5 u-section-2" id="carousel_3b6f">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-                <div class="u-container-layout u-valign-top u-container-layout-1">
-                  <h2 class="u-text u-text-default u-text-1"> AI for sustainable feed management</h2>
-                  <div class="u-container-align-left-lg u-container-align-left-md u-container-align-left-sm u-container-align-left-xs u-container-style u-custom-color-6 u-expanded-width u-group u-radius u-shape-round u-group-1">
-                    <div class="u-container-layout u-container-layout-2">
-                      <p class="u-text u-text-default u-text-2">
-                        <span style="font-size: 1.5rem;">In salmon
-farming, feed utilization is a significant challenge, with feeding costs
-comprising over half of total expenses</span>.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-                <div class="u-container-layout u-container-layout-3"><span class="u-custom-color-8 u-file-icon u-icon u-icon-circle u-icon-1"><img src="images/566359-285e955e.png" alt=""></span>
-                  <p class="u-text u-text-default u-text-3">RationFeed uses computer vision to automatically quantify wasted feed that escapes through the
-effluent of farming tanks. The system alerts operators immediately to under- or
-overfeeding, controls feeding automatically, and provides expert feeding
-suggestions by combining various environmental measurements.&nbsp;&nbsp;</p>
-                </div>
-              </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="pill">
+              <span class="dot" aria-hidden="true"></span>
+              RationFeed for Land-based aquaculture
             </div>
+
+            <h1>Boost feeding with less waste and cleaner water</h1>
+            <p class="subhead">
+              RationFeed counts uneaten pellets in real-time and can automatically adjust feeding to appetite —
+              so you grow fish efficiently while protecting water quality.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="mailto:sales@ration.is?subject=RationFeed%20trial%20request">Start a 6-month trial</a>
+              <a class="btn ghost" href="#how">See how it works</a>
+            </div>
+
+            <ul class="mini-list" aria-label="Key outcomes">
+              <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Increase feeding to appetite without overshooting—reduce wasted feed.</span></li>
+              <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Cleaner water and better conditions can support appetite and growth.</span></li>
+              <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Out-of-water camera system: easier install, stable operation, less maintenance.</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-image">
+            <img src="assets/tank-hero.png" alt="Tank and effluent area showing where RationFeed measures pellets" loading="lazy" decoding="async" />
+            <div class="caption">Measures pellets at the effluent — no submerged camera required.</div>
           </div>
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-custom-color-5 u-section-3" id="sec-1e31">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <img class="u-expanded-height u-image u-image-contain u-image-default u-image-1" src="images/RationFeed-Render.png" alt="" data-image-width="2264" data-image-height="1144">
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-5 u-section-4" id="sec-ddb8">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-text u-text-default u-text-1">Benefits </h2>
-        <div class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-            <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-1">
-                <div class="u-container-style u-group u-group-1">
-                  <div class="u-container-layout u-container-layout-2"><span class="u-custom-color-8 u-file-icon u-icon u-icon-circle u-text-white u-icon-1"><img src="images/4753144-542524db.png" alt=""></span>
-                    <p class="u-text u-text-2">Feed and stock are fully utilized</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-3">
-                <div class="u-container-style u-group u-video-cover u-group-2">
-                  <div class="u-container-layout u-container-layout-4"><span class="u-custom-color-8 u-file-icon u-icon u-icon-circle u-icon-2"><img src="images/2881380-c1ec0858.png" alt=""></span>
-                    <p class="u-text u-text-default u-text-3">Clean water and discharge </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-5">
-                <div class="u-container-style u-group u-video-cover u-group-3">
-                  <div class="u-container-layout u-container-layout-6"><span class="u-custom-color-8 u-file-icon u-icon u-icon-circle u-icon-3"><img src="images/907136-8ea9da3c.png" alt=""></span>
-                    <p class="u-text u-text-default u-text-4">Cloud based updates</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-7">
-                <div class="u-container-style u-group u-video-cover u-group-4">
-                  <div class="u-container-layout u-container-layout-8"><span class="u-custom-color-8 u-file-icon u-icon u-icon-circle u-text-white u-icon-4"><img src="images/1161439-d24eff7e.png" alt=""></span>
-                    <p class="u-text u-text-default u-text-5">Secure by design </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+    <section class="section alt" id="problem">
+      <div class="container">
+        <p class="kicker">THE CHALLENGE</p>
+        <h2>Feed is the largest cost in salmon farming</h2>
+        <p class="lead">Adjusting feeding to appetite is challenging: pellets have low visibility in the tank and effluent water.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Low visibility, hard decisions</h3>
+            <p>Feed pellets can be difficult to see in turbulent flows and mixed effluent. You may be feeding, but you don’t truly know how much is being wasted.</p>
+          </div>
+          <div class="card">
+            <h3>Appetite changes quickly</h3>
+            <p>Fish can react quickly to stress and eat less. If appetite drops, feeding strategy must adapt fast to avoid waste and preserve water quality.</p>
           </div>
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-custom-color-5 u-section-5" id="sec-c02b">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h3 class="u-text u-text-default u-text-1">There is more to feeding strategy than meets the eye</h3>
-        <a href="mailto:info@ration.is" class="u-border-2 u-border-custom-color-6 u-btn u-button-style u-hover-custom-color-6 u-none u-text-hover-white u-btn-1">CONTACTS US FOR INFORMATION </a>
-      </div>
-    </section>
-    
-    
-    
-    <footer class="u-align-center u-clearfix u-container-align-center u-custom-color-8 u-footer u-footer" id="sec-5095"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
-                <div class="u-container-layout u-container-layout-1">
-                  <a href="mailto:info@site.com" class="u-active-none u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1"> Ration ehf.</a>
-                  <a href="mailto:info@site.com" class="u-active-none u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-body-alt-color u-btn-2"><span class="u-icon u-text-white"><svg class="u-svg-content" viewBox="0 0 24 16" x="0px" y="0px" style="width: 1em; height: 1em;"><path fill="currentColor" d="M23.8,1.1l-7.3,6.8l7.3,6.8c0.1-0.2,0.2-0.6,0.2-0.9V2C24,1.7,23.9,1.4,23.8,1.1z M21.8,0H2.2
-	c-0.4,0-0.7,0.1-1,0.2L10.6,9c0.8,0.8,2.2,0.8,3,0l9.2-8.7C22.6,0.1,22.2,0,21.8,0z M0.2,1.1C0.1,1.4,0,1.7,0,2V14
-	c0,0.3,0.1,0.6,0.2,0.9l7.3-6.8L0.2,1.1z M15.5,9l-1.1,1c-1.3,1.2-3.6,1.2-4.9,0l-1-1l-7.3,6.8c0.2,0.1,0.6,0.2,1,0.2H22
-	c0.4,0,0.6-0.1,1-0.2L15.5,9z"></path></svg></span>&nbsp;info@ration.is
-                  </a>
-                  <p class="u-align-left u-text u-text-body-alt-color u-text-1"><span class="u-icon u-text-white"><svg class="u-svg-content" viewBox="0 0 52 52" x="0px" y="0px" style="width: 1em; height: 1em;"><path style="fill:currentColor;" d="M38.853,5.324L38.853,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
-	C6.751,11.72,6.031,23.763,11.459,31L26,52l14.541-21C45.969,23.763,45.249,11.72,38.853,5.324z M26.177,24c-3.314,0-6-2.686-6-6
-	s2.686-6,6-6s6,2.686,6,6S29.491,24,26.177,24z"></path></svg></span>&nbsp;Hamraborg 9,&nbsp;<br>&nbsp; &nbsp; &nbsp;200, Kópavogur&nbsp;<br>&nbsp; &nbsp; &nbsp;Iceland
-                  </p>
-                </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
-                <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <a href="#" class="u-image u-logo u-image-1" data-image-width="792" data-image-height="589">
-                    <img src="images/tfund.png" class="u-logo-image u-logo-image-1">
-                  </a>
-                </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">
-                <div class="u-container-layout u-container-layout-3">
-                  <a href="#" class="u-image u-logo u-image-2" data-image-width="602" data-image-height="421">
-                    <img src="images/ffund-2.png" class="u-logo-image u-logo-image-2">
-                  </a>
-                </div>
-              </div>
-            </div>
+
+    <section class="section" id="solution">
+      <div class="container">
+        <p class="kicker">Solution</p>
+        <h2>Real-time pellet counting + automatic feeding control</h2>
+        <p class="lead">RationFeed quantifies wasted pellets escaping through the effluent, then uses that signal to help you feed to appetite with minimal waste.</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Counts uneaten pellets in real-time</h3>
+            <p>A unique discovery in imaging makes it possible to distinguish pellets from fish waste and see through turbulent flows. Using patented optical methods and AI, pellets are counted with high precision.</p>
+          </div>
+          <div class="card">
+            <h3>Controls feeding automatically</h3>
+            <p>Knowing the number of wasted pellets, RationFeed adjusts the feeding system to changes in appetite. Minimal waste improves water quality and further enhances appetite.</p>
+          </div>
+          <div class="card">
+            <h3>Complements your expertise</h3>
+            <p>Together, we can improve conditions for your fish and create optimal growth. RationFeed helps identify causes of reduced feeding such as broken pellets, water quality issues, and stressful events.</p>
           </div>
         </div>
-      </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <p class="u-text">
-        <span>This site was created with the </span>
-        <a class="u-link" href="https://nicepage.com/" target="_blank" rel="nofollow">
-          <span>Nicepage</span>
-        </a>
-      </p>
+
+        <div class="section" style="padding-bottom: 0;">
+          <div class="media-card" aria-label="Non-submerged camera system for precision feeding">
+            <div class="media-text">
+              <h3>The only non-submerged camera system for precision feeding</h3>
+              <p>
+                Easier to install, operate, and maintain out of water. It does not prevent water-flow or dead fish removal,
+                and control remains stable because it does not depend on routine cleaning.
+              </p>
+            </div>
+
+            <figure class="media-figure">
+              <img src="assets/rationfeed-device.png" alt="RationFeed device enclosure" loading="lazy" decoding="async" />
+              <figcaption>Out-of-water installation makes maintenance easy.</figcaption>
+            </figure>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
     </section>
-  
-</body></html>
+
+    <section class="section alt" id="how">
+      <div class="container">
+        <p class="kicker">How it works</p>
+        <h2>From installation to automatic control</h2>
+        <p class="lead">A straightforward trial process designed to fit your existing tank and feeding system.</p>
+
+        <div class="steps" role="list">
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">1</div>
+            <div>
+              <h3>Trial installation with custom fasteners</h3>
+              <p>If you order a RationFeed trial, we install a device with custom fasteners that fit your set-up and distance between the device and outflow pipe.</p>
+              <p style="margin-top: 10px; color: var(--muted);">
+                <strong>Spec sheet:</strong>
+                <a href="spec-sheet.pdf" target="_blank" rel="noopener">Download detailed specifications</a>
+                <span class="small">(add your PDF next to this HTML file)</span>
+              </p>
+            </div>
+          </div>
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">2</div>
+            <div>
+              <h3>Connect utilities and begin counting</h3>
+              <p>After the device is connected to internet, electricity, and water, it can start counting pellets. Greater accuracy is expected within ~two weeks when image analysis has been optimized for your set-up.</p>
+            </div>
+          </div>
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">3</div>
+            <div>
+              <h3>Enable automatic feeding control</h3>
+              <p>For automatic control, RationFeed needs a local computer with read &amp; write access to the feeding system via internet (e.g., using a REST API). It can be connected to any feeding system that includes an API.</p>
+
+              <div class="chips" aria-label="Currently supported feeding systems">
+                <span class="chip">SCALE</span><span class="chip">AKVAGROUP</span><span class="chip">ARVOTECH</span><span class="chip">FLUCTUS</span><span class="chip">LAKSESYSTEMET</span>
+              </div>
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <p class="kicker">Features</p>
+        <h2>Purpose-built for stable, verifiable pellet counting</h2>
+        <p class="lead">The device, optics, cloud interface, and alerts are designed around one outcome: feeding to appetite with confidence.</p>
+
+        <div class="grid-3">
+          <div class="card"><h3>Computer vision at the effluent</h3><p>Counts pellets at effluent so feeding can match appetite with less waste and cleaner water.</p></div>
+          <div class="card"><h3>Specialized optics</h3><p>Distinguishes pellets in fast, turbulent flows—improving accuracy and verification.</p></div>
+          <div class="card"><h3>Automatic feeding control</h3><p>Adjusts feeding system Appetite Factor optimally when under- or overfeeding happens.</p></div>
+          <div class="card"><h3>Out-of-water camera + self-cleaning</h3><p>Stable counting and control without routine cleaning hassles.</p></div>
+          <div class="card"><h3>Web-based user interface</h3><p>Cloud historical appetite + control data, with high-access parameters for automation tuning.</p></div>
+          <div class="card"><h3>Mobile alerts</h3><p>Notifications for prolonged maximum or minimum feeding.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="proof">
+      <div class="container">
+        <p class="kicker">Feeding control</p>
+        <h2>See how RationFeed adjusts feeding automatically</h2>
+        <p class="lead">RationFeed uses wasted pellet counts to adjust feeding (e.g., appetite factor) to match fish appetite and reduce waste.</p>
+
+        <div class="graph-wrap">
+          <img src="assets/feed-graph.png" alt="Graph showing pellet counts and automatic appetite factor control over time" loading="lazy" decoding="async" />
+        </div>
+        <div class="graph-caption">Example: automatic appetite factor (AF) changes as pellet waste changes, keeping feeding near target.</div>
+
+        
+        <div style="height: 18px;"></div>
+
+        <p class="kicker" style="margin-top: 0;">Testimonials</p>
+        <h3 style="margin: 0 0 12px; color: var(--navy); letter-spacing: -0.01em; font-size: 20px;">
+          What operators say
+        </h3>
+
+        <div class="testimonials-grid" aria-label="Testimonials">
+          <div class="quote-card">
+            <div class="quote-head">
+              <div class="quote-logo" aria-hidden="true">LOGO</div>
+              <div class="quote-by">
+                <div class="quote-company">Customer (placeholder)</div>
+                <div class="quote-meta">RAS Operations Lead · Trial site</div>
+              </div>
+            </div>
+            <p class="quote-text">“The pellet waste signal helped us react faster to appetite changes. We could push feeding when fish were eating—and back off when they weren’t.”</p>
+          </div>
+
+          <div class="quote-card">
+            <div class="quote-head">
+              <div class="quote-logo" aria-hidden="true">LOGO</div>
+              <div class="quote-by">
+                <div class="quote-company">Customer (placeholder)</div>
+                <div class="quote-meta">Site Technician · Land-based salmon facility</div>
+              </div>
+            </div>
+            <p class="quote-text">“Installing out of water made maintenance simple. We didn’t have to interrupt flow or deal with routine cleaning to keep the system stable.”</p>
+          </div>
+        </div>
+
+        <div style="height: 18px;"></div>
+
+        <div class="calc">
+          <div class="card">
+            <h3 style="margin-top: 0;">Calculator</h3>
+            <p class="small" style="margin-top: -2px;">Adjust inputs to estimate monthly savings and potential extra revenue.</p>
+
+            <form class="form" id="calcForm2" autocomplete="off">
+              <div class="field">
+                <label for="feedCost">Cost of 1 kg feed (EUR)</label>
+                <input id="feedCost" type="number" min="0" step="0.01" value="2" inputmode="decimal" />
+              </div>
+              <div class="field">
+                <label for="monthlyFeed">Average monthly feeding (kg)</label>
+                <input id="monthlyFeed" type="number" min="0" step="1" value="30000" inputmode="numeric" />
+              </div>
+              <div class="field">
+                <label for="pctSaved">Percentage feed saved (%)</label>
+                <input id="pctSaved" type="number" min="0" max="100" step="0.1" value="10" inputmode="decimal" />
+              </div>
+
+              <hr style="border: none; border-top: 1px solid rgba(21,55,85,.14); margin: 4px 0;" />
+
+              <div class="field">
+                <label for="tanks">Number of tanks</label>
+                <input id="tanks" type="number" min="0" step="1" value="10" inputmode="numeric" />
+              </div>
+              <div class="field">
+                <label for="harvestPerTank">kg harvest per tank</label>
+                <input id="harvestPerTank" type="number" min="0" step="1" value="20000" inputmode="numeric" />
+              </div>
+              <div class="field">
+                <label for="pctYield">Yield increase (%)</label>
+                <input id="pctYield" type="number" min="0" max="100" step="0.1" value="2" inputmode="decimal" />
+              </div>
+              <div class="field">
+                <label for="fishPrice">Price per kg fish (EUR)</label>
+                <input id="fishPrice" type="number" min="0" step="0.01" value="6" inputmode="decimal" />
+              </div>
+            </form>
+          </div>
+
+          <div class="calc-out" aria-live="polite">
+            <h3>Estimated impact</h3>
+
+            <div class="metric">
+              <div class="label">Monthly feed savings</div>
+              <div class="value" id="outFeedSavings">€0</div>
+            </div>
+
+            <div class="metric">
+              <div class="label">Potential extra revenue</div>
+              <div class="value" id="outRevenue">€0</div>
+            </div>
+
+            <div class="metric">
+              <div class="label">Combined monthly upside</div>
+              <div class="value" id="outTotal">€0</div>
+            </div>
+
+            <p class="fine">These are simple scenario estimates for planning. Actual results depend on species, system design, and site conditions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="container">
+        <p class="kicker">Risk reversal</p>
+        <h2>6-month trial with a rental contract and refund option</h2>
+        <p class="lead">If you feel the device did not help improve operations during the trial period, you can return it for a full refund. Software updates add new capabilities over time.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Lasting value</h3>
+            <ul style="margin: 0; padding-left: 18px; color: var(--muted);">
+              <li>Rental contract so the device can be returned if not useful anymore</li>
+              <li>Keeps saving money long-term</li>
+              <li>New valuable software features over time (updates)</li>
+              <li>Trusted advisors/partners on the line</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Service &amp; support</h3>
+            <ul style="margin: 0; padding-left: 18px; color: var(--muted);">
+              <li>Remote and local customer support</li>
+              <li>Service agents in main market areas (add names/regions here)</li>
+              <li>Refund on demo contract if you do not find it valuable</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact">
+      <div class="container">
+        <h2>Contact for information or a demo</h2>
+        <p class="lead">Email <strong>sales@ration.is</strong> to discuss your setup, get a trial proposal, or schedule a demo.</p>
+
+        <div class="hero-actions" style="margin-top: 12px;">
+          <a class="btn primary" href="mailto:sales@ration.is?subject=RationFeed%20information%20request">Email sales@ration.is</a>
+          <a class="btn ghost" href="service-support.html">Service &amp; Support</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom: 10px;">
+            <span class="brand-mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px;"></span>
+            <strong style="color:#153755;">RationFeed</strong>
+          </div>
+          <p class="small">Precision feeding for land-based aquaculture — less waste, cleaner water, better decisions.</p>
+          <p class="small" style="margin-top: 8px;"><strong>Contact:</strong> <a href="mailto:info@ration.is">info@ration.is</a><br/>
+            <strong>Service:</strong> <a href="service-support.html">Service &amp; Support</a></p>
+        </div>
+
+        <div class="footer-card">
+          <p><strong style="color:#153755;">Ration ehf.</strong></p>
+          <p class="small">Hamraborg 9<br />200, Kópavogur<br />Iceland</p>
+          <p class="small" style="margin-top: 10px;">© <span id="year"></span> Ration. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const header = document.getElementById("siteHeader");
+      const btn = document.getElementById("menuBtn");
+
+      function setOpen(open) {
+        header.dataset.open = open ? "true" : "false";
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+
+      btn?.addEventListener("click", () => {
+        const open = header.dataset.open === "true";
+        setOpen(!open);
+      });
+
+      document.addEventListener("click", (e) => {
+        if (header.dataset.open !== "true") return;
+        if (!header.contains(e.target)) setOpen(false);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setOpen(false);
+      });
+
+      document.querySelectorAll(".mobile-nav a[href^='#']").forEach(a => {
+        a.addEventListener("click", () => setOpen(false), { passive: true });
+      });
+
+      function onScroll() {
+        header.dataset.scrolled = (window.scrollY > 8) ? "true" : "false";
+      }
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      const navAnchors = Array.from(document.querySelectorAll("[data-navlink][href^='#']"));
+      const groups = new Map();
+      for (const a of navAnchors) {
+        const id = (a.getAttribute("href") || "").slice(1);
+        if (!id) continue;
+        if (!groups.has(id)) groups.set(id, []);
+        groups.get(id).push(a);
+      }
+
+      const setActive = (id) => {
+        navAnchors.forEach(a => a.removeAttribute("aria-current"));
+        (groups.get(id) || []).forEach(a => a.setAttribute("aria-current", "page"));
+      };
+
+      const sections = Array.from(groups.keys()).map(id => document.getElementById(id)).filter(Boolean);
+
+      const io = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+            break;
+          }
+        }
+      }, { rootMargin: "-20% 0px -65% 0px", threshold: 0.01 });
+
+      sections.forEach(sec => io.observe(sec));
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+
+    (function () {
+      const $ = (id) => document.getElementById(id);
+
+      const feedCost = $("feedCost");
+      const monthlyFeed = $("monthlyFeed");
+      const pctSaved = $("pctSaved");
+      const tanks = $("tanks");
+      const harvestPerTank = $("harvestPerTank");
+      const pctYield = $("pctYield");
+      const fishPrice = $("fishPrice");
+
+      const outFeedSavings = $("outFeedSavings");
+      const outRevenue = $("outRevenue");
+      const outTotal = $("outTotal");
+
+      function n(v) {
+        const x = Number(v);
+        return Number.isFinite(x) ? x : 0;
+      }
+
+      function money(value) {
+        return new Intl.NumberFormat(undefined, {
+          style: "currency",
+          currency: "EUR",
+          maximumFractionDigits: 0
+        }).format(n(value));
+      }
+
+      function recalc() {
+        const cost = n(feedCost.value);
+        const monthly = n(monthlyFeed.value);
+        const savedPct = n(pctSaved.value) / 100;
+        const feedSavings = cost * monthly * savedPct;
+
+        const t = n(tanks.value);
+        const harvest = n(harvestPerTank.value);
+        const yieldPct = n(pctYield.value) / 100;
+        const price = n(fishPrice.value);
+        const extraRevenue = t * harvest * yieldPct * price;
+
+        const total = feedSavings + extraRevenue;
+
+        outFeedSavings.textContent = money(feedSavings);
+        outRevenue.textContent = money(extraRevenue);
+        outTotal.textContent = money(total);
+      }
+
+      ["input", "change"].forEach((evt) => {
+        document.getElementById("calcForm2")?.addEventListener(evt, recalc, { passive: true });
+      });
+
+      recalc();
+    })();
+  </script>
+</body>
+</html>

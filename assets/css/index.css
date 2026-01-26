@@ -133,14 +133,14 @@
     
 
     .brand-logo{
-      height: 30px;
+      height: 36px;
       width: auto;
       display: block;
     }
     .brand-tag{
       color: rgba(21,55,85,.70);
       font-weight: 800;
-      font-size: 12px;
+      font-size: 13px;
       letter-spacing: .01em;
       white-space: nowrap;
     }
@@ -275,7 +275,7 @@ display: grid;
 
     @media (max-width: 820px){
       .brand-tag{ display:none; }
-      .brand-logo{ height: 28px; }
+      .brand-logo{ height: 32px; }
     }
 .brand:hover{ text-decoration: none; }
 

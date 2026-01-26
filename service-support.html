@@ -21,18 +21,26 @@
       <div class="header-inner">
         <a class="brand" href="index.html" aria-label="Ration home">
           <img class="brand-logo" src="assets/ration-logo.png" alt="Ration logo" loading="eager" decoding="async" />
-          <span class="brand-tag">Vision for Aquaculture</span>
+          <span class="brand-tag" data-i18n="header.tagline">Vision for Aquaculture</span>
         </a>
 
         <nav class="nav" aria-label="Primary navigation">
-          <a href="index.html">Home</a>
-          <a href="rationfeed.html">RationFEED</a>
-          <a href="service-support.html" aria-current="page">Service &amp; Support</a>
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="rationfeed.html" data-i18n="nav.feed">RationFEED</a>
+          <a href="service-support.html" aria-current="page" data-i18n="nav.support">Service &amp; Support</a>
         </nav>
 
         <div style="display:flex; gap:10px; align-items:center;">
-          <a class="btn ghost" href="mailto:info@ration.is?subject=Support%20request">Email support</a>
-          <a class="btn primary" href="mailto:sales@ration.is?subject=Sales%20inquiry">Email sales</a>
+          <div class="lang-switch" aria-label="Language selector">
+            <label class="sr-only" for="langSelect">Language</label>
+            <select id="langSelect" class="lang-select">
+              <option value="en">EN</option>
+              <option value="no">NO</option>
+              <option value="es">ES</option>
+            </select>
+          </div>
+          <a class="btn ghost" href="mailto:info@ration.is?subject=Support%20request" data-i18n="cta.support">Email support</a>
+          <a class="btn primary" href="mailto:sales@ration.is?subject=Sales%20inquiry" data-i18n="cta.sales">Email sales</a>
         </div>
       </div>
     </div>
@@ -41,9 +49,9 @@
   <main id="main">
     <section class="hero" aria-label="Service and support">
       <div class="container">
-        <p class="kicker">Service &amp; Support</p>
-        <h1>Sales and service agents</h1>
-        <p class="lead">
+        <p class="kicker" data-i18n="hero.kicker">Service &amp; Support</p>
+        <h1 data-i18n="hero.title">Sales and service agents</h1>
+        <p class="lead" data-i18n="hero.body">
           Our experts are known in the industry for designing systems and products that have set new benchmarks for land-based production.
           Many of the world’s leading farms use technology and solutions created by our team. The experience is real, earned, and shaped by
           two decades of solving practical problems for fish farmers.
@@ -53,92 +61,92 @@
 
     <section class="section" aria-label="Agent directory">
       <div class="container">
-        <p class="kicker">Directory</p>
-        <h1 style="font-size: 22px; margin-top: 0; color: var(--navy);">Find a sales and service agent closest to you</h1>
+        <p class="kicker" data-i18n="dir.kicker">Directory</p>
+        <h1 style="font-size: 22px; margin-top: 0; color: var(--navy);" data-i18n="dir.title">Find a sales and service agent closest to you</h1>
 
         <div class="accordion" aria-label="Service and support by country">
           <details class="accordion-item" open>
             <summary>
-              <span>Chile</span>
+              <span data-i18n="country.chile">Chile</span>
               <span class="accordion-icon" aria-hidden="true"></span>
             </summary>
             <div class="cols">
               <div class="subcard">
-                <h3>Sales</h3>
+                <h3 data-i18n="dir.sales">Sales</h3>
                 <p><span class="pill">FinalCut</span> <span class="pill">finalcut.cl</span></p>
-                <p><strong>Contact</strong><br/>Jorge — jorge(at)finalcut.cl</p>
+                <p><strong data-i18n="dir.contact">Contact</strong><br/>Jorge — jorge(at)finalcut.cl</p>
               </div>
               <div class="subcard">
-                <h3>Service for all products</h3>
+                <h3 data-i18n="dir.serviceAll">Service for all products</h3>
                 <p><span class="pill">DuoTek</span> <span class="pill">duotek.cl</span></p>
-                <p><strong>Contact</strong><br/>Jorge — jorge(at)finalcut.cl</p>
+                <p><strong data-i18n="dir.contact">Contact</strong><br/>Jorge — jorge(at)finalcut.cl</p>
               </div>
             </div>
           </details>
 
           <details class="accordion-item">
             <summary>
-              <span>Iceland &amp; World-wide</span>
+              <span data-i18n="country.iceland">Iceland &amp; World-wide</span>
               <span class="accordion-icon" aria-hidden="true"></span>
             </summary>
             <div class="cols">
               <div class="subcard">
-                <h3>Sales</h3>
+                <h3 data-i18n="dir.sales">Sales</h3>
                 <p><span class="pill">Ration HQ</span> <span class="pill">ration.is</span></p>
-                <p><strong>Contact</strong><br/>Hans Emil Atlason — hans(at)ration.is<br/>David Jarron — david(at)ration.is</p>
+                <p><strong data-i18n="dir.contact">Contact</strong><br/>Hans Emil Atlason — hans(at)ration.is<br/>David Jarron — david(at)ration.is</p>
               </div>
               <div class="subcard">
-                <h3>Service for all products</h3>
+                <h3 data-i18n="dir.serviceAll">Service for all products</h3>
                 <p><span class="pill">Ration HQ</span> <span class="pill">ration.is</span></p>
-                <p><strong>Contact for all products</strong><br/>Hans Emil Atlason — hans(at)ration.is<br/>David Jarron — david(at)ration.is</p>
-                <p><strong>Contact for all RationFEED</strong><br/>Elías S. Guðmundsson — elias(at)ration.is</p>
-                <p><strong>Contact for all RationOVA</strong><br/>Gunnar Sigurðsson — gunnar(at)ration.is</p>
-                <p><strong>Contact for all RationCOUNTER</strong><br/>Gunnar Sigurðsson — gunnar(at)ration.is</p>
+                <p><strong data-i18n="dir.contactAll">Contact for all products</strong><br/>Hans Emil Atlason — hans(at)ration.is<br/>David Jarron — david(at)ration.is</p>
+                <p><strong data-i18n="dir.contactFeed">Contact for all RationFEED</strong><br/>Elías S. Guðmundsson — elias(at)ration.is</p>
+                <p><strong data-i18n="dir.contactOva">Contact for all RationOVA</strong><br/>Gunnar Sigurðsson — gunnar(at)ration.is</p>
+                <p><strong data-i18n="dir.contactCounter">Contact for all RationCOUNTER</strong><br/>Gunnar Sigurðsson — gunnar(at)ration.is</p>
               </div>
             </div>
           </details>
 
           <details class="accordion-item">
             <summary>
-              <span>Norway</span>
+              <span data-i18n="country.norway">Norway</span>
               <span class="accordion-icon" aria-hidden="true"></span>
             </summary>
             <div class="cols">
               <div class="subcard">
-                <h3>Sales</h3>
+                <h3 data-i18n="dir.sales">Sales</h3>
                 <p><span class="pill">Ration HQ</span> <span class="pill">ration.is</span></p>
-                <p><strong>Contact</strong><br/>David Jarron — david(at)ration.is<br/>Hans Emil Atlason — hans(at)ration.is</p>
+                <p><strong data-i18n="dir.contact">Contact</strong><br/>David Jarron — david(at)ration.is<br/>Hans Emil Atlason — hans(at)ration.is</p>
               </div>
               <div class="subcard">
-                <h3>Service for all products</h3>
+                <h3 data-i18n="dir.serviceAll">Service for all products</h3>
                 <p><span class="pill">Toskedal AS</span> <span class="pill">toskedal.no</span></p>
-                <p><strong>Contact</strong><br/>Atle Toskedal — atle(at)toskedal.no</p>
+                <p><strong data-i18n="dir.contact">Contact</strong><br/>Atle Toskedal — atle(at)toskedal.no</p>
               </div>
             </div>
           </details>
 
           <details class="accordion-item">
             <summary>
-              <span>UK</span>
+              <span data-i18n="country.uk">UK</span>
               <span class="accordion-icon" aria-hidden="true"></span>
             </summary>
             <div class="cols">
               <div class="subcard">
-                <h3>Sales</h3>
+                <h3 data-i18n="dir.sales">Sales</h3>
                 <p><span class="pill">Nexus Aquaculture</span> <span class="pill">nexusaquaculture.co.uk</span></p>
-                <p><strong>Contact</strong><br/>David Jarron — david(at)ration.is<br/>Gareth Hammond — gareth(at)nexusaquaculture.co.uk</p>
+                <p><strong data-i18n="dir.contact">Contact</strong><br/>David Jarron — david(at)ration.is<br/>Gareth Hammond — gareth(at)nexusaquaculture.co.uk</p>
               </div>
               <div class="subcard">
-                <h3>Service for all products</h3>
+                <h3 data-i18n="dir.serviceAll">Service for all products</h3>
                 <p><span class="pill">Nexus Aquaculture</span> <span class="pill">nexusaquaculture.co.uk</span></p>
-                <p><strong>Contact</strong><br/>Gareth Hammond — gareth(at)nexusaquaculture.co.uk</p>
+                <p><strong data-i18n="dir.contact">Contact</strong><br/>Gareth Hammond — gareth(at)nexusaquaculture.co.uk</p>
               </div>
             </div>
           </details>
         </div>
 
         <div style="height: 10px;"></div>
-        <p class="small">If your region is not listed, contact <strong>sales@ration.is</strong> and we will route your request.</p>
+        <p class="small" data-i18n-html="dir.note">If your region is not listed, contact <strong>sales@ration.is</strong> and we will route your request.</p>
       </div>
     </section>
 
@@ -150,14 +158,14 @@
               <img src="assets/ration-logo.png" alt="Ration logo" loading="lazy" decoding="async" style="height:26px;width:auto;" />
               <strong style="color:#153755;">Ration</strong>
             </div>
-            <p class="small">Aquaculture sensing &amp; control — less waste, cleaner water, better decisions.</p>
-            <p class="small" style="margin-top: 8px;"><strong>Contact:</strong> <a href="mailto:info@ration.is">info@ration.is</a></p>
+            <p class="small" data-i18n="footer.tagline">Aquaculture sensing &amp; control — less waste, cleaner water, better decisions.</p>
+            <p class="small" style="margin-top: 8px;"><strong><span data-i18n="footer.contact">Contact:</span></strong> <a href="mailto:info@ration.is">info@ration.is</a></p>
           </div>
 
           <div class="footer-card">
             <p><strong style="color:#153755;">Ration ehf.</strong></p>
             <p class="small">Árleynir 8<br />112 Reykjavík<br />Iceland</p>
-            <p class="small" style="margin-top: 10px;">© <span id="year"></span> Ration. All rights reserved.</p>
+            <p class="small" style="margin-top: 10px;" data-i18n-html="footer.copyright">© <span id="year"></span> Ration. All rights reserved.</p>
           </div>
         </div>
       </div>

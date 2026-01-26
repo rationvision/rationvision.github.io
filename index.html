@@ -21,19 +21,27 @@
       <div class="header-inner">
         <a class="brand" href="#top" aria-label="Ration home">
           <img class="brand-logo" src="assets/ration-logo.png" alt="Ration logo" loading="eager" decoding="async" />
-          <span class="brand-tag">Vision for Aquaculture</span>
+          <span class="brand-tag" data-i18n="header.tagline">Vision for Aquaculture</span>
         </a>
 
         <nav class="nav-desktop" aria-label="Primary navigation">
-          <a class="nav-link" href="#products" data-navlink>View products</a>
-          <a class="nav-link" href="#about" data-navlink>About us</a>
-<a class="nav-link" href="#contact" data-navlink>Contact</a>
+          <a class="nav-link" href="#products" data-navlink data-i18n="nav.products">View products</a>
+          <a class="nav-link" href="#about" data-navlink data-i18n="nav.about">About us</a>
+<a class="nav-link" href="#contact" data-navlink data-i18n="nav.contact">Contact</a>
 </nav>
 
         <div class="nav-cta" aria-label="Header actions">
-          <a class="btn ghost" href="rationfeed.html">View RationFEED</a>
-          <a class="btn ghost" href="service-support.html">Service &amp; Support</a>
-          <a class="btn primary" href="#contact">Contact us</a>
+          <div class="lang-switch" aria-label="Language selector">
+            <label class="sr-only" for="langSelect">Language</label>
+            <select id="langSelect" class="lang-select">
+              <option value="en">EN</option>
+              <option value="no">NO</option>
+              <option value="es">ES</option>
+            </select>
+          </div>
+          <a class="btn ghost" href="rationfeed.html" data-i18n="cta.feed">View RationFEED</a>
+          <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
+          <a class="btn primary" href="#contact" data-i18n="cta.contact">Contact us</a>
         </div>
 
         <button class="menu-btn" type="button" id="menuBtn"
@@ -48,13 +56,13 @@
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="container">
         <nav class="mobile-nav" aria-label="Mobile navigation">
-          <a class="mobile-link" href="#products" data-navlink>View products</a>
-          <a class="mobile-link" href="#about" data-navlink>About us</a>
-          <a class="mobile-link" href="#contact" data-navlink>Contact</a>
+          <a class="mobile-link" href="#products" data-navlink data-i18n="nav.products">View products</a>
+          <a class="mobile-link" href="#about" data-navlink data-i18n="nav.about">About us</a>
+          <a class="mobile-link" href="#contact" data-navlink data-i18n="nav.contact">Contact</a>
 <div class="mobile-cta" aria-label="Mobile actions">
-            <a class="btn primary" href="#contact">Contact us</a>
-            <a class="btn ghost" href="rationfeed.html">View RationFEED</a>
-          <a class="btn ghost" href="service-support.html">Service &amp; Support</a>
+            <a class="btn primary" href="#contact" data-i18n="cta.contact">Contact us</a>
+            <a class="btn ghost" href="rationfeed.html" data-i18n="cta.feed">View RationFEED</a>
+          <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
             </div>
         </nav>
       </div>
@@ -65,11 +73,11 @@
     <section class="home-hero" id="top" aria-label="Hero">
       <div class="container">
         <div class="hero-inner">
-          <h1><span class="shine-text">Join our Vision for<br/>Sustainable Aquaculture</span></h1>
-          <p>
+          <h1><span class="shine-text" data-i18n-html="hero.title">Join our Vision for<br/>Sustainable Aquaculture</span></h1>
+          <p data-i18n="hero.body">
             Ration develops practical, data-driven technology that helps land‑based fish farms operate efficiently, responsibly, and profitably.
           </p>
-          <a class="btn primary" href="#about">About Ration</a>
+          <a class="btn primary" href="#about" data-i18n="hero.cta">About Ration</a>
         </div>
       </div>
     </section>
@@ -87,8 +95,8 @@
               </svg>
             </div>
             <div>
-              <h3>Technology with purpose</h3>
-              <p>Solutions designed to reduce waste, improve consistency, and integrate seamlessly into your operations.</p>
+              <h3 data-i18n="value.one.title">Technology with purpose</h3>
+              <p data-i18n="value.one.body">Solutions designed to reduce waste, improve consistency, and integrate seamlessly into your operations.</p>
             </div>
           </div>
 
@@ -100,8 +108,8 @@
               </svg>
             </div>
             <div>
-              <h3>Actionable insights</h3>
-              <p>Clear, usable information that supports better decisions, stronger fish welfare, and improved production economics.</p>
+              <h3 data-i18n="value.two.title">Actionable insights</h3>
+              <p data-i18n="value.two.body">Clear, usable information that supports better decisions, stronger fish welfare, and improved production economics.</p>
             </div>
           </div>
 
@@ -114,8 +122,8 @@
               </svg>
             </div>
             <div>
-              <h3>A long-term partner</h3>
-              <p>Built on hands-on experience — we work alongside customers to support continuous improvement for a sustainable future.</p>
+              <h3 data-i18n="value.three.title">A long-term partner</h3>
+              <p data-i18n="value.three.body">Built on hands-on experience — we work alongside customers to support continuous improvement for a sustainable future.</p>
             </div>
           </div>
         </div>
@@ -124,27 +132,27 @@
 
     <section class="section" aria-label="Smarter aquaculture">
       <div class="container">
-        <h2 class="big-title">Smarter Aquaculture starts with Ration</h2>
+        <h2 class="big-title" data-i18n="section.smarter.title">Smarter Aquaculture starts with Ration</h2>
 
         <div class="info-grid" aria-label="Ration benefits">
           <div class="card info-box">
-            <h3>Our technology improves performance and profitability</h3>
-            <p>Real-time monitoring via computer vision and sensors that track fish behavior, health indicators, and environmental conditions for better insights.</p>
+            <h3 data-i18n="info.one.title">Our technology improves performance and profitability</h3>
+            <p data-i18n="info.one.body">Real-time monitoring via computer vision and sensors that track fish behavior, health indicators, and environmental conditions for better insights.</p>
           </div>
 
           <div class="card info-box">
-            <h3>Quality control and precision</h3>
-            <p>A system that provides consistent, verifiable measurements—supporting stable operations and reduced labor.</p>
+            <h3 data-i18n="info.two.title">Quality control and precision</h3>
+            <p data-i18n="info.two.body">A system that provides consistent, verifiable measurements—supporting stable operations and reduced labor.</p>
           </div>
 
           <div class="card info-box">
-            <h3>Environmental impact</h3>
-            <p>Lower waste and optimized systems reduce the overall footprint of production and contribute to more sustainable aquaculture.</p>
+            <h3 data-i18n="info.three.title">Environmental impact</h3>
+            <p data-i18n="info.three.body">Lower waste and optimized systems reduce the overall footprint of production and contribute to more sustainable aquaculture.</p>
           </div>
 
           <div class="card info-box">
-            <h3>Fish welfare</h3>
-            <p>Our products help maintain better conditions and reduce stress through improved control.</p>
+            <h3 data-i18n="info.four.title">Fish welfare</h3>
+            <p data-i18n="info.four.body">Our products help maintain better conditions and reduce stress through improved control.</p>
           </div>
         </div>
 
@@ -153,24 +161,24 @@
             <div class="tile-media" aria-hidden="true">
               <img src="assets/tank-hero.png" alt="" loading="lazy" decoding="async" />
             </div>
-                        <p class="small">Feed monitoring system<br /><strong>RationFEED</strong></p>
-            <a class="tile-link" href="rationfeed.html" aria-label="Learn more about RationFEED">Learn more →</a>
+            <p class="small" data-i18n-html="product.feed">Feed monitoring system<br /><strong>RationFEED</strong></p>
+            <a class="tile-link" href="rationfeed.html" aria-label="Learn more about RationFEED" data-i18n="product.learn">Learn more →</a>
           </div>
 
           <div class="product-tile">
             <div class="tile-media" aria-hidden="true">
               <img src="assets/tank-hero.png" alt="" loading="lazy" decoding="async" />
             </div>
-                        <p class="small">Counting and quality control of salmon ova<br /><strong>RationOVA</strong></p>
-            <a class="tile-link" href="#contact" aria-label="Learn more about RationOVA">Learn more →</a>
+            <p class="small" data-i18n-html="product.ova">Counting and quality control of salmon ova<br /><strong>RationOVA</strong></p>
+            <a class="tile-link" href="#contact" aria-label="Learn more about RationOVA" data-i18n="product.learn">Learn more →</a>
           </div>
 
           <div class="product-tile">
             <div class="tile-media" aria-hidden="true">
               <img src="assets/tank-hero.png" alt="" loading="lazy" decoding="async" />
             </div>
-                        <p class="small">Counting and biomass estimation of live fish<br /><strong>RationCOUNTER</strong></p>
-            <a class="tile-link" href="#contact" aria-label="Learn more about RationCOUNTER">Learn more →</a>
+            <p class="small" data-i18n-html="product.counter">Counting and biomass estimation of live fish<br /><strong>RationCOUNTER</strong></p>
+            <a class="tile-link" href="#contact" aria-label="Learn more about RationCOUNTER" data-i18n="product.learn">Learn more →</a>
           </div>
         </div>
       </div>
@@ -179,26 +187,26 @@
     <section class="cta-band" aria-label="Contact sales and service agents">
       <div class="container">
         <div class="cta-inner">
-          <h2>Contact our Sales and Service Agents</h2>
-          <p>Let’s get started. Contact your Ration representative today to learn more about optimizing your production efficiency with the power of Ration technology.</p>
-          <a class="btn primary" href="#contact">Talk to our Team</a>
+          <h2 data-i18n="cta.title">Contact our Sales and Service Agents</h2>
+          <p data-i18n="cta.body">Let’s get started. Contact your Ration representative today to learn more about optimizing your production efficiency with the power of Ration technology.</p>
+          <a class="btn primary" href="#contact" data-i18n="cta.button">Talk to our Team</a>
         </div>
       </div>
     </section>
 
     <section class="section about" id="about" aria-label="About Ration">
       <div class="container">
-        <p class="kicker">About</p>
-        <h2>About Ration</h2>
-        <p class="lead">To improve modern aquaculture outcomes by combining deep industry knowledge, robust technology, and strong collaborations with producers.</p>
+        <p class="kicker" data-i18n="about.kicker">About</p>
+        <h2 data-i18n="about.title">About Ration</h2>
+        <p class="lead" data-i18n="about.lead">To improve modern aquaculture outcomes by combining deep industry knowledge, robust technology, and strong collaborations with producers.</p>
 
         <div class="about-grid">
           <div>
-            <h3>What Drives Us</h3>
-            <p>Our mission is to unify aquaculture data sources in a practical way—so teams can reduce costs and improve consistency without adding complexity.</p>
+            <h3 data-i18n="about.drive.title">What Drives Us</h3>
+            <p data-i18n="about.drive.body">Our mission is to unify aquaculture data sources in a practical way—so teams can reduce costs and improve consistency without adding complexity.</p>
 
-            <h3>Experience That Matters</h3>
-            <p>For over 20 years, our team has designed and delivered high-tech systems to land-based operations worldwide. This experience, and our collaboration with customers, shapes how we design technology aligned with what farms actually need.</p>
+            <h3 data-i18n="about.exp.title">Experience That Matters</h3>
+            <p data-i18n="about.exp.body">For over 20 years, our team has designed and delivered high-tech systems to land-based operations worldwide. This experience, and our collaboration with customers, shapes how we design technology aligned with what farms actually need.</p>
 
             
           </div>
@@ -210,7 +218,7 @@
             <div class="team-media">
               <img src="assets/web hans.jpeg" alt="Hans Emil Atlason portrait" loading="lazy" decoding="async" />
               <div class="team-overlay">
-                <p>Hans brings expertise in computer vision and AI to the team. With a PhD in Electrical- and Computer Engineering focused computer vision, he has designed industrial-grade vision systems robust for demanding environments. His work bridges academic innovation with practical, scalable engineering.</p>
+                <p data-i18n="team.bio.hans">Hans brings expertise in computer vision and AI to the team. With a PhD in Electrical- and Computer Engineering focused computer vision, he has designed industrial-grade vision systems robust for demanding environments. His work bridges academic innovation with practical, scalable engineering.</p>
               </div>
             </div>
             <div class="team-bar blue">
@@ -228,7 +236,7 @@
             <div class="team-media">
               <img src="assets/web bjorg.png" alt="Bj&#246;rg O. &#193;sgeirsd&#243;ttir portrait" loading="lazy" decoding="async" />
               <div class="team-overlay">
-                <p>Bjorg brings extensive experience in global marketing and commercial strategy across the aquaculture sector. She has led international teams, launched products into new markets, developed market strategies, and driven commercial growth.</p>
+                <p data-i18n="team.bio.bjorg">Bjorg brings extensive experience in global marketing and commercial strategy across the aquaculture sector. She has led international teams, launched products into new markets, developed market strategies, and driven commercial growth.</p>
               </div>
             </div>
             <div class="team-bar blue">
@@ -246,7 +254,7 @@
             <div class="team-media">
               <img src="assets/web david.jpeg" alt="David Jarron portrait" loading="lazy" decoding="async" />
               <div class="team-overlay">
-                <p>David brings more than two decades of commercial aquaculture experience. For 24 years, he served as sales manager at Vaki Aquaculture, supporting farms and hatcheries globally. His hands-on knowledge, industry relationships, and operational insight make him one of the sector's most experienced commercial specialists. Contact David about your project today.</p>
+                <p data-i18n="team.bio.david">David brings more than two decades of commercial aquaculture experience. For 24 years, he served as sales manager at Vaki Aquaculture, supporting farms and hatcheries globally. His hands-on knowledge, industry relationships, and operational insight make him one of the sector's most experienced commercial specialists. Contact David about your project today.</p>
               </div>
             </div>
             <div class="team-bar blue">
@@ -264,7 +272,7 @@
             <div class="team-media">
               <img src="assets/web thorvaldur.jpeg" alt="&#222;orvaldur L. P&#233;tursson portrait (placeholder)" loading="lazy" decoding="async" />
               <div class="team-overlay">
-                <p>&#222;orvaldur is a pioneer in modern aquaculture technology. As a Technical Lead in Vaki, he has decades of operational and commercial experience, strategic insight, and sector knowledge, which he brings to the team.</p>
+                <p data-i18n="team.bio.thorvaldur">&#222;orvaldur is a pioneer in modern aquaculture technology. As a Technical Lead in Vaki, he has decades of operational and commercial experience, strategic insight, and sector knowledge, which he brings to the team.</p>
               </div>
             </div>
             <div class="team-bar blue">
@@ -282,7 +290,7 @@
             <div class="team-media">
               <img src="assets/web gunnar.jpeg" alt="Gunnar Sigur&#240;sson portrait (placeholder)" loading="lazy" decoding="async" />
               <div class="team-overlay">
-                <p>Gunnar is an electrical engineer, with experience in control systems and power distribution. Before joining Ration, he worked at designing and implementing electrical architectures for industrial environments. He contributes a strong foundation in electrical design, reliability engineering, and system integration.</p>
+                <p data-i18n="team.bio.gunnar">Gunnar is an electrical engineer, with experience in control systems and power distribution. Before joining Ration, he worked at designing and implementing electrical architectures for industrial environments. He contributes a strong foundation in electrical design, reliability engineering, and system integration.</p>
               </div>
             </div>
             <div class="team-bar blue">
@@ -300,7 +308,7 @@
             <div class="team-media">
               <img src="assets/web elias.jpeg" alt="El&#237;as S. Gu&#240;mundsson portrait" loading="lazy" decoding="async" />
               <div class="team-overlay">
-                <p>Elias specializes in robotics and mechatronics with experience across computer vision, motion planning, and medical robotics. Previously, focused on force control in pneumatic robotic instruments for minimally invasive surgery, blending precision engineering with advanced control theory.</p>
+                <p data-i18n="team.bio.elias">Elias specializes in robotics and mechatronics with experience across computer vision, motion planning, and medical robotics. Previously, focused on force control in pneumatic robotic instruments for minimally invasive surgery, blending precision engineering with advanced control theory.</p>
               </div>
             </div>
             <div class="team-bar blue">
@@ -320,50 +328,50 @@
 
     <section class="section alt" id="contact" aria-label="Contact form">
       <div class="container">
-        <h2 class="contact-title">Get rational with Ration.</h2>
+        <h2 class="contact-title" data-i18n="contact.title">Get rational with Ration.</h2>
 
         <div class="contact-grid">
           <div class="form-card">
             <form id="contactForm">
               <div class="form-grid">
                 <div>
-                  <label for="name">Name *</label>
-                  <input id="name" name="name" required placeholder="Name" />
+                  <label for="name" data-i18n="form.name">Name *</label>
+                  <input id="name" name="name" required placeholder="Name" data-i18n-placeholder="form.placeholder.name" />
                 </div>
                 <div>
-                  <label for="email">Email *</label>
-                  <input id="email" name="email" required type="email" placeholder="Email" />
+                  <label for="email" data-i18n="form.email">Email *</label>
+                  <input id="email" name="email" required type="email" placeholder="Email" data-i18n-placeholder="form.placeholder.email" />
                 </div>
                 <div>
-                  <label for="company">Company *</label>
-                  <input id="company" name="company" required placeholder="Company name" />
+                  <label for="company" data-i18n="form.company">Company *</label>
+                  <input id="company" name="company" required placeholder="Company name" data-i18n-placeholder="form.placeholder.company" />
                 </div>
                 <div>
-                  <label for="country">Country *</label>
-                  <input id="country" name="country" required placeholder="Where are you?" />
+                  <label for="country" data-i18n="form.country">Country *</label>
+                  <input id="country" name="country" required placeholder="Where are you?" data-i18n-placeholder="form.placeholder.country" />
                 </div>
 
                 <div class="full">
-                  <label>What products are you interested in?</label>
+                  <label data-i18n="form.products">What products are you interested in?</label>
                   <div class="checks" role="group" aria-label="Products interested in">
                     <label class="checkline"><input type="checkbox" name="interest" value="RationFeed" /> RationFeed</label>
                     <label class="checkline"><input type="checkbox" name="interest" value="RationOVA" /> RationOVA</label>
                     <label class="checkline"><input type="checkbox" name="interest" value="RationCounter" /> RationCounter</label>
-                    <label class="checkline"><input type="checkbox" name="interest" value="General" /> General talk</label>
+                    <label class="checkline"><input type="checkbox" name="interest" value="General" /> <span data-i18n="form.general">General talk</span></label>
                   </div>
                 </div>
 
                 <div class="full">
-                  <label for="notes">Additional information</label>
-                  <textarea id="notes" name="notes" placeholder="Comments or thoughts you'd like to share with us"></textarea>
+                  <label for="notes" data-i18n="form.additional">Additional information</label>
+                  <textarea id="notes" name="notes" placeholder="Comments or thoughts you'd like to share with us" data-i18n-placeholder="form.placeholder.notes"></textarea>
                 </div>
               </div>
 
               <div class="form-actions">
-                <button class="btn primary" type="submit">Contact Us</button>
+                <button class="btn primary" type="submit" data-i18n="form.submit">Contact Us</button>
               </div>
 
-              <p class="small" style="margin: 10px 0 0;">
+              <p class="small" style="margin: 10px 0 0;" data-i18n="form.note">
                 This form opens your email client (mailto). Replace with your backend later if desired.
               </p>
             </form>
@@ -373,7 +381,7 @@
             <div class="logo-plate">
               <img src="assets/ration-logo.png" alt="Ration logo" loading="lazy" decoding="async" />
             </div>
-            <p class="small" style="margin: 10px 0 0; text-align: center;">
+            <p class="small" style="margin: 10px 0 0; text-align: center;" data-i18n-html="form.reach">
               Reach us at <a href="mailto:info@ration.is">info@ration.is</a>
             </p>
           </div>
@@ -389,9 +397,9 @@
           <div class="footer-brand">
             <img class="footer-logo" src="assets/ration-logo.png" alt="Ration logo" loading="lazy" decoding="async" />
           </div>
-          <p class="small">Aquaculture sensing &amp; control — less waste, cleaner water, better decisions.</p>
-          <p class="small" style="margin-top: 8px;"><strong>Contact:</strong> <a href="mailto:info@ration.is">info@ration.is</a><br/>
-            <strong>Service:</strong> <a href="service-support.html">Service &amp; Support</a></p>
+          <p class="small" data-i18n="footer.tagline">Aquaculture sensing &amp; control — less waste, cleaner water, better decisions.</p>
+          <p class="small" style="margin-top: 8px;"><strong><span data-i18n="footer.contact">Contact:</span></strong> <a href="mailto:info@ration.is">info@ration.is</a><br/>
+            <strong><span data-i18n="footer.service">Service:</span></strong> <a href="service-support.html">Service &amp; Support</a></p>
         </div>
 
         
@@ -399,8 +407,8 @@
         <div class="footer-card">
           <p><strong style="color:#153755;">Ration ehf.</strong></p>
           <p class="small">Árleynir 8<br />112 Reykjavík<br />Iceland</p>
-          <p class="small" style="margin-top: 10px;">© <span id="year"></span> Ration. All rights reserved.</p>
-          <p class="small" style="margin-top: 10px;"><strong>Partnerships:</strong> KLPK · VÍSK · Matvælasjóður · Technology Development Fund</p>
+          <p class="small" style="margin-top: 10px;" data-i18n-html="footer.copyright">© <span id="year"></span> Ration. All rights reserved.</p>
+          <p class="small" style="margin-top: 10px;"><strong><span data-i18n="footer.partnerships">Partnerships:</span></strong> KLPK · VÍSK · Matvælasjóður · Technology Development Fund</p>
         </div>
       </div>
     </div>

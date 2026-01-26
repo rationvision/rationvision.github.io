@@ -156,25 +156,59 @@
       font-size: 12px;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .accordion{
+      display: grid;
       gap: 14px;
       align-items: start;
       margin-top: 14px;
     }
-    .card{
-      background: rgba(255,255,255,.95);
+    .accordion-item{
       border: 1px solid rgba(21,55,85,.14);
       border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 1px 0 rgba(0,0,0,.02);
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 8px 22px rgba(0,0,0,.06);
+      overflow: hidden;
     }
-    .card h2{
-      margin: 0 0 10px;
-      font-size: 18px;
-      letter-spacing: -0.01em;
+    .accordion-item summary{
+      list-style: none;
+      cursor: pointer;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-weight: 950;
       color: var(--navy);
+      background: rgba(222,232,241,.55);
+    }
+    .accordion-item summary::-webkit-details-marker{ display: none; }
+    .accordion-item summary:focus-visible{
+      outline: 3px solid var(--navy);
+      outline-offset: 3px;
+      border-radius: 12px;
+    }
+    .accordion-icon{
+      width: 22px;
+      height: 22px;
+      border-radius: 8px;
+      border: 1px solid rgba(21,55,85,.18);
+      display: grid;
+      place-items: center;
+      position: relative;
+      background: rgba(255,255,255,.8);
+    }
+    .accordion-icon::before,
+    .accordion-icon::after{
+      content:"";
+      position: absolute;
+      background: var(--navy);
+      border-radius: 2px;
+    }
+    .accordion-icon::before{ width: 10px; height: 2px; }
+    .accordion-icon::after{ width: 2px; height: 10px; }
+    .accordion-item[open] .accordion-icon::after{ display: none; }
+    .accordion-item .cols{
+      padding: 16px 18px 18px;
     }
     .cols{
       display:grid;
@@ -236,7 +270,6 @@
     .small{ color: var(--muted); font-size: 14px; }
 
     @media (max-width: 980px){
-      .grid{ grid-template-columns: 1fr; }
       .cols{ grid-template-columns: 1fr; }
       .nav{ display:none; }
       .footer-grid{ grid-template-columns: 1fr; }

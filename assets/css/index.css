@@ -856,7 +856,8 @@ display: grid;
       background: #fff;
       box-shadow: 0 10px 24px rgba(0,0,0,.06);
       transition: transform .18s ease, box-shadow .18s ease;
-      min-height: 540px;
+      display: flex;
+      flex-direction: column;
     }
     @media (hover:hover) and (pointer:fine){
       .team-card:hover{
@@ -864,14 +865,19 @@ display: grid;
         box-shadow: 0 18px 40px rgba(0,0,0,.10);
       }
     }
-    .team-card img{
-      width: min(260px, 100%);
-      height: auto;
-      display: block;
-      margin: 18px auto 6px;
-      border-radius: 12px;
-      border: 1px solid rgba(21,55,85,.10);
+    .team-media{
+      position: relative;
+      height: 340px;
+      overflow: hidden;
+      border-radius: 12px 12px 0 0;
       background: rgba(222,232,241,.35);
+      border-bottom: 1px solid rgba(21,55,85,.10);
+    }
+    .team-media img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
       transition: filter .18s ease, transform .18s ease;
     }
     .team-bar{
@@ -910,7 +916,7 @@ display: grid;
       left: 0;
       right: 0;
       top: 0;
-      bottom: 56px; /* keep the name bar visible */
+      bottom: 0;
       padding: 18px 14px 20px;
       overflow: auto;
       display: flex;

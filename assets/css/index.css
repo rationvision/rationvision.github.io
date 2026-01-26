@@ -173,7 +173,7 @@ display: grid;
       border-radius: var(--radius);
       border: 1px solid rgba(21,55,85,.14);
       background: rgba(255,255,255,.92);
-      padding: 16px;
+      padding: 18px;
       box-shadow: 0 1px 0 rgba(0,0,0,.02);
       transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
       position: relative;
@@ -207,23 +207,18 @@ display: grid;
       display: block;
     }
 
-.product-tile h3{
-      margin: 8px 0 6px;
-      font-size: 18px;
-      color: var(--navy);
-      letter-spacing: -0.01em;
-    }
     .product-tile .small{
-      margin: 0;
+      margin: 6px 0 0;
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
+      font-size: 15px;
+      line-height: 1.6;
     }
     .tile-link{
       display: inline-flex;
       margin-top: 10px;
       font-weight: 900;
       color: rgba(21,55,85,.86);
+      font-size: 15px;
       text-decoration: none;
     }
     .tile-link:hover{ color: var(--navy); text-decoration: underline; text-decoration-color: rgba(242,149,63,.55); text-underline-offset: .16em; }

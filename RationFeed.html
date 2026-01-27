@@ -252,92 +252,78 @@
         </h3>
 
         <div class="testimonials-grid" aria-label="Testimonials">
-                    <div class="quote-card">
+          <div class="quote-card">
             <div class="quote-head">
               <div class="quote-logo">
                 <img src="assets/Laxey-logo.png" alt="Laxey logo" loading="lazy" decoding="async" />
               </div>
               <div class="quote-by">
-                <div class="quote-company">Viðar Örn Victorsson</div>
+                <div class="quote-company">Vi&eth;ar &Ouml;rn Victorsson</div>
                 <div class="quote-meta" data-i18n="quote.one.role">Assistant Grow Out Manager</div>
               </div>
             </div>
-            <p class="quote-text" data-i18n="quote.one.text">"We have excellent overall results using RationFeed to monitor and control our feeding 24/7."</p>
+            <p class="quote-text" data-i18n="quote.one.text">&quot;We have excellent overall results using RationFeed to monitor and control our feeding 24/7.&quot;</p>
           </div>
 
           <div class="quote-card">
             <div class="quote-head">
-              <div class="quote-logo" aria-hidden="true">LOGO</div>
+              <div class="quote-logo">
+                <img src="assets/Laxey-logo.png" alt="Laxey logo" loading="lazy" decoding="async" />
+              </div>
               <div class="quote-by">
-                <div class="quote-company" data-i18n="quote.two.company">Customer (placeholder)</div>
-                <div class="quote-meta" data-i18n="quote.two.role">Site Technician · Land-based salmon facility</div>
+                <div class="quote-company" data-i18n="quote.two.company">Carl Terblanche, Laxey</div>
+                <div class="quote-meta" data-i18n="quote.two.role">Assistant Grow Out Manager</div>
               </div>
             </div>
-            <p class="quote-text" data-i18n="quote.two.text">“Installing out of water made maintenance simple. We didn’t have to interrupt flow or deal with routine cleaning to keep the system stable.”</p>
+            <p class="quote-text" data-i18n="quote.two.text">&quot;With RationFEED automatically controlling our feeding, we were delighted to see improved water quality and an increase in overall feeding.&quot;</p>
           </div>
         </div>
 
         <div style="height: 18px;"></div>
 
+        <h3 class="calc-heading" data-i18n="calc.heading">Estimate your feed savings</h3>
+
         <div class="calc">
           <div class="card">
             <h3 style="margin-top: 0;" data-i18n="calc.title">Calculator</h3>
-            <p class="small" style="margin-top: -2px;" data-i18n="calc.note">Adjust inputs to estimate monthly savings and potential extra revenue.</p>
+            <p class="small" style="margin-top: -2px;" data-i18n="calc.note">Use the sliders to estimate annual feed savings.</p>
 
             <form class="form" id="calcForm2" autocomplete="off">
               <div class="field">
-                <label for="feedCost" data-i18n="calc.feedCost">Cost of 1 kg feed (EUR)</label>
-                <input id="feedCost" type="number" min="0" step="0.01" value="2" inputmode="decimal" />
+                <div class="range-head">
+                  <label for="annualFeed" data-i18n="calc.annualFeed">Annual feed use (tonnes/year)</label>
+                  <span class="range-value" id="annualFeedValue">2,000</span>
+                </div>
+                <input id="annualFeed" type="range" min="200" max="10000" step="50" value="2000" />
               </div>
               <div class="field">
-                <label for="monthlyFeed" data-i18n="calc.monthlyFeed">Average monthly feeding (kg)</label>
-                <input id="monthlyFeed" type="number" min="0" step="1" value="30000" inputmode="numeric" />
+                <div class="range-head">
+                  <label for="feedPrice" data-i18n="calc.feedPrice">Feed price (EUR/tonne)</label>
+                  <span class="range-value" id="feedPriceValue">1,500</span>
+                </div>
+                <input id="feedPrice" type="range" min="500" max="3000" step="50" value="1500" />
               </div>
               <div class="field">
-                <label for="pctSaved" data-i18n="calc.pctSaved">Percentage feed saved (%)</label>
-                <input id="pctSaved" type="number" min="0" max="100" step="0.1" value="10" inputmode="decimal" />
-              </div>
-
-              <hr style="border: none; border-top: 1px solid rgba(21,55,85,.14); margin: 4px 0;" />
-
-              <div class="field">
-                <label for="tanks" data-i18n="calc.tanks">Number of tanks</label>
-                <input id="tanks" type="number" min="0" step="1" value="10" inputmode="numeric" />
-              </div>
-              <div class="field">
-                <label for="harvestPerTank" data-i18n="calc.harvestPerTank">kg harvest per tank</label>
-                <input id="harvestPerTank" type="number" min="0" step="1" value="20000" inputmode="numeric" />
-              </div>
-              <div class="field">
-                <label for="pctYield" data-i18n="calc.pctYield">Yield increase (%)</label>
-                <input id="pctYield" type="number" min="0" max="100" step="0.1" value="2" inputmode="decimal" />
-              </div>
-              <div class="field">
-                <label for="fishPrice" data-i18n="calc.fishPrice">Price per kg fish (EUR)</label>
-                <input id="fishPrice" type="number" min="0" step="0.01" value="6" inputmode="decimal" />
+                <div class="range-head">
+                  <label for="reduction" data-i18n="calc.reduction">Estimated feed waste reduction (%)</label>
+                  <span class="range-value" id="reductionValue">1.0%</span>
+                </div>
+                <input id="reduction" type="range" min="5" max="20" step="0.5" value="10" />
+                <p class="small" style="margin: 0;" data-i18n="calc.reductionHint">Typical range 5%&ndash;20%</p>
               </div>
             </form>
           </div>
 
           <div class="calc-out" aria-live="polite">
-            <h3 data-i18n="calc.impact">Estimated impact</h3>
+            <h3 data-i18n="calc.impact">Estimated annual savings</h3>
 
             <div class="metric">
-              <div class="label" data-i18n="calc.feedSavings">Monthly feed savings</div>
-              <div class="value" id="outFeedSavings">€0</div>
-            </div>
-
-            <div class="metric">
-              <div class="label" data-i18n="calc.extraRevenue">Potential extra revenue</div>
-              <div class="value" id="outRevenue">€0</div>
-            </div>
-
-            <div class="metric">
-              <div class="label" data-i18n="calc.total">Combined monthly upside</div>
-              <div class="value" id="outTotal">€0</div>
+              <div class="label" data-i18n="calc.savings">Annual feed savings</div>
+              <div class="value" id="outAnnualSavings">&euro;0</div>
             </div>
 
             <p class="fine" data-i18n="calc.fine">These are simple scenario estimates for planning. Actual results depend on species, system design, and site conditions.</p>
+            <a class="btn primary" style="margin-top: 12px;" href="mailto:sales@ration.is?subject=RationFeed%20site-specific%20assessment" data-i18n="calc.cta">Request a site-specific assessment</a>
           </div>
         </div>
       </div>

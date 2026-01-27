@@ -73,21 +73,30 @@
     (function () {
       const $ = (id) => document.getElementById(id);
 
-      const feedCost = $("feedCost");
-      const monthlyFeed = $("monthlyFeed");
-      const pctSaved = $("pctSaved");
-      const tanks = $("tanks");
-      const harvestPerTank = $("harvestPerTank");
-      const pctYield = $("pctYield");
-      const fishPrice = $("fishPrice");
+      const annualFeed = $("annualFeed");
+      const feedPrice = $("feedPrice");
+      const reduction = $("reduction");
 
-      const outFeedSavings = $("outFeedSavings");
-      const outRevenue = $("outRevenue");
-      const outTotal = $("outTotal");
+      const annualFeedValue = $("annualFeedValue");
+      const feedPriceValue = $("feedPriceValue");
+      const reductionValue = $("reductionValue");
+
+      const outAnnualSavings = $("outAnnualSavings");
+      if (!annualFeed || !feedPrice || !reduction || !outAnnualSavings) return;
 
       function n(v) {
         const x = Number(v);
         return Number.isFinite(x) ? x : 0;
+      }
+
+      function number(value) {
+        return new Intl.NumberFormat(undefined, {
+          maximumFractionDigits: 0
+        }).format(n(value));
+      }
+
+      function percent(value) {
+        return `${n(value).toFixed(1)}%`;
       }
 
       function money(value) {
@@ -99,22 +108,16 @@
       }
 
       function recalc() {
-        const cost = n(feedCost.value);
-        const monthly = n(monthlyFeed.value);
-        const savedPct = n(pctSaved.value) / 100;
-        const feedSavings = cost * monthly * savedPct;
+        const annual = n(annualFeed.value);
+        const price = n(feedPrice.value);
+        const reductionPct = n(reduction.value) / 100;
 
-        const t = n(tanks.value);
-        const harvest = n(harvestPerTank.value);
-        const yieldPct = n(pctYield.value) / 100;
-        const price = n(fishPrice.value);
-        const extraRevenue = t * harvest * yieldPct * price;
+        if (annualFeedValue) annualFeedValue.textContent = number(annual);
+        if (feedPriceValue) feedPriceValue.textContent = number(price);
+        if (reductionValue) reductionValue.textContent = percent(reduction.value);
 
-        const total = feedSavings + extraRevenue;
-
-        outFeedSavings.textContent = money(feedSavings);
-        outRevenue.textContent = money(extraRevenue);
-        outTotal.textContent = money(total);
+        const savings = annual * price * reductionPct;
+        if (outAnnualSavings) outAnnualSavings.textContent = money(savings);
       }
 
       ["input", "change"].forEach((evt) => {
@@ -201,25 +204,22 @@
         "testimonials.title": "What operators say",
         "quote.one.role": "Assistant Grow Out Manager",
         "quote.one.text": "&quot;We have excellent overall results using RationFeed to monitor and control our feeding 24/7.&quot;",
-        "quote.two.company": "Customer (placeholder)",
-        "quote.two.role": "Site Technician &middot; Land-based salmon facility",
-        "quote.two.text": "&quot;Installing out of water made maintenance simple. We didn't have to interrupt flow or deal with routine cleaning to keep the system stable.&quot;",
+        "quote.two.company": "Carl Terblanche, Laxey",
+        "quote.two.role": "Assistant Grow Out Manager",
+        "quote.two.text": "&quot;With RationFEED automatically controlling our feeding, we were delighted to see improved water quality and an increase in overall feeding.&quot;",
       });
       Object.assign(translations.en, {
         "calc.title": "Calculator",
-        "calc.note": "Adjust inputs to estimate monthly savings and potential extra revenue.",
-        "calc.feedCost": "Cost of 1 kg feed (EUR)",
-        "calc.monthlyFeed": "Average monthly feeding (kg)",
-        "calc.pctSaved": "Percentage feed saved (%)",
-        "calc.tanks": "Number of tanks",
-        "calc.harvestPerTank": "kg harvest per tank",
-        "calc.pctYield": "Yield increase (%)",
-        "calc.fishPrice": "Price per kg fish (EUR)",
-        "calc.impact": "Estimated impact",
-        "calc.feedSavings": "Monthly feed savings",
-        "calc.extraRevenue": "Potential extra revenue",
-        "calc.total": "Combined monthly upside",
-        "calc.fine": "These are simple scenario estimates for planning. Actual results depend on species, system design, and site conditions.",
+        "calc.note": "Use the sliders to estimate annual feed savings.",
+        "calc.heading": "Estimate your feed savings",
+        "calc.annualFeed": "Annual feed use (tonnes/year)",
+        "calc.feedPrice": "Feed price (EUR/tonne)",
+        "calc.reduction": "Estimated feed waste reduction (%)",
+        "calc.reductionHint": "Typical range 5%&ndash;20%",
+        "calc.impact": "Estimated annual savings",
+        "calc.savings": "Annual feed savings",
+        "calc.fine": "This estimate reflects feed savings only. Additional benefits related to water quality, fish welfare, and compliance not included.",
+        "calc.cta": "Request a site-specific assessment",
         "support.kicker": "Risk reversal",
         "support.title": "6-month trial with a rental contract and refund option",
         "support.lead": "If you feel the device did not help improve operations during the trial period, you can return it for a full refund. Software updates add new capabilities over time.",
@@ -313,25 +313,22 @@
         "testimonials.title": "Hva operat&oslash;rene sier",
         "quote.one.role": "Assisterende grow-out manager",
         "quote.one.text": "&quot;Vi har sv&aelig;rt gode resultater med RationFeed for &aring; overv&aring;ke og kontrollere f&ocirc;ringen v&aring;r 24/7.&quot;",
-        "quote.two.company": "Kunde (plassholder)",
-        "quote.two.role": "Driftstekniker &middot; Landbasert lakseanlegg",
-        "quote.two.text": "&quot;Installasjon over vann gjorde vedlikehold enkelt. Vi m&aring;tte ikke stoppe gjennomstr&oslash;mningen eller h&aring;ndtere rutinemessig rengj&oslash;ring for &aring; holde systemet stabilt.&quot;",
+        "quote.two.company": "Carl Terblanche, Laxey",
+        "quote.two.role": "Assisterende grow-out manager",
+        "quote.two.text": "&quot;Med RationFEED som automatisk kontrollerer f&ocirc;ringen v&aring;r, var vi glade for &aring; se bedre vannkvalitet og en &oslash;kning i total f&ocirc;ring.&quot;",
       });
       Object.assign(translations.no, {
         "calc.title": "Kalkulator",
-        "calc.note": "Juster inndata for &aring; estimere m&aring;nedlige besparelser og mulig ekstra inntekt.",
-        "calc.feedCost": "Kostnad for 1 kg f&ocirc;r (EUR)",
-        "calc.monthlyFeed": "Gjennomsnittlig m&aring;nedlig f&ocirc;ring (kg)",
-        "calc.pctSaved": "Andel f&ocirc;r spart (%)",
-        "calc.tanks": "Antall kar",
-        "calc.harvestPerTank": "kg slakt per kar",
-        "calc.pctYield": "Avlings&oslash;kning (%)",
-        "calc.fishPrice": "Pris per kg fisk (EUR)",
-        "calc.impact": "Estimert effekt",
-        "calc.feedSavings": "M&aring;nedlige f&ocirc;rbesparelser",
-        "calc.extraRevenue": "Potensiell ekstra inntekt",
-        "calc.total": "Samlet m&aring;nedlig gevinst",
-        "calc.fine": "Dette er enkle scenarieestimater for planlegging. Faktiske resultater avhenger av art, systemdesign og lokale forhold.",
+        "calc.note": "Bruk glidebryterne for &aring; estimere &aring;rlige f&ocirc;rbesparelser.",
+        "calc.heading": "Estimer f&ocirc;rbesparelsene dine",
+        "calc.annualFeed": "&Aring;rlig f&ocirc;rforbruk (tonn/&aring;r)",
+        "calc.feedPrice": "F&ocirc;rpris (EUR/tonn)",
+        "calc.reduction": "Estimert reduksjon i f&ocirc;rsvinn (%)",
+        "calc.reductionHint": "Typisk omr&aring;de 5%&ndash;20%",
+        "calc.impact": "Estimert &aring;rlig besparelse",
+        "calc.savings": "&Aring;rlige f&ocirc;rbesparelser",
+        "calc.fine": "Dette estimatet gjelder kun f&ocirc;rbesparelser. Ytterligere fordeler knyttet til vannkvalitet, fiskevelferd og etterlevelse er ikke inkludert.",
+        "calc.cta": "Be om en stedsspesifikk vurdering",
         "support.kicker": "Risikoreversering",
         "support.title": "6-m&aring;neders pr&oslash;ve med leiekontrakt og refusjonsmulighet",
         "support.lead": "Hvis du mener at enheten ikke bidro til bedre drift i pr&oslash;veperioden, kan du returnere den for full refusjon. Programvareoppdateringer gir nye funksjoner over tid.",
@@ -426,25 +423,22 @@
         "testimonials.title": "Lo que dicen los operadores",
         "quote.one.role": "Asistente de grow-out manager",
         "quote.one.text": "&quot;Tenemos excelentes resultados generales usando RationFeed para monitorear y controlar nuestra alimentaci&oacute;n 24/7.&quot;",
-        "quote.two.company": "Cliente (marcador de posici&oacute;n)",
-        "quote.two.role": "T&eacute;cnico de sitio &middot; Instalaci&oacute;n de salm&oacute;n en tierra",
-        "quote.two.text": "&quot;La instalaci&oacute;n fuera del agua hizo que el mantenimiento fuera sencillo. No tuvimos que interrumpir el flujo ni lidiar con limpiezas rutinarias para mantener el sistema estable.&quot;",
+        "quote.two.company": "Carl Terblanche, Laxey",
+        "quote.two.role": "Asistente de grow-out manager",
+        "quote.two.text": "&quot;Con RationFEED controlando autom&aacute;ticamente nuestra alimentaci&oacute;n, nos alegr&oacute; ver una mejora en la calidad del agua y un aumento en la alimentaci&oacute;n total.&quot;",
       });
       Object.assign(translations.es, {
         "calc.title": "Calculadora",
-        "calc.note": "Ajusta los datos para estimar ahorros mensuales y posibles ingresos adicionales.",
-        "calc.feedCost": "Costo de 1 kg de alimento (EUR)",
-        "calc.monthlyFeed": "Alimentaci&oacute;n mensual promedio (kg)",
-        "calc.pctSaved": "Porcentaje de alimento ahorrado (%)",
-        "calc.tanks": "N&uacute;mero de tanques",
-        "calc.harvestPerTank": "kg de cosecha por tanque",
-        "calc.pctYield": "Aumento de rendimiento (%)",
-        "calc.fishPrice": "Precio por kg de pescado (EUR)",
-        "calc.impact": "Impacto estimado",
-        "calc.feedSavings": "Ahorro mensual de alimento",
-        "calc.extraRevenue": "Ingresos adicionales potenciales",
-        "calc.total": "Beneficio mensual combinado",
-        "calc.fine": "Estas son estimaciones simples para planificaci&oacute;n. Los resultados reales dependen de la especie, el dise&ntilde;o del sistema y las condiciones del sitio.",
+        "calc.note": "Usa los deslizadores para estimar ahorros anuales de alimento.",
+        "calc.heading": "Estima tus ahorros de alimento",
+        "calc.annualFeed": "Uso anual de alimento (toneladas/a&ntilde;o)",
+        "calc.feedPrice": "Precio del alimento (EUR/tonelada)",
+        "calc.reduction": "Reducci&oacute;n estimada del desperdicio de alimento (%)",
+        "calc.reductionHint": "Rango t&iacute;pico 5%&ndash;20%",
+        "calc.impact": "Ahorros anuales estimados",
+        "calc.savings": "Ahorro anual de alimento",
+        "calc.fine": "Esta estimaci&oacute;n refleja solo el ahorro de alimento. No se incluyen beneficios adicionales relacionados con la calidad del agua, el bienestar de los peces y el cumplimiento.",
+        "calc.cta": "Solicitar una evaluaci&oacute;n espec&iacute;fica del sitio",
         "support.kicker": "Reversi&oacute;n de riesgo",
         "support.title": "Prueba de 6 meses con contrato de alquiler y opci&oacute;n de reembolso",
         "support.lead": "Si consideras que el dispositivo no ayud&oacute; a mejorar las operaciones durante la prueba, puedes devolverlo para un reembolso completo. Las actualizaciones de software agregan nuevas funciones con el tiempo.",

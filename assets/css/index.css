@@ -198,12 +198,12 @@ display: grid;
       overflow: hidden;
       border: 1px solid rgba(21,55,85,.12);
       background: rgba(222,232,241,.35);
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 4 / 3;
     }
     .tile-media img{
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 

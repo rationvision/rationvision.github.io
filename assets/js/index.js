@@ -174,11 +174,11 @@
           "form.submit": "Contact Us",
           "form.note": "This form opens your email client (mailto). Replace with your backend later if desired.",
           "form.reach": "Reach us at <a href=\"mailto:info@ration.is\">info@ration.is</a>",
-          "footer.tagline": "Aquaculture sensing &amp; control — less waste, cleaner water, better decisions.",
-          "footer.contact": "Contact:",
-          "footer.service": "Service:",
-          "footer.partnerships": "Partnerships:",
-          "footer.copyright": "© <span id=\"year\"></span> Ration. All rights reserved."
+          "footer.about.title": "About Ration",
+          "footer.about.body": "To improve modern aquaculture outcomes by combining deep industry knowledge, robust technology, and close collaboration with producers, strengthening fish welfare, reducing waste, and supporting sustainable growth.",
+          "footer.about.cta": "Let's build better aquaculture together.",
+          "footer.partnerships.title": "Collaboration &amp; Partnerships",
+          "footer.copyright": "&copy; <span id=\"year\"></span> Ration. All rights reserved.",
         },
         no: {
           "header.tagline": "Visjon for akvakultur",
@@ -242,11 +242,11 @@
           "form.submit": "Kontakt oss",
           "form.note": "Dette skjemaet åpner e-postklienten din (mailto). Bytt til backend senere om ønskelig.",
           "form.reach": "Kontakt oss på <a href=\"mailto:info@ration.is\">info@ration.is</a>",
-          "footer.tagline": "Akvakulturmåling og -kontroll — mindre avfall, renere vann, bedre beslutninger.",
-          "footer.contact": "Kontakt:",
-          "footer.service": "Service:",
-          "footer.partnerships": "Partnerskap:",
-          "footer.copyright": "© <span id=\"year\"></span> Ration. Alle rettigheter reservert."
+          "footer.about.title": "Om Ration",
+          "footer.about.body": "Forbedre resultatene i moderne akvakultur ved &aring; kombinere dyp bransjekunnskap, robust teknologi og n&aelig;rt samarbeid med produsenter, som styrker fiskevelferd, reduserer svinn og st&oslash;tter b&aelig;rekraftig vekst.",
+          "footer.about.cta": "La oss bygge bedre akvakultur sammen.",
+          "footer.partnerships.title": "Samarbeid og partnerskap",
+          "footer.copyright": "&copy; <span id=\"year\"></span> Ration. Alle rettigheter reservert.",
         },
         es: {
           "header.tagline": "Visión para la acuicultura",
@@ -310,11 +310,11 @@
           "form.submit": "Contáctanos",
           "form.note": "Este formulario abre tu cliente de correo (mailto). Sustitúyelo por tu backend más adelante si lo deseas.",
           "form.reach": "Contáctanos en <a href=\"mailto:info@ration.is\">info@ration.is</a>",
-          "footer.tagline": "Sensado y control para acuicultura — menos desperdicio, agua más limpia, mejores decisiones.",
-          "footer.contact": "Contacto:",
-          "footer.service": "Servicio:",
-          "footer.partnerships": "Colaboraciones:",
-          "footer.copyright": "© <span id=\"year\"></span> Ration. Todos los derechos reservados."
+          "footer.about.title": "Sobre Ration",
+          "footer.about.body": "Mejorar los resultados de la acuicultura moderna combinando profundo conocimiento del sector, tecnolog&iacute;a robusta y colaboraci&oacute;n cercana con productores, fortaleciendo el bienestar de los peces, reduciendo el desperdicio y apoyando el crecimiento sostenible.",
+          "footer.about.cta": "Construyamos una mejor acuicultura juntos.",
+          "footer.partnerships.title": "Colaboraci&oacute;n y alianzas",
+          "footer.copyright": "&copy; <span id=\"year\"></span> Ration. Todos los derechos reservados.",
         }
       };
 

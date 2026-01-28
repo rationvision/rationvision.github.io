@@ -204,8 +204,8 @@
         "testimonials.title": "What operators say",
         "quote.one.role": "Assistant Grow Out Manager",
         "quote.one.text": "&quot;We have excellent overall results using RationFeed to monitor and control our feeding 24/7.&quot;",
-        "quote.two.company": "Carl Terblanche, Laxey",
-        "quote.two.role": "Assistant Grow Out Manager",
+        "quote.two.company": "Hallgr&iacute;mur Steinsson, Laxey",
+        "quote.two.role": "CTO",
         "quote.two.text": "&quot;With RationFEED automatically controlling our feeding, we were delighted to see improved water quality and an increase in overall feeding.&quot;",
       });
       Object.assign(translations.en, {
@@ -313,8 +313,8 @@
         "testimonials.title": "Hva operat&oslash;rene sier",
         "quote.one.role": "Assisterende grow-out manager",
         "quote.one.text": "&quot;Vi har sv&aelig;rt gode resultater med RationFeed for &aring; overv&aring;ke og kontrollere f&ocirc;ringen v&aring;r 24/7.&quot;",
-        "quote.two.company": "Carl Terblanche, Laxey",
-        "quote.two.role": "Assisterende grow-out manager",
+        "quote.two.company": "Hallgr&iacute;mur Steinsson, Laxey",
+        "quote.two.role": "CTO",
         "quote.two.text": "&quot;Med RationFEED som automatisk kontrollerer f&ocirc;ringen v&aring;r, var vi glade for &aring; se bedre vannkvalitet og en &oslash;kning i total f&ocirc;ring.&quot;",
       });
       Object.assign(translations.no, {
@@ -423,8 +423,8 @@
         "testimonials.title": "Lo que dicen los operadores",
         "quote.one.role": "Asistente de grow-out manager",
         "quote.one.text": "&quot;Tenemos excelentes resultados generales usando RationFeed para monitorear y controlar nuestra alimentaci&oacute;n 24/7.&quot;",
-        "quote.two.company": "Carl Terblanche, Laxey",
-        "quote.two.role": "Asistente de grow-out manager",
+        "quote.two.company": "Hallgr&iacute;mur Steinsson, Laxey",
+        "quote.two.role": "CTO",
         "quote.two.text": "&quot;Con RationFEED controlando autom&aacute;ticamente nuestra alimentaci&oacute;n, nos alegr&oacute; ver una mejora en la calidad del agua y un aumento en la alimentaci&oacute;n total.&quot;",
       });
       Object.assign(translations.es, {

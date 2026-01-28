@@ -389,26 +389,39 @@
     </section>
   </main>
 
-  <footer aria-label="Footer">
+  <footer class="footer-banner" aria-label="Footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">
-            <img class="footer-logo" src="assets/ration-logo.png" alt="Ration logo" loading="lazy" decoding="async" />
+      <div class="footer-banner-grid">
+        <div class="footer-brand-block">
+          <img class="footer-logo-large" src="assets/ration-logo.png" alt="Ration logo" loading="lazy" decoding="async" />
+          <p class="footer-address">
+            <strong>Ration ehf.</strong><br/>
+            &Aacute;rleynir 8<br/>
+            112 Reykjav&iacute;k<br/>
+            Iceland<br/>
+            <a href="mailto:info@ration.is">info@ration.is</a>
+          </p>
+        </div>
+
+        <div class="footer-about">
+          <h3 data-i18n="footer.about.title">About Ration</h3>
+          <p data-i18n="footer.about.body">To improve modern aquaculture outcomes by combining deep industry knowledge, robust technology, and close collaboration with producers, strengthening fish welfare, reducing waste, and supporting sustainable growth.</p>
+          <p class="footer-about-cta" data-i18n="footer.about.cta">Let's build better aquaculture together.</p>
+        </div>
+
+        <div class="footer-partners">
+          <h3 data-i18n="footer.partnerships.title">Collaboration &amp; Partnerships</h3>
+          <div class="partners-grid" aria-label="Partners">
+            <img class="partner-logo" src="assets/logos/klaki.png" alt="KLAKI logo" loading="lazy" decoding="async" />
+            <img class="partner-logo" src="assets/logos/visk.png" alt="V&Iacute;SK logo" loading="lazy" decoding="async" />
+            <img class="partner-logo" src="assets/logos/matvaelasjodur.png" alt="Matv&aelig;lasj&oacute;&eth;ur logo" loading="lazy" decoding="async" />
+            <img class="partner-logo" src="assets/logos/tdf.png" alt="Technology Development Fund logo" loading="lazy" decoding="async" />
           </div>
-          <p class="small" data-i18n="footer.tagline">Aquaculture sensing &amp; control — less waste, cleaner water, better decisions.</p>
-          <p class="small" style="margin-top: 8px;"><strong><span data-i18n="footer.contact">Contact:</span></strong> <a href="mailto:info@ration.is">info@ration.is</a><br/>
-            <strong><span data-i18n="footer.service">Service:</span></strong> <a href="service-support.html">Service &amp; Support</a></p>
         </div>
+      </div>
 
-        
-
-        <div class="footer-card">
-          <p><strong style="color:#153755;">Ration ehf.</strong></p>
-          <p class="small">Árleynir 8<br />112 Reykjavík<br />Iceland</p>
-          <p class="small" style="margin-top: 10px;" data-i18n-html="footer.copyright">© <span id="year"></span> Ration. All rights reserved.</p>
-          <p class="small" style="margin-top: 10px;"><strong><span data-i18n="footer.partnerships">Partnerships:</span></strong> KLPK · VÍSK · Matvælasjóður · Technology Development Fund</p>
-        </div>
+      <div class="footer-bottom">
+        <p class="small" data-i18n-html="footer.copyright">&copy; <span id="year"></span> Ration. All rights reserved.</p>
       </div>
     </div>
   </footer>

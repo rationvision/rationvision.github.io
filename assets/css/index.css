@@ -204,6 +204,15 @@ display: grid;
       background: rgba(222,232,241,.35);
       aspect-ratio: 4 / 3;
     }
+    .tile-media-link{
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .tile-media-link:focus-visible{
+      outline: 3px solid rgba(242,149,63,.7);
+      outline-offset: 2px;
+    }
     .tile-media img{
       width: 100%;
       height: 100%;
@@ -768,6 +777,10 @@ display: grid;
       max-width: 74ch;
       font-size: 14px;
     }
+    .cta-email{
+      display: none;
+      font-weight: 900;
+    }
 
     /* About section */
     .about-grid{
@@ -868,8 +881,8 @@ display: grid;
       margin-top: 22px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      max-width: 1200px;
+      gap: 14px;
+      max-width: 960px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -892,7 +905,7 @@ display: grid;
     }
     .team-media{
       position: relative;
-      height: 340px;
+      height: 240px;
       overflow: hidden;
       border-radius: 12px 12px 0 0;
       background: rgba(222,232,241,.35);
@@ -910,22 +923,22 @@ display: grid;
       align-items:flex-start;
       justify-content: space-between;
       gap: 10px;
-      padding: 12px 12px 14px;
+      padding: 10px 10px 12px;
       color: #fff;
       font-weight: 900;
-      font-size: 13px;
+      font-size: 12px;
     }
     .team-text{
       display: grid;
       gap: 4px;
     }
     .team-name{
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 900;
       line-height: 1.2;
     }
     .team-title{
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       opacity: 0.9;
       line-height: 1.2;
@@ -1148,11 +1161,14 @@ display: grid;
       align-items: center;
     }
     .partner-logo{
-      max-height: 46px;
+      max-height: 52px;
       width: auto;
       display: block;
       filter: brightness(0) invert(1);
       opacity: .9;
+    }
+    .partner-logo.tall{
+      max-height: 92px;
     }
     .footer-bottom{
       border-top: 1px solid rgba(255,255,255,.12);

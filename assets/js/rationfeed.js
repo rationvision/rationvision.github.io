@@ -69,6 +69,13 @@
       const systems = document.getElementById("feedingSystems");
       if (systems) systems.style.display = "none";
     })();
+    (function () {
+      const config = window.RATION_CONFIG || {};
+      if (!config.hideRationfeedSpecSheet) return;
+
+      const specLine = document.querySelector(".spec-line");
+      if (specLine) specLine.style.display = "none";
+    })();
 
     (function () {
       const $ = (id) => document.getElementById(id);
@@ -149,7 +156,7 @@
         "hero.bullet.one": "Increase feeding to appetite without overshooting &mdash; reduce wasted feed.",
         "hero.bullet.two": "Cleaner water and better conditions can support appetite and growth.",
         "hero.bullet.three": "Out-of-water camera system: easier install, stable operation, less maintenance.",
-        "hero.caption": "Measures pellets at the effluent.",
+        "hero.caption": "Counts pellets at the effluent for better feeding control.",
         "problem.kicker": "THE CHALLENGE",
         "problem.title": "Feed is the largest cost in salmon farming",
         "problem.lead": "Adjusting feeding to appetite is challenging: pellets have low visibility in the tank and effluent water.",
@@ -235,9 +242,10 @@
         "contact.title": "Contact for information or a demo",
         "contact.lead": "Email <strong>sales@ration.is</strong> to discuss your setup, get a trial proposal, or schedule a demo.",
         "contact.cta": "Email sales@ration.is",
-        "footer.tagline": "Precision feeding for land-based aquaculture &mdash; less waste, cleaner water, better decisions.",
-        "footer.contact": "Contact:",
-        "footer.service": "Service:",
+        "footer.about.title": "About Ration",
+        "footer.about.body": "To improve modern aquaculture outcomes by combining deep industry knowledge, robust technology, and close collaboration with producers, strengthening fish welfare, reducing waste, and supporting sustainable growth.",
+        "footer.about.cta": "Let's build better aquaculture together.",
+        "footer.partnerships.title": "Collaboration &amp; Partnerships",
         "footer.copyright": "&copy; <span id=&quot;year&quot;></span> Ration. All rights reserved.",
       });
       Object.assign(translations.no, {
@@ -258,7 +266,7 @@
         "hero.bullet.one": "F&ocirc;r etter appetitt uten &aring; overf&ocirc;re &mdash; reduser f&ocirc;rsvinn.",
         "hero.bullet.two": "Renere vann og bedre forhold kan st&oslash;tte appetitt og vekst.",
         "hero.bullet.three": "Kamerasystem over vann: enklere installasjon, stabil drift, mindre vedlikehold.",
-        "hero.caption": "M&aring;ler pellets ved avl&oslash;pet.",
+        "hero.caption": "Teller pellets ved avl&oslash;pet for bedre f&ocirc;ringskontroll.",
         "problem.kicker": "UTFORDRINGEN",
         "problem.title": "F&ocirc;r er den st&oslash;rste kostnaden i lakseoppdrett",
         "problem.lead": "Det er krevende &aring; f&ocirc;re etter appetitt: pellets har lav synlighet i karet og i avl&oslash;psvannet.",
@@ -344,9 +352,10 @@
         "contact.title": "Kontakt for informasjon eller demo",
         "contact.lead": "Send e-post til <strong>sales@ration.is</strong> for &aring; diskutere ditt oppsett, f&aring; et pr&oslash;veforslag eller avtale en demo.",
         "contact.cta": "Send e-post til sales@ration.is",
-        "footer.tagline": "Presisjonsf&ocirc;ring for landbasert akvakultur &mdash; mindre svinn, renere vann, bedre beslutninger.",
-        "footer.contact": "Kontakt:",
-        "footer.service": "Service:",
+        "footer.about.title": "Om Ration",
+        "footer.about.body": "Forbedre resultatene i moderne akvakultur ved &aring; kombinere dyp bransjekunnskap, robust teknologi og n&aelig;rt samarbeid med produsenter, som styrker fiskevelferd, reduserer svinn og st&oslash;tter b&aelig;rekraftig vekst.",
+        "footer.about.cta": "La oss bygge bedre akvakultur sammen.",
+        "footer.partnerships.title": "Samarbeid og partnerskap",
         "footer.copyright": "&copy; <span id=&quot;year&quot;></span> Ration. Alle rettigheter forbeholdt.",
       });
 
@@ -368,7 +377,7 @@
         "hero.bullet.one": "Aumenta la alimentaci&oacute;n seg&uacute;n el apetito sin excederte &mdash; reduce el desperdicio de alimento.",
         "hero.bullet.two": "Agua m&aacute;s limpia y mejores condiciones pueden favorecer el apetito y el crecimiento.",
         "hero.bullet.three": "C&aacute;mara fuera del agua: instalaci&oacute;n m&aacute;s sencilla, operaci&oacute;n estable, menos mantenimiento.",
-        "hero.caption": "Mide los pellets en el efluente.",
+        "hero.caption": "Cuenta pellets en el efluente para un mejor control de la alimentaci&oacute;n.",
         "problem.kicker": "EL DESAF&Iacute;O",
         "problem.title": "El alimento es el mayor costo en la salmonicultura",
         "problem.lead": "Ajustar la alimentaci&oacute;n al apetito es dif&iacute;cil: los pellets tienen poca visibilidad en el tanque y en el agua del efluente.",
@@ -454,9 +463,10 @@
         "contact.title": "Contacto para informaci&oacute;n o demo",
         "contact.lead": "Escribe a <strong>sales@ration.is</strong> para hablar de tu configuraci&oacute;n, obtener una propuesta de prueba o agendar una demo.",
         "contact.cta": "Escribir a sales@ration.is",
-        "footer.tagline": "Alimentaci&oacute;n de precisi&oacute;n para acuicultura en tierra &mdash; menos desperdicio, agua m&aacute;s limpia, mejores decisiones.",
-        "footer.contact": "Contacto:",
-        "footer.service": "Servicio:",
+        "footer.about.title": "Sobre Ration",
+        "footer.about.body": "Mejorar los resultados de la acuicultura moderna combinando profundo conocimiento del sector, tecnolog&iacute;a robusta y colaboraci&oacute;n cercana con productores, fortaleciendo el bienestar de los peces, reduciendo el desperdicio y apoyando el crecimiento sostenible.",
+        "footer.about.cta": "Construyamos una mejor acuicultura juntos.",
+        "footer.partnerships.title": "Colaboraci&oacute;n y alianzas",
         "footer.copyright": "&copy; <span id=&quot;year&quot;></span> Ration. Todos los derechos reservados.",
       });
 

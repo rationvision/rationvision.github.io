@@ -277,30 +277,86 @@
       margin: 4px 6px 0 0;
     }
 
-    footer{
-      border-top: 1px solid rgba(21,55,85,.14);
-      padding: 26px 0;
-      background: linear-gradient(180deg, #ffffff, rgba(222,232,241,.35));
+    .footer-banner{
+      background: #0b2a4a;
+      color: #f4f7fb;
+      padding: 48px 0 28px;
+      border-top: none;
     }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 14px;
-      align-items:start;
+    .footer-banner a{
+      color: #f4f7fb;
+      text-decoration: none;
     }
-    .footer-card{
-      border: 1px solid rgba(21,55,85,.14);
-      border-radius: var(--radius);
-      padding: 16px;
-      background: rgba(255,255,255,.75);
+    .footer-banner a:hover{ text-decoration: underline; text-underline-offset: .15em; }
+    .footer-banner-grid{
+      display: grid;
+      grid-template-columns: 1.05fr 1.4fr 1.1fr;
+      gap: 28px;
+      align-items: start;
     }
-    .small{ color: var(--muted); font-size: 14px; }
+    .footer-logo-large{
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+    .footer-address{
+      margin: 12px 0 0;
+      line-height: 1.6;
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+    }
+    .footer-about h3,
+    .footer-partners h3{
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .footer-about p{
+      margin: 0 0 10px;
+      line-height: 1.6;
+      color: rgba(255,255,255,.84);
+    }
+    .footer-about-cta{
+      margin-top: 12px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .partners-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px 22px;
+      align-items: center;
+    }
+    .partner-logo{
+      max-height: 52px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+      opacity: .9;
+    }
+    .partner-logo.tall{
+      max-height: 92px;
+    }
+    .footer-bottom{
+      border-top: 1px solid rgba(255,255,255,.12);
+      margin-top: 26px;
+      padding-top: 16px;
+    }
+    .footer-banner .small{
+      color: rgba(255,255,255,.68);
+      font-size: 13px;
+    }
 
     @media (max-width: 980px){
       .cols{ grid-template-columns: 1fr; }
       .nav{ display:none; }
-      .footer-grid{ grid-template-columns: 1fr; }
+      .footer-banner-grid{ grid-template-columns: 1fr; }
+      .partners-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .brand-tag{ display: none; }
       .brand-logo{ height: 34px; }
+    }
+    @media (max-width: 640px){
+      .partners-grid{ grid-template-columns: 1fr; }
     }
   

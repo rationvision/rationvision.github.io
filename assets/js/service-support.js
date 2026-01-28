@@ -24,8 +24,10 @@
           "dir.contactOva": "Contact for all RationOVA",
           "dir.contactCounter": "Contact for all RationCOUNTER",
           "dir.note": "If your region is not listed, contact <strong>sales@ration.is</strong> and we will route your request.",
-          "footer.tagline": "Aquaculture sensing &amp; control — less waste, cleaner water, better decisions.",
-          "footer.contact": "Contact:",
+          "footer.about.title": "About Ration",
+          "footer.about.body": "To improve modern aquaculture outcomes by combining deep industry knowledge, robust technology, and close collaboration with producers, strengthening fish welfare, reducing waste, and supporting sustainable growth.",
+          "footer.about.cta": "Let's build better aquaculture together.",
+          "footer.partnerships.title": "Collaboration &amp; Partnerships",
           "footer.copyright": "© <span id=\"year\"></span> Ration. All rights reserved."
         },
         no: {
@@ -52,8 +54,10 @@
           "dir.contactOva": "Kontakt for alle RationOVA",
           "dir.contactCounter": "Kontakt for alle RationCOUNTER",
           "dir.note": "Hvis regionen din ikke er oppført, kontakt <strong>sales@ration.is</strong> så ruter vi forespørselen din.",
-          "footer.tagline": "Akvakulturmåling og -kontroll — mindre avfall, renere vann, bedre beslutninger.",
-          "footer.contact": "Kontakt:",
+          "footer.about.title": "Om Ration",
+          "footer.about.body": "Forbedre resultatene i moderne akvakultur ved &aring; kombinere dyp bransjekunnskap, robust teknologi og n&aelig;rt samarbeid med produsenter, som styrker fiskevelferd, reduserer svinn og st&oslash;tter b&aelig;rekraftig vekst.",
+          "footer.about.cta": "La oss bygge bedre akvakultur sammen.",
+          "footer.partnerships.title": "Samarbeid og partnerskap",
           "footer.copyright": "© <span id=\"year\"></span> Ration. Alle rettigheter reservert."
         },
         es: {
@@ -80,8 +84,10 @@
           "dir.contactOva": "Contacto para todos los RationOVA",
           "dir.contactCounter": "Contacto para todos los RationCOUNTER",
           "dir.note": "Si tu región no aparece en la lista, contacta a <strong>sales@ration.is</strong> y canalizaremos tu solicitud.",
-          "footer.tagline": "Sensado y control para acuicultura — menos desperdicio, agua más limpia, mejores decisiones.",
-          "footer.contact": "Contacto:",
+          "footer.about.title": "Sobre Ration",
+          "footer.about.body": "Mejorar los resultados de la acuicultura moderna combinando profundo conocimiento del sector, tecnolog&iacute;a robusta y colaboraci&oacute;n cercana con productores, fortaleciendo el bienestar de los peces, reduciendo el desperdicio y apoyando el crecimiento sostenible.",
+          "footer.about.cta": "Construyamos una mejor acuicultura juntos.",
+          "footer.partnerships.title": "Colaboraci&oacute;n y alianzas",
           "footer.copyright": "© <span id=\"year\"></span> Ration. Todos los derechos reservados."
         }
       };

@@ -469,8 +469,9 @@
     }
     .hero-image .caption{
       margin-top: 10px;
-      color: var(--muted);
+      color: rgba(21,55,85,.78);
       font-size: 13px;
+      font-weight: 700;
     }
 
     .grid-2{
@@ -549,6 +550,10 @@
     }
     .media-figure{
       margin: 0;
+      padding: 12px;
+      background: rgba(255,255,255,.90);
+      border-radius: 16px;
+      border: 1px solid rgba(21,55,85,.10);
     }
     .media-figure img{
       width: 100%;
@@ -556,15 +561,13 @@
       max-height: 420px;
       object-fit: contain;
       display: block;
-      border-radius: 16px;
-      border: 1px solid rgba(21,55,85,.10);
-      background: rgba(255,255,255,.90);
-      padding: 12px;
+      border-radius: 12px;
+      background: transparent;
     }
     .media-figure figcaption{
       margin-top: 10px;
-      color: rgba(21,55,85,.86);
-      font-weight: 900;
+      color: rgba(21,55,85,.78);
+      font-weight: 700;
       font-size: 13px;
     }
 
@@ -890,11 +893,14 @@
       align-items: center;
     }
     .partner-logo{
-      max-height: 46px;
+      max-height: 52px;
       width: auto;
       display: block;
       filter: brightness(0) invert(1);
       opacity: .9;
+    }
+    .partner-logo.tall{
+      max-height: 92px;
     }
     .footer-bottom{
       border-top: 1px solid rgba(255,255,255,.12);

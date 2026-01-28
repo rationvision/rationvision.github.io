@@ -65,6 +65,12 @@
     // Config toggles
     (function () {
       const config = window.RATION_CONFIG || {};
+      const contactTarget = config.hideHomeContactForm ? "#contact-sales" : "#contact";
+
+      document.querySelectorAll("[data-contact-link]").forEach((link) => {
+        link.setAttribute("href", contactTarget);
+      });
+
       if (!config.hideHomeContactForm) return;
 
       const contactSection = document.getElementById("contact");
@@ -73,6 +79,10 @@
       document.querySelectorAll("a[href='#contact']").forEach((link) => {
         link.style.display = "none";
         link.setAttribute("aria-hidden", "true");
+      });
+
+      document.querySelectorAll(".cta-email").forEach((el) => {
+        el.style.display = "block";
       });
     })();
 
@@ -144,6 +154,7 @@
           "product.learn": "Learn more →",
           "cta.title": "Contact our Sales and Service Agents",
           "cta.body": "Let’s get started. Contact your Ration representative today to learn more about optimizing your production efficiency with the power of Ration technology.",
+          "cta.email": "Email us at <a href=\"mailto:sales@ration.is\">sales@ration.is</a>",
           "cta.button": "Talk to our Team",
           "about.kicker": "About",
           "about.title": "About Ration",
@@ -212,6 +223,7 @@
           "product.learn": "Les mer →",
           "cta.title": "Kontakt våre salgs- og serviceagenter",
           "cta.body": "La oss komme i gang. Kontakt din Ration-representant i dag for å lære mer om hvordan du kan optimalisere produksjonen med Ration-teknologi.",
+          "cta.email": "E-post: <a href=\"mailto:sales@ration.is\">sales@ration.is</a>",
           "cta.button": "Snakk med teamet vårt",
           "about.kicker": "Om",
           "about.title": "Om Ration",
@@ -280,6 +292,7 @@
           "product.learn": "Más información →",
           "cta.title": "Contacta a nuestros agentes de ventas y servicio",
           "cta.body": "Empecemos. Contacta hoy a tu representante de Ration para conocer cómo optimizar tu eficiencia de producción con la tecnología de Ration.",
+          "cta.email": "Correo: <a href=\"mailto:sales@ration.is\">sales@ration.is</a>",
           "cta.button": "Habla con nuestro equipo",
           "about.kicker": "Acerca de",
           "about.title": "Sobre Ration",

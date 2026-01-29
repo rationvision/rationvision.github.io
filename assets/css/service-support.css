@@ -335,6 +335,9 @@
       filter: brightness(0) invert(1);
       opacity: .9;
     }
+    .partner-logo.mikra{
+      max-height: 38px;
+    }
     .partner-logo.tall{
       max-height: 92px;
     }

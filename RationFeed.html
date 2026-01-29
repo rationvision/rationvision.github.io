@@ -1,225 +1,413 @@
-<!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2FRGMW17TQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#153755" />
+  <link rel="icon" href="favicon.ico" />
 
-  gtag('config', 'G-2FRGMW17TQ');
-</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="INTUITIVE">
-    <meta name="description" content="">
-    <title>RationFeed</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="RationFeed.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 6.16.5, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
-    
-    
-    
-    
-    
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "WebSite6152742",
-		"logo": "images/94479_Ration_Flat_R_AC_02-Cropped.png"
-}</script>
-    <meta name="theme-color" content="#c97f47">
-    <meta property="og:title" content="RationFeed">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-path-to-root="./" data-include-products="false" class="u-body u-overlap u-overlap-contrast u-overlap-transparent u-xl-mode" data-lang="en"><header class="u-clearfix u-custom-color-5 u-header u-sticky u-sticky-aa0d u-header" id="sec-35d6"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="./" class="u-image u-logo u-image-1" data-image-width="1319" data-image-height="542" title="Ration">
-          <img src="images/94479_Ration_Flat_R_AC_02-Cropped.png" class="u-logo-image u-logo-image-1">
+  <title>RationFeed — Precision feeding for land-based aquaculture</title>
+  <meta name="description" content="RationFeed counts uneaten pellets in real-time and automatically adjusts feeding to appetite — less waste, cleaner water." />
+
+  <link rel="stylesheet" href="assets/css/rationfeed.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header" id="siteHeader" data-open="false" data-scrolled="false">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Ration home">
+          <img class="brand-logo" src="assets/ration-logo.png" alt="Ration logo" loading="eager" decoding="async" />
         </a>
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1.25rem; letter-spacing: 0px;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="#" style="">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-            </a>
+
+        <nav class="nav-desktop" aria-label="Primary navigation">
+          
+          <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+<a class="nav-link" href="#solution" data-navlink data-i18n="nav.overview">Overview</a>
+          <a class="nav-link" href="#how" data-navlink data-i18n="nav.how">How it works</a>
+          <a class="nav-link" href="#features" data-navlink data-i18n="nav.features">Features</a>
+          <a class="nav-link" href="#proof" data-navlink data-i18n="nav.control">Control</a>
+          <a class="nav-link" href="#support" data-navlink data-i18n="nav.support">Support</a>
+          <a class="nav-link" href="#contact" data-navlink data-i18n="nav.contact">Contact</a>
+        </nav>
+
+        <div class="nav-cta" aria-label="Header actions">
+          <div class="lang-switch" aria-label="Language selector">
+            <label class="sr-only" for="langSelect">Language</label>
+            <select id="langSelect" class="lang-select">
+              <option value="en">EN</option>
+              <option value="no">NO</option>
+              <option value="es">ES</option>
+            </select>
           </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="#" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="./#sec-9c20" style="padding: 10px 20px;">Products</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="RationFeed.html">RationFeed</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="RationOva.html">RationOva</a>
-</li></ul>
-</div>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="./#sec-1e31" style="padding: 10px 20px;">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="./#sec-1e31" style="padding: 10px 20px;">Contact</a>
-</li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./#sec-9c20">Products</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RationFeed.html">RationFeed</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="RationOva.html">RationOva</a>
-</li></ul>
-</div>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./#sec-1e31">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./#sec-1e31">Contact</a>
-</li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
+          <a class="btn primary" href="mailto:sales@ration.is?subject=RationFeed%20demo%20request" data-i18n="cta.demo">Request a demo</a>
+        </div>
+
+        <button class="menu-btn" type="button" id="menuBtn"
+          aria-expanded="false" aria-controls="mobileDrawer" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="#153755" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="container">
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          
+          <a class="mobile-link" href="index.html" data-i18n="nav.home">Home</a>
+<a class="mobile-link" href="#solution" data-navlink data-i18n="nav.overview">Overview</a>
+          <a class="mobile-link" href="#how" data-navlink data-i18n="nav.how">How it works</a>
+          <a class="mobile-link" href="#features" data-navlink data-i18n="nav.features">Features</a>
+          <a class="mobile-link" href="#proof" data-navlink data-i18n="nav.control">Control</a>
+          <a class="mobile-link" href="#support" data-navlink data-i18n="nav.support">Support</a>
+          <a class="mobile-link" href="#contact" data-navlink data-i18n="nav.contact">Contact</a>
+
+          <div class="mobile-cta" aria-label="Mobile actions">
+            <a class="btn primary" href="mailto:sales@ration.is?subject=RationFeed%20demo%20request" data-i18n="cta.demo">Request a demo</a>
+            <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
           </div>
         </nav>
-      </div><style class="u-sticky-style" data-style-id="aa0d">.u-sticky-fixed.u-sticky-aa0d, .u-body.u-sticky-fixed .u-sticky-aa0d {
-box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4) !important
-}</style></header>
-    <section class="u-align-center u-clearfix u-container-align-center u-image u-shading u-section-1" src="" data-image-width="1280" data-image-height="853" id="sec-b399">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-text u-title u-text-1">RationFeed</h1>
-        <p class="u-align-center u-large-text u-text u-text-variant u-text-2">Optimize feed, maximize growth, and boost margins in land-based aquaculture<br>
-        </p>
       </div>
-    </section>
-    <section class="u-clearfix u-custom-color-5 u-section-2" id="carousel_3b6f">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-                <div class="u-container-layout u-valign-top u-container-layout-1">
-                  <h2 class="u-text u-text-default u-text-1"> AI for sustainable feed management</h2>
-                  <div class="u-container-align-left-lg u-container-align-left-md u-container-align-left-sm u-container-align-left-xs u-container-style u-custom-color-6 u-expanded-width u-group u-radius u-shape-round u-group-1">
-                    <div class="u-container-layout u-container-layout-2">
-                      <p class="u-text u-text-default u-text-2">
-                        <span style="font-size: 1.5rem;">In salmon
-farming, feed utilization is a significant challenge, with feeding costs
-comprising over half of total expenses</span>.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-                <div class="u-container-layout u-container-layout-3"><span class="u-custom-color-8 u-file-icon u-icon u-icon-circle u-icon-1"><img src="images/566359-285e955e.png" alt=""></span>
-                  <p class="u-text u-text-default u-text-3">RationFeed uses computer vision to automatically quantify wasted feed that escapes through the
-effluent of farming tanks. The system alerts operators immediately to under- or
-overfeeding, controls feeding automatically, and provides expert feeding
-suggestions by combining various environmental measurements.&nbsp;&nbsp;</p>
-                </div>
-              </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="pill">
+              <span class="dot" aria-hidden="true"></span>
+              <span data-i18n="hero.pill">RationFEED for Land-based aquaculture</span>
             </div>
+
+            <h1 data-i18n="hero.title">Boost feeding with less waste and cleaner water</h1>
+            <p class="subhead" data-i18n="hero.body">
+              RationFeed counts uneaten pellets in real-time and can automatically adjust feeding to appetite —
+              so you grow fish efficiently while protecting water quality.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="mailto:sales@ration.is?subject=RationFeed%20trial%20request" data-i18n="hero.cta.trial">Start a 3-month trial</a>
+              <a class="btn ghost" href="#how" data-i18n="hero.cta.how">See how it works</a>
+            </div>
+
+            <ul class="mini-list" aria-label="Key outcomes">
+              <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="hero.bullet.one">Increase feeding to appetite without overshooting—reduce wasted feed.</span></li>
+              <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="hero.bullet.two">Cleaner water and better conditions can support appetite and growth.</span></li>
+              <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="hero.bullet.three">Out-of-water camera system: easier install, stable operation, less maintenance.</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-image">
+            <img src="assets/tank-hero.png" alt="Tank and effluent area showing where RationFeed measures pellets" loading="lazy" decoding="async" />
+            <div class="caption" data-i18n="hero.caption">Counts pellets at the effluent for better feeding control.</div>
           </div>
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-custom-color-5 u-section-3" id="sec-1e31">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <img class="u-expanded-height u-image u-image-contain u-image-default u-image-1" src="images/RationFeed-Render.png" alt="" data-image-width="2264" data-image-height="1144">
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-5 u-section-4" id="sec-ddb8">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-text u-text-default u-text-1">Benefits </h2>
-        <div class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-            <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-1">
-                <div class="u-container-style u-group u-group-1">
-                  <div class="u-container-layout u-container-layout-2"><span class="u-custom-color-8 u-file-icon u-icon u-icon-circle u-text-white u-icon-1"><img src="images/4753144-542524db.png" alt=""></span>
-                    <p class="u-text u-text-2">Feed and stock are fully utilized</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-3">
-                <div class="u-container-style u-group u-video-cover u-group-2">
-                  <div class="u-container-layout u-container-layout-4"><span class="u-custom-color-8 u-file-icon u-icon u-icon-circle u-icon-2"><img src="images/2881380-c1ec0858.png" alt=""></span>
-                    <p class="u-text u-text-default u-text-3">Clean water and discharge </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-5">
-                <div class="u-container-style u-group u-video-cover u-group-3">
-                  <div class="u-container-layout u-container-layout-6"><span class="u-custom-color-8 u-file-icon u-icon u-icon-circle u-icon-3"><img src="images/907136-8ea9da3c.png" alt=""></span>
-                    <p class="u-text u-text-default u-text-4">Cloud based updates</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-7">
-                <div class="u-container-style u-group u-video-cover u-group-4">
-                  <div class="u-container-layout u-container-layout-8"><span class="u-custom-color-8 u-file-icon u-icon u-icon-circle u-text-white u-icon-4"><img src="images/1161439-d24eff7e.png" alt=""></span>
-                    <p class="u-text u-text-default u-text-5">Secure by design </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+    <section class="section alt" id="problem">
+      <div class="container">
+        <p class="kicker" data-i18n="problem.kicker">THE CHALLENGE</p>
+        <h2 data-i18n="problem.title">Feed is the largest cost in salmon farming</h2>
+        <p class="lead" data-i18n="problem.lead">Adjusting feeding to appetite is challenging: pellets have low visibility in the tank and effluent water.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 data-i18n="problem.card1.title">Low visibility, hard decisions</h3>
+            <p data-i18n="problem.card1.body">Feed pellets can be difficult to see in turbulent flows and mixed effluent. You may be feeding, but you don’t truly know how much is being wasted.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="problem.card2.title">Appetite changes quickly</h3>
+            <p data-i18n="problem.card2.body">Fish can react quickly to stress and eat less. If appetite drops, feeding strategy must adapt fast to avoid waste and preserve water quality.</p>
           </div>
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-custom-color-5 u-section-5" id="sec-c02b">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h3 class="u-text u-text-default u-text-1">There is more to feeding strategy than meets the eye</h3>
-        <a href="mailto:info@ration.is" class="u-border-2 u-border-custom-color-6 u-btn u-button-style u-hover-custom-color-6 u-none u-text-hover-white u-btn-1">CONTACTS US FOR INFORMATION </a>
-      </div>
-    </section>
-    
-    
-    
-    <footer class="u-align-center u-clearfix u-container-align-center u-custom-color-8 u-footer u-footer" id="sec-5095"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
-                <div class="u-container-layout u-container-layout-1">
-                  <a href="mailto:info@site.com" class="u-active-none u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1"> Ration ehf.</a>
-                  <a href="mailto:info@site.com" class="u-active-none u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-body-alt-color u-btn-2"><span class="u-icon u-text-white"><svg class="u-svg-content" viewBox="0 0 24 16" x="0px" y="0px" style="width: 1em; height: 1em;"><path fill="currentColor" d="M23.8,1.1l-7.3,6.8l7.3,6.8c0.1-0.2,0.2-0.6,0.2-0.9V2C24,1.7,23.9,1.4,23.8,1.1z M21.8,0H2.2
-	c-0.4,0-0.7,0.1-1,0.2L10.6,9c0.8,0.8,2.2,0.8,3,0l9.2-8.7C22.6,0.1,22.2,0,21.8,0z M0.2,1.1C0.1,1.4,0,1.7,0,2V14
-	c0,0.3,0.1,0.6,0.2,0.9l7.3-6.8L0.2,1.1z M15.5,9l-1.1,1c-1.3,1.2-3.6,1.2-4.9,0l-1-1l-7.3,6.8c0.2,0.1,0.6,0.2,1,0.2H22
-	c0.4,0,0.6-0.1,1-0.2L15.5,9z"></path></svg></span>&nbsp;info@ration.is
-                  </a>
-                  <p class="u-align-left u-text u-text-body-alt-color u-text-1"><span class="u-icon u-text-white"><svg class="u-svg-content" viewBox="0 0 52 52" x="0px" y="0px" style="width: 1em; height: 1em;"><path style="fill:currentColor;" d="M38.853,5.324L38.853,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
-	C6.751,11.72,6.031,23.763,11.459,31L26,52l14.541-21C45.969,23.763,45.249,11.72,38.853,5.324z M26.177,24c-3.314,0-6-2.686-6-6
-	s2.686-6,6-6s6,2.686,6,6S29.491,24,26.177,24z"></path></svg></span>&nbsp;Hamraborg 9,&nbsp;<br>&nbsp; &nbsp; &nbsp;200, Kópavogur&nbsp;<br>&nbsp; &nbsp; &nbsp;Iceland
-                  </p>
-                </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
-                <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <a href="#" class="u-image u-logo u-image-1" data-image-width="792" data-image-height="589">
-                    <img src="images/tfund.png" class="u-logo-image u-logo-image-1">
-                  </a>
-                </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">
-                <div class="u-container-layout u-container-layout-3">
-                  <a href="#" class="u-image u-logo u-image-2" data-image-width="602" data-image-height="421">
-                    <img src="images/ffund-2.png" class="u-logo-image u-logo-image-2">
-                  </a>
-                </div>
-              </div>
-            </div>
+
+    <section class="section" id="solution">
+      <div class="container">
+        <p class="kicker" data-i18n="solution.kicker">Solution</p>
+        <h2 data-i18n="solution.title">Real-time pellet counting + automatic feeding control</h2>
+        <p class="lead" data-i18n="solution.lead">RationFeed quantifies wasted pellets escaping through the effluent, then uses that signal to help you feed to appetite with minimal waste.</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3 data-i18n="solution.card1.title">Counts uneaten pellets in real-time</h3>
+            <p data-i18n="solution.card1.body">A unique discovery in imaging makes it possible to distinguish pellets from fish waste and see through turbulent flows. Using patented optical methods and AI, pellets are counted with high precision.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="solution.card2.title">Controls feeding automatically</h3>
+            <p data-i18n="solution.card2.body">Knowing the number of wasted pellets, RationFeed adjusts the feeding system to changes in appetite. Minimal waste improves water quality and further enhances appetite.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="solution.card3.title">Complements your expertise</h3>
+            <p data-i18n="solution.card3.body">Together, we can improve conditions for your fish and create optimal growth. RationFeed helps identify causes of reduced feeding such as broken pellets, water quality issues, and stressful events.</p>
           </div>
         </div>
-      </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <p class="u-text">
-        <span>This site was created with the </span>
-        <a class="u-link" href="https://nicepage.com/" target="_blank" rel="nofollow">
-          <span>Nicepage</span>
-        </a>
-      </p>
+
+        <div class="section" style="padding-bottom: 0;">
+          <div class="media-card" aria-label="Non-submerged camera system for precision feeding">
+            <div class="media-text">
+              <h3 data-i18n="solution.media.title">The only non-submerged camera system for precision feeding</h3>
+              <p data-i18n="solution.media.body">
+                Easier to install, operate, and maintain out of water. It does not prevent water-flow or dead fish removal,
+                and control remains stable because it does not depend on routine cleaning.
+              </p>
+            </div>
+
+            <figure class="media-figure">
+              <img src="assets/rationfeed-device_photorealistic.png" alt="RationFeed device enclosure" loading="lazy" decoding="async" />
+              <figcaption data-i18n="solution.media.caption">Out-of-water installation makes maintenance easy.</figcaption>
+            </figure>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
     </section>
-  
-</body></html>
+
+    <section class="section alt" id="how">
+      <div class="container">
+        <p class="kicker" data-i18n="how.kicker">How it works</p>
+        <h2 data-i18n="how.title">From installation to automatic control</h2>
+        <p class="lead" data-i18n="how.lead">A straightforward trial process designed to fit your existing tank and feeding system.</p>
+
+        <div class="steps" role="list">
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">1</div>
+            <div>
+              <h3 data-i18n="how.step1.title">Trial installation with custom fasteners</h3>
+              <p data-i18n="how.step1.body">If you order a RationFeed trial, we install a device with custom fasteners that fit your set-up and distance between the device and outflow pipe.</p>
+              <p class="spec-line" style="margin-top: 10px; color: var(--muted);" data-i18n-html="how.step1.spec">
+                <strong>Spec sheet:</strong>
+                <a href="spec-sheet.pdf" target="_blank" rel="noopener">Download detailed specifications</a>
+                <span class="small">(add your PDF next to this HTML file)</span>
+              </p>
+            </div>
+          </div>
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">2</div>
+            <div>
+              <h3 data-i18n="how.step2.title">Connect utilities and begin counting</h3>
+              <p data-i18n="how.step2.body">After the device is connected to internet, electricity, and water, it can start counting pellets. Greater accuracy is expected within ~two weeks when image analysis has been optimized for your set-up.</p>
+            </div>
+          </div>
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">3</div>
+            <div>
+              <h3 data-i18n="how.step3.title">Enable automatic feeding control</h3>
+              <p data-i18n="how.step3.body">For automatic control, RationFeed needs a local computer with read &amp; write access to the feeding system via internet (e.g., using a REST API). It can be connected to any feeding system that includes an API.</p>
+
+              <div class="chips" id="feedingSystems" aria-label="Currently supported feeding systems">
+                <span class="chip">SCALE</span><span class="chip">AKVAGROUP</span><span class="chip">ARVOTECH</span><span class="chip">FLUCTUS</span><span class="chip">LAKSESYSTEMET</span>
+              </div>
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <p class="kicker" data-i18n="features.kicker">Features</p>
+        <h2 data-i18n="features.title">Purpose-built for stable, verifiable pellet counting</h2>
+        <p class="lead" data-i18n="features.lead">The device, optics, cloud interface, and alerts are designed around one outcome: feeding to appetite with confidence.</p>
+
+        <div class="grid-3">
+          <div class="card"><h3 data-i18n="features.card1.title">Computer vision at the effluent</h3><p data-i18n="features.card1.body">Counts pellets at effluent so feeding can match appetite with less waste and cleaner water.</p></div>
+          <div class="card"><h3 data-i18n="features.card2.title">Specialized optics</h3><p data-i18n="features.card2.body">Distinguishes pellets in fast, turbulent flows—improving accuracy and verification.</p></div>
+          <div class="card"><h3 data-i18n="features.card3.title">Automatic feeding control</h3><p data-i18n="features.card3.body">Adjusts feeding system Appetite Factor optimally when under- or overfeeding happens.</p></div>
+          <div class="card"><h3 data-i18n="features.card4.title">Out-of-water camera + self-cleaning</h3><p data-i18n="features.card4.body">Stable counting and control without routine cleaning hassles.</p></div>
+          <div class="card"><h3 data-i18n="features.card5.title">Web-based user interface</h3><p data-i18n="features.card5.body">Cloud historical appetite + control data, with high-access parameters for automation tuning.</p></div>
+          <div class="card"><h3 data-i18n="features.card6.title">Mobile alerts</h3><p data-i18n="features.card6.body">Notifications for prolonged maximum or minimum feeding.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="proof">
+      <div class="container">
+        <p class="kicker" data-i18n="proof.kicker">Feeding control</p>
+        <h2 data-i18n="proof.title">See how RationFeed adjusts feeding automatically</h2>
+        <p class="lead" data-i18n="proof.lead">RationFeed uses wasted pellet counts to adjust feeding (e.g., appetite factor) to match fish appetite and reduce waste.</p>
+
+        <div class="graph-wrap">
+          <img src="assets/feed-graph.png" alt="Graph showing pellet counts and automatic appetite factor control over time" loading="lazy" decoding="async" />
+        </div>
+        <div class="graph-caption" data-i18n="proof.caption">Example: automatic appetite factor (AF) changes as pellet waste changes, keeping feeding near target.</div>
+
+        
+        <div style="height: 18px;"></div>
+
+        <p class="kicker" style="margin-top: 0;" data-i18n="testimonials.kicker">Testimonials</p>
+        <h3 style="margin: 0 0 12px; color: var(--navy); letter-spacing: -0.01em; font-size: 20px;">
+          <span data-i18n="testimonials.title">What operators say</span>
+        </h3>
+
+        <div class="testimonials-grid" aria-label="Testimonials">
+          <div class="quote-card">
+            <div class="quote-head">
+              <div class="quote-logo">
+                <img src="assets/Laxey-logo.png" alt="Laxey logo" loading="lazy" decoding="async" />
+              </div>
+              <div class="quote-by">
+                <div class="quote-company">Vi&eth;ar &Ouml;rn Victorsson</div>
+                <div class="quote-meta" data-i18n="quote.one.role">Assistant Grow Out Manager</div>
+              </div>
+            </div>
+            <p class="quote-text" data-i18n="quote.one.text">&quot;We have excellent overall results using RationFeed to monitor and control our feeding 24/7.&quot;</p>
+          </div>
+
+          <div class="quote-card">
+            <div class="quote-head">
+              <div class="quote-logo">
+                <img src="assets/Laxey-logo.png" alt="Laxey logo" loading="lazy" decoding="async" />
+              </div>
+              <div class="quote-by">
+                <div class="quote-company" data-i18n="quote.two.company">Hallgr&iacute;mur Steinsson, Laxey</div>
+                <div class="quote-meta" data-i18n="quote.two.role">CTO</div>
+              </div>
+            </div>
+            <p class="quote-text" data-i18n="quote.two.text">&quot;With RationFEED automatically controlling our feeding, we were delighted to see improved water quality and an increase in overall feeding.&quot;</p>
+          </div>
+        </div>
+
+        <div style="height: 18px;"></div>
+
+        <h3 class="calc-heading" data-i18n="calc.heading">Estimate your feed savings</h3>
+
+        <div class="calc">
+          <div class="card">
+            <h3 style="margin-top: 0;" data-i18n="calc.title">Calculator</h3>
+            <p class="small" style="margin-top: -2px;" data-i18n="calc.note">Use the sliders to estimate annual feed savings.</p>
+
+            <form class="form" id="calcForm2" autocomplete="off">
+              <div class="field">
+                <div class="range-head">
+                  <label for="annualFeed" data-i18n="calc.annualFeed">Annual feed use (tonnes/year)</label>
+                  <span class="range-value" id="annualFeedValue">2,000</span>
+                </div>
+                <input id="annualFeed" type="range" min="200" max="10000" step="50" value="2000" />
+              </div>
+              <div class="field">
+                <div class="range-head">
+                  <label for="feedPrice" data-i18n="calc.feedPrice">Feed price (EUR/tonne)</label>
+                  <span class="range-value" id="feedPriceValue">1,500</span>
+                </div>
+                <input id="feedPrice" type="range" min="500" max="3000" step="50" value="1500" />
+              </div>
+              <div class="field">
+                <div class="range-head">
+                  <label for="reduction" data-i18n="calc.reduction">Estimated feed waste reduction (%)</label>
+                  <span class="range-value" id="reductionValue">1.0%</span>
+                </div>
+                <input id="reduction" type="range" min="5" max="20" step="0.5" value="10" />
+                <p class="small" style="margin: 0;" data-i18n="calc.reductionHint">Typical range 5%&ndash;20%</p>
+              </div>
+            </form>
+          </div>
+
+          <div class="calc-out" aria-live="polite">
+            <h3 data-i18n="calc.impact">Estimated annual savings</h3>
+
+            <div class="metric">
+              <div class="label" data-i18n="calc.savings">Annual feed savings</div>
+              <div class="value" id="outAnnualSavings">&euro;0</div>
+            </div>
+
+            <p class="fine" data-i18n="calc.fine">These are simple scenario estimates for planning. Actual results depend on species, system design, and site conditions.</p>
+            <a class="btn primary" style="margin-top: 12px;" href="mailto:sales@ration.is?subject=RationFeed%20site-specific%20assessment" data-i18n="calc.cta">Request a site-specific assessment</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="container">
+        <h2 data-i18n="support.title">3-month trial with a rental contract and refund option</h2>
+        <p class="lead" data-i18n="support.lead">If you feel the device did not help improve operations during the trial period, you can return it for a full refund. Software updates add new capabilities over time.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 data-i18n="support.value.title">Lasting value</h3>
+            <ul style="margin: 0; padding-left: 18px; color: var(--muted);">
+              <li data-i18n="support.value.item1">Rental contract so the device can be returned if not useful anymore</li>
+              <li data-i18n="support.value.item2">Keeps saving money long-term</li>
+              <li data-i18n="support.value.item3">New valuable software features over time (updates)</li>
+              <li data-i18n="support.value.item4">Trusted advisors/partners on the line</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 data-i18n="support.service.title">Service &amp; support</h3>
+            <ul style="margin: 0; padding-left: 18px; color: var(--muted);">
+              <li data-i18n="support.service.item1">Remote and local customer support</li>
+              <li data-i18n="support.service.item2">Service agents in main market areas (add names/regions here)</li>
+              <li data-i18n="support.service.item3">Refund on demo contract if you do not find it valuable</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact">
+      <div class="container">
+        <h2 data-i18n="contact.title">Contact for information or a demo</h2>
+        <p class="lead" data-i18n-html="contact.lead">Email <strong>sales@ration.is</strong> to discuss your setup, get a trial proposal, or schedule a demo.</p>
+
+        <div class="hero-actions" style="margin-top: 12px;">
+          <a class="btn primary" href="mailto:sales@ration.is?subject=RationFeed%20information%20request" data-i18n="contact.cta">Email sales@ration.is</a>
+          <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-banner" aria-label="Footer">
+    <div class="container">
+      <div class="footer-banner-grid">
+        <div class="footer-brand-block">
+          <img class="footer-logo-large" src="assets/ration-logo.png" alt="Ration logo" loading="lazy" decoding="async" />
+          <p class="footer-address">
+            <strong>Ration ehf.</strong><br/>
+            &Aacute;rleynir 8<br/>
+            112 Reykjav&iacute;k<br/>
+            Iceland<br/>
+            <a href="mailto:info@ration.is">info@ration.is</a>
+          </p>
+        </div>
+
+        <div class="footer-about">
+          <h3 data-i18n="footer.about.title">About Ration</h3>
+          <p data-i18n="footer.about.body">To improve modern aquaculture outcomes by combining deep industry knowledge, robust technology, and close collaboration with producers, strengthening fish welfare, reducing waste, and supporting sustainable growth.</p>
+          <p class="footer-about-cta" data-i18n="footer.about.cta">Let's build better aquaculture together.</p>
+        </div>
+
+        <div class="footer-partners">
+          <h3 data-i18n="footer.partnerships.title">Collaboration &amp; Partnerships</h3>
+          <div class="partners-grid" aria-label="Partners">
+            <img class="partner-logo" src="assets/logos/klaki.png" alt="KLAKI logo" loading="lazy" decoding="async" />
+            <img class="partner-logo" src="assets/logos/visk.png" alt="V&Iacute;SK logo" loading="lazy" decoding="async" />
+            <img class="partner-logo tall" src="assets/logos/matvaelasjodur.png" alt="Matv&aelig;lasj&oacute;&eth;ur logo" loading="lazy" decoding="async" />
+            <img class="partner-logo tall" src="assets/logos/tdf.png" alt="Technology Development Fund logo" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="small" data-i18n-html="footer.copyright">&copy; <span id="year"></span> Ration. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/rationfeed.js"></script>
+</body>
+</html>

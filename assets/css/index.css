@@ -757,6 +757,9 @@ display: grid;
       grid-template-columns: 1.4fr auto;
       gap: 22px;
       align-items: center;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
       box-shadow: 0 24px 70px rgba(11,42,74,.25);
       position: relative;
       overflow: hidden;
@@ -774,22 +777,30 @@ display: grid;
     .cta-copy h2{
       margin: 0 0 6px;
       color: #fff;
+      text-align: center;
     }
     .cta-copy p{
       margin: 0;
       color: rgba(255,255,255,.85);
       max-width: 70ch;
       font-size: 14px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
     .cta-actions{
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
     }
     .cta-email{
       display: none;
       font-weight: 900;
       margin-top: 8px;
-      color: #fff;
+      color: var(--orange);
+    }
+    .cta-email a{
+      color: inherit;
+      text-decoration-color: rgba(242,149,63,.8);
     }
 
     /* About section */

@@ -305,6 +305,24 @@
       color: rgba(255,255,255,.78);
       font-size: 14px;
     }
+    .footer-linkedin{
+      margin-top: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: rgba(255,255,255,.84);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .footer-linkedin-logo{
+      width: 22px;
+      height: 22px;
+      display: block;
+      border-radius: 4px;
+    }
+    .footer-linkedin-text{
+      line-height: 1;
+    }
     .footer-about h3,
     .footer-partners h3{
       margin: 0 0 10px;

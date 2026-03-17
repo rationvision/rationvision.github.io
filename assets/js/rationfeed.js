@@ -148,6 +148,15 @@
         "nav.contact": "Contact",
         "cta.service": "Service & Support",
         "cta.demo": "Request a demo",
+        "banner.kicker": "Seafood Expo Global 2026",
+        "banner.title": "Meet us at Seafood Expo Global",
+        "banner.lead.line1": "Discover our new feed pellets monitoring system",
+        "banner.lead.line2": "for land-based aquaculture",
+        "banner.date": "21-23 April 2026",
+        "banner.stand": "Stand 3BB201-F",
+        "banner.highlight.one": "Real-time pellet counting",
+        "banner.highlight.two": "Out-of-water installation",
+        "banner.highlight.three": "Automatic feeding control",
         "hero.pill": "RationFEED for Land-based aquaculture",
         "hero.title": "Boost feeding with less waste and cleaner water",
         "hero.body": "RationFeed counts uneaten pellets in real-time and can automatically adjust feeding to appetite. So you grow fish efficiently while protecting water quality.",
@@ -156,7 +165,7 @@
         "hero.bullet.one": "Increase feeding to appetite without overshooting, and reduce wasted feed.",
         "hero.bullet.two": "Cleaner water and better conditions can support appetite and growth.",
         "hero.bullet.three": "Out-of-water camera system: easier install, stable operation, less maintenance.",
-        "hero.caption": "Counts pellets at the effluent for better feeding control.",
+        "hero.caption": "Counts pellets at the effluent for better feeding control",
         "problem.kicker": "THE CHALLENGE",
         "problem.title": "Feed is the largest cost in salmon farming",
         "problem.lead": "Adjusting feeding to appetite is challenging: pellets have low visibility in the tank and effluent water.",
@@ -175,7 +184,7 @@
         "solution.card3.body": "Together, we can improve conditions for your fish and create optimal growth. RationFeed helps identify causes of reduced feeding such as broken pellets, water quality issues, and stressful events.",
         "solution.media.title": "The only non-submerged camera system for precision feeding",
         "solution.media.body": "Easier to install, operate, and maintain out of water. It does not prevent water flow or dead fish removal, and control remains stable because it does not depend on routine cleaning.",
-        "solution.media.caption": "Out-of-water installation makes maintenance easy."
+        "solution.media.caption": "Out-of-water installation makes maintenance easy"
       });
       Object.assign(translations.en, {
         "how.kicker": "How it works",
@@ -258,6 +267,15 @@
         "nav.contact": "Kontakt",
         "cta.service": "Service og support",
         "cta.demo": "Be om en demo",
+        "banner.kicker": "Seafood Expo Global 2026",
+        "banner.title": "M&oslash;t oss p&aring; Seafood Expo Global",
+        "banner.lead.line1": "Oppdag v&aring;rt nye overv&aring;kingssystem for f&ocirc;rpellets",
+        "banner.lead.line2": "til landbasert akvakultur",
+        "banner.date": "21.-23. april 2026",
+        "banner.stand": "Stand 3BB201-F",
+        "banner.highlight.one": "Pelletstelling i sanntid",
+        "banner.highlight.two": "Installasjon over vann",
+        "banner.highlight.three": "Automatisk f&ocirc;ringskontroll",
         "hero.pill": "RationFEED for landbasert akvakultur",
         "hero.title": "Bedre f&ocirc;ring med mindre svinn og renere vann",
         "hero.body": "RationFeed teller uspiste pellets i sanntid og kan automatisk justere f&ocirc;ringen etter appetitt. Slik at du produserer fisk effektivt og beskytter vannkvaliteten.",
@@ -266,7 +284,7 @@
         "hero.bullet.one": "F&ocirc;r etter appetitt uten &aring; overf&ocirc;re, og reduser f&ocirc;rsvinn.",
         "hero.bullet.two": "Renere vann og bedre forhold kan st&oslash;tte appetitt og vekst.",
         "hero.bullet.three": "Kamerasystem over vann: enklere installasjon, stabil drift, mindre vedlikehold.",
-        "hero.caption": "Teller pellets ved avl&oslash;pet for bedre f&ocirc;ringskontroll.",
+        "hero.caption": "Teller pellets ved avl&oslash;pet for bedre f&ocirc;ringskontroll",
         "problem.kicker": "UTFORDRINGEN",
         "problem.title": "F&ocirc;r er den st&oslash;rste kostnaden i lakseoppdrett",
         "problem.lead": "Det er krevende &aring; f&ocirc;re etter appetitt: pellets har lav synlighet i karet og i avl&oslash;psvannet.",
@@ -285,7 +303,7 @@
         "solution.card3.body": "Sammen kan vi forbedre forholdene for fisken og skape optimal vekst. RationFeed hjelper med &aring; identifisere &aring;rsaker til redusert f&ocirc;ring som knuste pellets, vannkvalitetsproblemer og stressende hendelser.",
         "solution.media.title": "Det eneste ikke-nedsenkede kamerasystemet for presisjonsf&ocirc;ring",
         "solution.media.body": "Enklere &aring; installere, drifte og vedlikeholde over vann. Det hindrer ikke vannstr&oslash;m eller fjerning av d&oslash;d fisk, og kontrollen er stabil fordi den ikke avhenger av rutinemessig rengj&oslash;ring.",
-        "solution.media.caption": "Installasjon over vann gj&oslash;r vedlikehold enkelt."
+        "solution.media.caption": "Installasjon over vann gj&oslash;r vedlikehold enkelt"
       });
       Object.assign(translations.no, {
         "how.kicker": "Slik fungerer det",
@@ -369,6 +387,15 @@
         "nav.contact": "Contacto",
         "cta.service": "Servicio y soporte",
         "cta.demo": "Solicitar una demo",
+        "banner.kicker": "Seafood Expo Global 2026",
+        "banner.title": "Encu&eacute;ntranos en Seafood Expo Global",
+        "banner.lead.line1": "Descubre nuestro nuevo sistema de monitorizaci&oacute;n de pellets de alimento",
+        "banner.lead.line2": "para acuicultura en tierra",
+        "banner.date": "21-23 de abril de 2026",
+        "banner.stand": "Stand 3BB201-F",
+        "banner.highlight.one": "Conteo de pellets en tiempo real",
+        "banner.highlight.two": "Instalaci&oacute;n fuera del agua",
+        "banner.highlight.three": "Control autom&aacute;tico de alimentaci&oacute;n",
         "hero.pill": "RationFEED para acuicultura en tierra",
         "hero.title": "Mejora la alimentaci&oacute;n con menos desperdicio y agua m&aacute;s limpia",
         "hero.body": "RationFeed cuenta los pellets no consumidos en tiempo real y puede ajustar autom&aacute;ticamente la alimentaci&oacute;n seg&uacute;n el apetito. As&iacute; produces peces de forma eficiente y proteges la calidad del agua.",
@@ -377,7 +404,7 @@
         "hero.bullet.one": "Aumenta la alimentaci&oacute;n seg&uacute;n el apetito sin excederte, y reduce el desperdicio de alimento.",
         "hero.bullet.two": "Agua m&aacute;s limpia y mejores condiciones pueden favorecer el apetito y el crecimiento.",
         "hero.bullet.three": "C&aacute;mara fuera del agua: instalaci&oacute;n m&aacute;s sencilla, operaci&oacute;n estable, menos mantenimiento.",
-        "hero.caption": "Cuenta pellets en el efluente para un mejor control de la alimentaci&oacute;n.",
+        "hero.caption": "Cuenta pellets en el efluente para un mejor control de la alimentaci&oacute;n",
         "problem.kicker": "EL DESAF&Iacute;O",
         "problem.title": "El alimento es el mayor costo en la salmonicultura",
         "problem.lead": "Ajustar la alimentaci&oacute;n al apetito es dif&iacute;cil: los pellets tienen poca visibilidad en el tanque y en el agua del efluente.",
@@ -396,7 +423,7 @@
         "solution.card3.body": "Juntos podemos mejorar las condiciones para tus peces y lograr un crecimiento &oacute;ptimo. RationFeed ayuda a identificar causas de menor alimentaci&oacute;n, como pellets rotos, problemas de calidad de agua y eventos estresantes.",
         "solution.media.title": "El &uacute;nico sistema de c&aacute;mara no sumergida para alimentaci&oacute;n de precisi&oacute;n",
         "solution.media.body": "M&aacute;s f&aacute;cil de instalar, operar y mantener fuera del agua. No impide el flujo de agua ni la retirada de peces muertos, y el control es estable porque no depende de la limpieza rutinaria.",
-        "solution.media.caption": "La instalaci&oacute;n fuera del agua facilita el mantenimiento."
+        "solution.media.caption": "La instalaci&oacute;n fuera del agua facilita el mantenimiento"
       });
       Object.assign(translations.es, {
         "how.kicker": "C&oacute;mo funciona",

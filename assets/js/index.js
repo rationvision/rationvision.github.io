@@ -150,6 +150,7 @@
           "info.three.body": "Lower waste and optimized systems reduce the overall footprint of production and contribute to more sustainable aquaculture.",
           "info.four.title": "Fish welfare",
           "info.four.body": "Our products help maintain better conditions and reduce stress through improved control.",
+          "products.headline": "Product line",
           "product.feed": "Feed monitoring system<br /><strong>RationFEED</strong>",
           "product.ova": "Counting and quality control of salmon ova<br /><strong>RationOVA</strong>",
           "product.counter": "Counting and biomass estimation of live fish<br /><strong>RationCOUNTER</strong>",
@@ -221,6 +222,7 @@
           "info.three.body": "Mindre avfall og optimaliserte systemer reduserer det totale fotavtrykket og bidrar til mer bærekraftig akvakultur.",
           "info.four.title": "Fiskevelferd",
           "info.four.body": "Våre produkter hjelper med å opprettholde bedre forhold og redusere stress gjennom bedre kontroll.",
+          "products.headline": "Produktlinje",
           "product.feed": "Fôrovervåkingssystem<br /><strong>RationFEED</strong>",
           "product.ova": "Telling og kvalitetskontroll av lakserogn<br /><strong>RationOVA</strong>",
           "product.counter": "Telling og biomasseestimering av levende fisk<br /><strong>RationCOUNTER</strong>",
@@ -292,6 +294,7 @@
           "info.three.body": "Menos desperdicio y sistemas optimizados reducen la huella total de producción y contribuyen a una acuicultura más sostenible.",
           "info.four.title": "Bienestar de los peces",
           "info.four.body": "Nuestros productos ayudan a mantener mejores condiciones y reducir el estrés mediante un control mejorado.",
+          "products.headline": "L�nea de productos",
           "product.feed": "Sistema de monitoreo de alimento<br /><strong>RationFEED</strong>",
           "product.ova": "Conteo y control de calidad de ovas de salmón<br /><strong>RationOVA</strong>",
           "product.counter": "Conteo y estimación de biomasa de peces vivos<br /><strong>RationCOUNTER</strong>",
@@ -380,5 +383,9 @@
       });
     })();
   
+
+
+
+
 
 

@@ -133,6 +133,8 @@
           "hero.title": "Join our Vision for<br/>Sustainable Aquaculture",
           "hero.body": "Ration develops practical, data-driven technology that helps land-based fish farms operate efficiently, responsibly, and profitably.",
           "hero.cta": "About Ration",
+          "hero.event.seafood": "Seafood Expo Global 2026",
+          "hero.event.aquasur": "Aqua Sur 2026",
           "value.one.title": "Technology with purpose",
           "value.one.body": "Solutions designed to reduce waste, improve consistency, and integrate seamlessly into your operations.",
           "value.two.title": "Actionable insights",
@@ -202,6 +204,8 @@
           "hero.title": "Bli med på vår visjon for<br/>bærekraftig akvakultur",
           "hero.body": "Ration utvikler praktisk, datadrevet teknologi som hjelper landbaserte oppdrettsanlegg med å drive mer effektivt, ansvarlig og lønnsomt.",
           "hero.cta": "Om Ration",
+          "hero.event.seafood": "Seafood Expo Global 2026",
+          "hero.event.aquasur": "Aqua Sur 2026",
           "value.one.title": "Teknologi med formål",
           "value.one.body": "Løsninger utformet for å redusere svinn, forbedre konsistens og integrere sømløst i driften.",
           "value.two.title": "Handlingsrettet innsikt",
@@ -271,6 +275,8 @@
           "hero.title": "Únete a nuestra visión de<br/>acuicultura sostenible",
           "hero.body": "Ration desarrolla tecnología práctica y basada en datos que ayuda a las granjas acuícolas en tierra a operar de forma más eficiente, responsable y rentable.",
           "hero.cta": "Sobre Ration",
+          "hero.event.seafood": "Seafood Expo Global 2026",
+          "hero.event.aquasur": "Aqua Sur 2026",
           "value.one.title": "Tecnología con propósito",
           "value.one.body": "Soluciones diseñadas para reducir el desperdicio, mejorar la consistencia e integrarse sin fricciones en tus operaciones.",
           "value.two.title": "Información accionable",
@@ -374,3 +380,5 @@
       });
     })();
   
+
+

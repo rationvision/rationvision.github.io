@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ration Fish Counter — Reliable fish counts with welfare-first design</title>
+  <meta name="description" content="Ration Fish Counter delivers accurate, dependable fish counts and biomass reporting during handling — designed with fish welfare in mind." />
+
+  <!-- Fonts (optional). Remove if you prefer system fonts only. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Ration Fish Counter">
+        <span class="brand-mark">Ration</span>
+        <span class="brand-product">Fish Counter</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+          Menu
+        </button>
+        <ul class="nav-list" id="primary-nav" data-nav-list>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#welfare">Welfare</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang" aria-label="Language selector">
+          <span>Language</span>
+          <a class="active" href="#" aria-label="English (selected)">EN</a>
+          <a href="#" aria-label="Norwegian">NO</a>
+          <a href="#" aria-label="Spanish">ES</a>
+        </div>
+        <a class="btn btn-secondary" href="#support">Service &amp; Support</a>
+        <a class="btn btn-primary" href="#contact">Request a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO / OVERVIEW -->
+    <section class="hero" id="overview">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Ration Fish Counters</p>
+          <h1>Reliable fish counts with welfare‑first design</h1>
+          <p class="lead">
+            Ration are developing the new generation of fish counting solutions for fish farming operations.
+            Get accurate, dependable counts and biomass reporting — while supporting good fish welfare.
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#contact">Request a demo</a>
+            <a class="btn btn-ghost" href="#how">See how it works</a>
+          </div>
+
+          <ul class="checklist">
+            <li>Advanced computer vision focused on precision and operational stability.</li>
+            <li>Individual tracking (not just snapshots) for reliable counts in fast flow.</li>
+            <li>Designed for smooth handling: short time out of water and controlled passage geometry.</li>
+          </ul>
+        </div>
+
+        <figure class="hero-media">
+          <img
+            src="assets/fish-counter.png"
+            alt="Ration Fish Counter with controlled channel and touchscreen interface"
+            loading="eager"
+          />
+          <figcaption>Dry Fish Counter — for precise counting during transfers and grading.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CHALLENGE -->
+    <section class="section" id="challenge">
+      <div class="container split">
+        <div>
+          <p class="kicker">THE CHALLENGE</p>
+          <h2>When the real fish number is uncertain, decisions get weaker</h2>
+          <p>
+            Accurate counts of juveniles in land‑based tanks are the foundation for correct feeding,
+            density control, and water‑quality management. If the true number of fish is unknown,
+            feeding can overshoot (waste + extra load on the system) or become overly cautious (slower growth).
+          </p>
+          <p>
+            Transfers between tanks create a unique opportunity to observe each fish — but this is also when
+            fish can move quickly and in dense flow. That makes counting one of the hardest computer‑vision tasks:
+            reliably detecting and tracking individuals without double counting or missing fish.
+          </p>
+
+          <div class="stats" aria-label="Prototype performance highlights">
+            <div class="stat">
+              <div class="value">60 fps</div>
+              <div class="label">Real‑time analysis</div>
+            </div>
+            <div class="stat">
+              <div class="value">400–600</div>
+              <div class="label">Fish/min throughput (prototype)</div>
+            </div>
+            <div class="stat">
+              <div class="value">&lt;1%</div>
+              <div class="label">Target counting error</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Designed for smolt handling realities</h3>
+          <p>
+            During handling, fish overlap, speed varies, and lighting can change. Ration counters are built around
+            stability and verification — so the numbers are practical and trustworthy for daily operations.
+          </p>
+          <h3>Value beyond the number</h3>
+          <p>
+            Counting is only the start. Size distribution and biomass estimates help optimize feeding,
+            plan density, and standardize reporting across sites.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section alt" id="solution">
+      <div class="container split">
+        <div>
+          <p class="kicker">SOLUTION</p>
+          <h2>Dry Fish Counter for precise counting + biomass reporting</h2>
+          <p>
+            The Ration Dry Fish Counter is built for counting during grading and transfers, when fish pass
+            individually through a controlled channel outside of water.
+          </p>
+
+          <div class="card" style="box-shadow:none; margin-top:16px;">
+            <h3>Track each fish to avoid double counts</h3>
+            <p>
+              The system observes and analyses fish in real time and tracks individuals between frames.
+              This improves robustness in dense flow compared to simple frame‑by‑frame counting.
+            </p>
+            <h3>Biomass and size distribution</h3>
+            <p>
+              Get a session summary with total count, throughput, and size distribution for better biomass estimates.
+              Export results for reporting and production planning.
+            </p>
+          </div>
+        </div>
+
+        <figure class="media-card">
+          <img src="assets/ui-placeholder.svg" alt="Placeholder user interface for the Fish Counter" loading="lazy" />
+          <figcaption>UI image placeholder — replace with your real interface screenshot.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="container">
+        <p class="kicker">HOW IT WORKS</p>
+        <h2>From installation to verified results</h2>
+        <p>
+          A straightforward process designed to fit existing handling lines.
+          (Add your spec sheet PDF next to this HTML file if you want a download link.)
+        </p>
+        <p>
+          Spec sheet: <a href="specs.pdf">Download detailed specifications</a>
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <h3>Install on the handling line</h3>
+            <p>
+              Mount the counter where fish are transferred or graded. The dry channel provides controlled
+              geometry to support smooth, consistent passage.
+            </p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h3>Count and measure in real time</h3>
+            <p>
+              Fish are imaged at high frame rate and analysed as they pass the counting zone. Individual tracking
+              supports stable counts, even when flow is demanding.
+            </p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h3>Review, export, and report</h3>
+            <p>
+              The interface shows live count and throughput and produces a session report with size distribution
+              and biomass‑relevant metrics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section alt" id="features">
+      <div class="container">
+        <p class="kicker">FEATURES</p>
+        <h2>Purpose‑built for accurate, dependable fish counts</h2>
+        <p>
+          All Ration counters use advanced computer vision with a strong focus on precision and stability —
+          delivering information that is reliable and practical.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature">
+            <h3>High‑precision counting</h3>
+            <p>Designed to deliver verifiable counts with a target accuracy under 1% in typical operating conditions.</p>
+          </div>
+          <div class="feature">
+            <h3>Individual tracking</h3>
+            <p>Tracks fish between frames to reduce double counts and missed individuals in high‑throughput flow.</p>
+          </div>
+          <div class="feature">
+            <h3>Biomass reporting</h3>
+            <p>Session summaries include size distribution and biomass‑relevant metrics for planning and reporting.</p>
+          </div>
+          <div class="feature">
+            <h3>Out‑of‑water imaging</h3>
+            <p>Controlled dry passage improves visibility and consistency, enabling robust computer vision analysis.</p>
+          </div>
+          <div class="feature">
+            <h3>Operator‑friendly UI</h3>
+            <p>Live view for operators with clear session status, alarms, and exportable results.</p>
+          </div>
+          <div class="feature">
+            <h3>Built for operations</h3>
+            <p>Stable mechanical design, smooth flow, and a focus on uptime — designed for real farms, not labs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WELFARE -->
+    <section class="section" id="welfare">
+      <div class="container split">
+        <div>
+          <p class="kicker">FISH WELFARE</p>
+          <h2>Fish welfare by design</h2>
+          <p>
+            Fish welfare is a core consideration in the design of the Ration Dry Fish Counter.
+            The system is engineered to promote smooth handling and reduce stress.
+          </p>
+
+          <ul class="checklist" style="margin-top:16px">
+            <li>Smooth, continuous fish flow with minimal obstruction</li>
+            <li>Short handling time</li>
+            <li>Stable operation without sudden starts and stops</li>
+            <li>Consistent passage geometry to reduce physical contact</li>
+          </ul>
+
+          <div class="cta-strip" style="margin-top:22px">
+            <div>
+              <strong>Want to assess fit for your site?</strong>
+              <p>We can review your handling line and recommend the best installation approach.</p>
+            </div>
+            <a class="btn btn-primary" href="#contact">Talk to us</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Dry counter — controlled passage outside water</h3>
+          <p>
+            Fish pass individually through a controlled channel outside of water.
+            Each fish is observed and analysed in real time as it passes through the counting zone,
+            supporting high precision while maintaining smooth flow and controlled handling.
+          </p>
+          <h3>Designed for smolt size range</h3>
+          <p>
+            The current prototype is designed for juveniles in the ~15–100 g range,
+            with a roadmap to cover larger fish sizes over time.
+          </p>
+          <p class="small">Performance depends on fish size, flow, and site conditions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section class="section alt" id="support">
+      <div class="container">
+        <p class="kicker">SUPPORT</p>
+        <h2>Service &amp; support built around uptime</h2>
+        <p>
+          We aim to make deployment straightforward and operation stable.
+          Software updates can add new capabilities over time.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature">
+            <h3>Commissioning</h3>
+            <p>Installation guidance and configuration to match your line geometry and operating conditions.</p>
+          </div>
+          <div class="feature">
+            <h3>Remote support</h3>
+            <p>Fast troubleshooting and assistance, with clear logs and session data.</p>
+          </div>
+          <div class="feature">
+            <h3>Continuous improvement</h3>
+            <p>Ongoing software improvements focused on accuracy, stability, and operator experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container split">
+        <div>
+          <p class="kicker">CONTACT</p>
+          <h2>Contact for information or a demo</h2>
+          <p>
+            Email <a href="mailto:sales@ration.is">sales@ration.is</a> to discuss your setup,
+            get a proposal, or schedule a demo.
+          </p>
+          <div class="hero-ctas" style="margin-top:18px">
+            <a class="btn btn-primary" href="mailto:sales@ration.is?subject=Ration%20Fish%20Counter%20demo">Email sales@ration.is</a>
+            <a class="btn btn-secondary" href="#top">Back to top</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Ration ehf.</h3>
+          <p>Árleynir 8<br />112 Reykjavík<br />Iceland</p>
+          <p>
+            <strong>General:</strong> <a href="mailto:info@ration.is">info@ration.is</a><br />
+            <strong>Sales:</strong> <a href="mailto:sales@ration.is">sales@ration.is</a>
+          </p>
+          <p class="small">This page intentionally covers the Fish Counter only.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>About Ration</h3>
+        <p>
+          To improve modern aquaculture outcomes by combining deep industry knowledge,
+          robust technology, and close collaboration with producers — strengthening fish welfare,
+          reducing waste, and supporting sustainable growth.
+        </p>
+        <p class="small">© Ration. All rights reserved.</p>
+      </div>
+      <div>
+        <h3>Collaboration &amp; Partnerships</h3>
+        <p class="small">
+          Add partner logos here if desired.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

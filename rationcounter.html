@@ -8,7 +8,7 @@
   <link rel="icon" href="favicon.ico" />
 
   <title>RationCOUNTER: Reliable fish counts with welfare-first design</title>
-  <meta name="description" content="RationCOUNTER delivers dependable fish counting and biomass-relevant reporting during transfers and grading, with fish welfare built into the design." />
+  <meta name="description" content="RationCOUNTER delivers dependable fish counting and biomass relevant reporting during transfers and grading, with fish welfare built into the design." />
 
   <link rel="stylesheet" href="assets/css/rationcounter.css" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FRGMW17TQ"></script>
@@ -30,18 +30,29 @@
           <img class="brand-logo" src="assets/ration-logo.png" alt="Ration logo" loading="eager" decoding="async" />
         </a>
 
-        <nav class="nav-desktop" aria-label="Primary navigation">
-          <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
-          <a class="nav-link" href="#overview" data-navlink data-i18n="nav.overview">Overview</a>
-          <a class="nav-link" href="#how" data-navlink data-i18n="nav.how">How it works</a>
-          <a class="nav-link" href="#features" data-navlink data-i18n="nav.features">Features</a>
-          <a class="nav-link" href="#welfare" data-navlink data-i18n="nav.welfare">Welfare</a>
-          <a class="nav-link" href="#support" data-navlink data-i18n="nav.support">Support</a>
-          <a class="nav-link" href="#contact" data-navlink data-i18n="nav.contact">Contact</a>
-        </nav>
-
         <div class="nav-cta" aria-label="Header actions">
+          <div class="product-menu" data-product-menu data-open="false">
+            <button class="btn ghost product-menu-toggle" type="button" data-product-toggle aria-expanded="false" aria-controls="productMenuDesktop">
+              <span data-i18n="cta.products">View Products</span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="product-menu-list" id="productMenuDesktop" aria-label="Products menu">
+              <a class="product-menu-link" href="rationfeed.html" data-i18n="product.menu.feed">RationFeed</a>
+              <a class="product-menu-link" href="rationcounter.html" data-i18n="product.menu.counter">RationCounter</a>
+            </div>
+          </div>
+          <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
+          <a class="btn primary" href="mailto:sales@ration.is?subject=RationCOUNTER%20contact%20request" data-i18n="cta.demo">Contact Us</a>
           <div class="lang-switch" aria-label="Language selector">
+            <span class="lang-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.9"/>
+                <path d="M3.5 12h17" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+                <path d="M12 3.5c2.6 2.3 4.1 5.3 4.1 8.5S14.6 18.2 12 20.5c-2.6-2.3-4.1-5.3-4.1-8.5S9.4 5.8 12 3.5Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+              </svg>
+            </span>
             <label class="sr-only" for="langSelect">Language</label>
             <select id="langSelect" class="lang-select">
               <option value="en">EN</option>
@@ -49,8 +60,6 @@
               <option value="es">ES</option>
             </select>
           </div>
-          <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
-          <a class="btn primary" href="mailto:sales@ration.is?subject=RationCOUNTER%20demo%20request" data-i18n="cta.demo">Request a demo</a>
         </div>
 
         <button class="menu-btn" type="button" id="menuBtn"
@@ -65,17 +74,25 @@
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="container">
         <nav class="mobile-nav" aria-label="Mobile navigation">
-          <a class="mobile-link" href="index.html" data-i18n="nav.home">Home</a>
-          <a class="mobile-link" href="#overview" data-navlink data-i18n="nav.overview">Overview</a>
           <a class="mobile-link" href="#how" data-navlink data-i18n="nav.how">How it works</a>
           <a class="mobile-link" href="#features" data-navlink data-i18n="nav.features">Features</a>
           <a class="mobile-link" href="#welfare" data-navlink data-i18n="nav.welfare">Welfare</a>
-          <a class="mobile-link" href="#support" data-navlink data-i18n="nav.support">Support</a>
-          <a class="mobile-link" href="#contact" data-navlink data-i18n="nav.contact">Contact</a>
 
           <div class="mobile-cta" aria-label="Mobile actions">
-            <a class="btn primary" href="mailto:sales@ration.is?subject=RationCOUNTER%20demo%20request" data-i18n="cta.demo">Request a demo</a>
+            <div class="product-menu mobile-product-menu" data-product-menu data-open="false">
+              <button class="btn ghost product-menu-toggle" type="button" data-product-toggle aria-expanded="false" aria-controls="productMenuMobile">
+                <span data-i18n="cta.products">View Products</span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="product-menu-list" id="productMenuMobile" aria-label="Products menu">
+                <a class="product-menu-link" href="rationfeed.html" data-i18n="product.menu.feed">RationFeed</a>
+                <a class="product-menu-link" href="rationcounter.html" data-i18n="product.menu.counter">RationCounter</a>
+              </div>
+            </div>
             <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
+            <a class="btn primary" href="mailto:sales@ration.is?subject=RationCOUNTER%20contact%20request" data-i18n="cta.demo">Contact Us</a>
           </div>
         </nav>
       </div>
@@ -86,32 +103,54 @@
     <section class="hero" id="overview">
       <div class="container">
         <div class="hero-grid">
-          <div>
-            <div class="pill">
-              <span class="dot" aria-hidden="true"></span>
-              <span data-i18n="hero.pill">RationCOUNTER for land-based aquaculture</span>
-            </div>
-
-            <h1 data-i18n="hero.title">Reliable fish counts with welfare-first design</h1>
-            <p class="subhead" data-i18n="hero.body">
-              RationCOUNTER is built for accurate fish counting and biomass-relevant reporting during transfers and grading, while supporting smooth handling and good fish welfare.
+          <div class="hero-copy">
+            <h1 class="hero-title" data-i18n-html="hero.title"><span class="hero-title-line">Reliable fish counts</span><span class="hero-title-line">with welfare-first design</span></h1>
+            <p class="hero-subhead" data-i18n-html="hero.body">
+              <span class="hero-subhead-line"><span class="hero-product">RationCOUNTER</span> is built for accurate fish counting</span><span class="hero-subhead-line">and biomass relevant reporting during transfers and grading.</span>
             </p>
 
             <div class="hero-actions">
+              <a class="btn primary" href="#how" data-i18n="hero.cta.learn">Learn more</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-stage" aria-hidden="true"></div>
+            <img class="hero-device" src="assets/fishcounter_photorealistic_render.png" alt="RationCOUNTER dry fish counter with controlled channel and touchscreen interface" loading="eager" decoding="async" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-nav-section" aria-label="Section navigation">
+      <div class="container">
+        <nav class="nav-desktop hero-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="#how" data-navlink data-i18n="nav.how">How it works</a>
+          <a class="nav-link" href="#features" data-navlink data-i18n="nav.features">Features</a>
+          <a class="nav-link" href="#welfare" data-navlink data-i18n="nav.welfare">Welfare</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="hero-details-section" aria-label="RationCOUNTER introduction">
+      <div class="container">
+        <div class="hero-details-panel">
+          <div class="hero-details-copy">
+            <h2 class="hero-details-title" data-i18n="hero.details.title">Reliable fish counts with welfare-first design</h2>
+            <p class="hero-details-body" data-i18n="hero.details.body">
+              RationCOUNTER is built for accurate fish counting and biomass-relevant reporting during transfers and grading, while supporting smooth handling and good fish welfare.
+            </p>
+
+            <div class="hero-actions hero-details-actions">
               <a class="btn primary" href="mailto:sales@ration.is?subject=RationCOUNTER%20demo%20request" data-i18n="hero.cta.demo">Request a demo</a>
               <a class="btn ghost" href="#how" data-i18n="hero.cta.how">See how it works</a>
             </div>
 
-            <ul class="mini-list" aria-label="Key outcomes">
+            <ul class="mini-list hero-details-list" aria-label="Key outcomes">
               <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="hero.bullet.one">Advanced computer vision focused on precision and operational stability.</span></li>
               <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="hero.bullet.two">Individual tracking instead of snapshots for reliable counts in fast flow.</span></li>
               <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="hero.bullet.three">Designed for smooth handling with short time out of water and controlled passage geometry.</span></li>
             </ul>
-          </div>
-
-          <div class="hero-image">
-            <img src="assets/fish-counter.png" alt="RationCOUNTER dry fish counter with controlled channel and touchscreen interface" loading="lazy" decoding="async" />
-            <div class="caption" data-i18n="hero.caption">Dry Fish Counter for precise counting during transfers and grading</div>
           </div>
         </div>
       </div>

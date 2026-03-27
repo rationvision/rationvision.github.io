@@ -1,10 +1,24 @@
 (function () {
   const header = document.getElementById("siteHeader");
   const btn = document.getElementById("menuBtn");
+  const productMenus = Array.from(document.querySelectorAll("[data-product-menu]"));
 
   function setOpen(open) {
     header.dataset.open = open ? "true" : "false";
     btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (!open) closeProductMenus();
+  }
+
+  function setProductOpen(menu, open) {
+    menu.dataset.open = open ? "true" : "false";
+    const toggle = menu.querySelector("[data-product-toggle]");
+    if (toggle) toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  function closeProductMenus(exceptMenu) {
+    productMenus.forEach((menu) => {
+      if (menu !== exceptMenu) setProductOpen(menu, false);
+    });
   }
 
   btn?.addEventListener("click", () => {
@@ -12,13 +26,38 @@
     setOpen(!open);
   });
 
+  productMenus.forEach((menu) => {
+    const toggle = menu.querySelector("[data-product-toggle]");
+    if (!toggle) return;
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = menu.dataset.open === "true";
+      closeProductMenus(menu);
+      setProductOpen(menu, !open);
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeProductMenus();
+      }, { passive: true });
+    });
+  });
+
   document.addEventListener("click", (e) => {
     if (header.dataset.open !== "true") return;
     if (!header.contains(e.target)) setOpen(false);
   });
 
+  document.addEventListener("click", (e) => {
+    if (productMenus.some((menu) => menu.contains(e.target))) return;
+    closeProductMenus();
+  });
+
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") setOpen(false);
+    if (e.key !== "Escape") return;
+    setOpen(false);
+    closeProductMenus();
   });
 
   document.querySelectorAll(".mobile-nav a[href^='#']").forEach((a) => {
@@ -78,7 +117,7 @@
 
   Object.assign(translations.en, {
     title: "RationCOUNTER: Reliable fish counts with welfare-first design",
-    description: "RationCOUNTER delivers dependable fish counting and biomass-relevant reporting during transfers and grading, with fish welfare built into the design.",
+    description: "RationCOUNTER delivers dependable fish counting and biomass relevant reporting during transfers and grading, with fish welfare built into the design.",
     "nav.home": "Home",
     "nav.overview": "Overview",
     "nav.how": "How it works",
@@ -86,12 +125,18 @@
     "nav.welfare": "Welfare",
     "nav.support": "Support",
     "nav.contact": "Contact",
+    "cta.products": "View Products",
     "cta.service": "Service & Support",
-    "cta.demo": "Request a demo",
+    "cta.demo": "Contact Us",
+    "product.menu.feed": "RationFeed",
+    "product.menu.counter": "RationCounter",
     "hero.pill": "RationCOUNTER for land-based aquaculture",
-    "hero.title": "Reliable fish counts with welfare-first design",
-    "hero.body": "RationCOUNTER is built for accurate fish counting and biomass-relevant reporting during transfers and grading, while supporting smooth handling and good fish welfare.",
+    "hero.title": "<span class=\"hero-title-line\">Reliable fish counts</span><span class=\"hero-title-line\">with welfare-first design</span>",
+    "hero.details.title": "Reliable fish counts with welfare-first design",
+    "hero.body": "<span class=\"hero-subhead-line\"><span class=\"hero-product\">RationCOUNTER</span> is built for accurate fish counting</span><span class=\"hero-subhead-line\">and biomass relevant reporting during transfers and grading.</span>",
+    "hero.details.body": "RationCOUNTER is built for accurate fish counting and biomass-relevant reporting during transfers and grading, while supporting smooth handling and good fish welfare.",
     "hero.cta.demo": "Request a demo",
+    "hero.cta.learn": "Learn more",
     "hero.cta.how": "See how it works",
     "hero.bullet.one": "Advanced computer vision focused on precision and operational stability.",
     "hero.bullet.two": "Individual tracking instead of snapshots for reliable counts in fast flow.",
@@ -179,7 +224,7 @@
 
   Object.assign(translations.no, {
     title: "RationCOUNTER: P&aring;litelig fisketelling med fiskevelferd i sentrum",
-    description: "RationCOUNTER leverer p&aring;litelig fisketelling og biomasse-relevante rapporter under overf&oslash;ringer og sortering, med fiskevelferd bygget inn i designet.",
+    description: "RationCOUNTER leverer p&aring;litelig fisketelling og biomasserelevante rapporter under overf&oslash;ringer og sortering, med fiskevelferd bygget inn i designet.",
     "nav.home": "Hjem",
     "nav.overview": "Oversikt",
     "nav.how": "Slik fungerer det",
@@ -187,12 +232,18 @@
     "nav.welfare": "Fiskevelferd",
     "nav.support": "Support",
     "nav.contact": "Kontakt",
+    "cta.products": "Se produkter",
     "cta.service": "Service og support",
-    "cta.demo": "Be om en demo",
+    "cta.demo": "Kontakt oss",
+    "product.menu.feed": "RationFeed",
+    "product.menu.counter": "RationCounter",
     "hero.pill": "RationCOUNTER for landbasert akvakultur",
-    "hero.title": "P&aring;litelig fisketelling med fiskevelferd i sentrum",
-    "hero.body": "RationCOUNTER er utviklet for n&oslash;yaktig fisketelling og biomasse-relevante rapporter under overf&oslash;ringer og sortering, samtidig som den st&oslash;tter sk&aring;nsom h&aring;ndtering og god fiskevelferd.",
+    "hero.title": "<span class=\"hero-title-line\">P&aring;litelig fisketelling</span><span class=\"hero-title-line\">med fiskevelferd i sentrum</span>",
+    "hero.details.title": "P&aring;litelig fisketelling med fiskevelferd i sentrum",
+    "hero.body": "<span class=\"hero-subhead-line\"><span class=\"hero-product\">RationCOUNTER</span> er utviklet for n&oslash;yaktig fisketelling</span><span class=\"hero-subhead-line\">og biomasserelevante rapporter under overf&oslash;ringer og sortering.</span>",
+    "hero.details.body": "RationCOUNTER er utviklet for n&oslash;yaktig fisketelling og biomasse-relevante rapporter under overf&oslash;ringer og sortering, samtidig som den st&oslash;tter sk&aring;nsom h&aring;ndtering og god fiskevelferd.",
     "hero.cta.demo": "Be om en demo",
+    "hero.cta.learn": "Les mer",
     "hero.cta.how": "Se hvordan det fungerer",
     "hero.bullet.one": "Avansert datavisjon med fokus p&aring; presisjon og operasjonell stabilitet.",
     "hero.bullet.two": "Individsporing i stedet for stillbilder for p&aring;litelig telling ved h&oslash;y hastighet.",
@@ -288,12 +339,18 @@
     "nav.welfare": "Bienestar",
     "nav.support": "Soporte",
     "nav.contact": "Contacto",
+    "cta.products": "Ver productos",
     "cta.service": "Servicio y soporte",
-    "cta.demo": "Solicitar una demo",
+    "cta.demo": "Contáctenos",
+    "product.menu.feed": "RationFeed",
+    "product.menu.counter": "RationCounter",
     "hero.pill": "RationCOUNTER para acuicultura en tierra",
-    "hero.title": "Conteos fiables con dise&ntilde;o centrado en el bienestar",
-    "hero.body": "RationCOUNTER est&aacute; dise&ntilde;ado para conteos precisos de peces e informes relevantes para biomasa durante traslados y clasificaci&oacute;n, a la vez que favorece una manipulaci&oacute;n suave y un buen bienestar de los peces.",
+    "hero.title": "<span class=\"hero-title-line\">Conteos fiables de peces</span><span class=\"hero-title-line\">con dise&ntilde;o centrado en el bienestar</span>",
+    "hero.details.title": "Conteos fiables con dise&ntilde;o centrado en el bienestar",
+    "hero.body": "<span class=\"hero-subhead-line\"><span class=\"hero-product\">RationCOUNTER</span> est&aacute; dise&ntilde;ado para conteos precisos</span><span class=\"hero-subhead-line\">e informes relevantes para biomasa durante traslados y clasificaci&oacute;n.</span>",
+    "hero.details.body": "RationCOUNTER est&aacute; dise&ntilde;ado para conteos precisos de peces e informes relevantes para biomasa durante traslados y clasificaci&oacute;n, a la vez que favorece una manipulaci&oacute;n suave y un buen bienestar de los peces.",
     "hero.cta.demo": "Solicitar una demo",
+    "hero.cta.learn": "M&aacute;s informaci&oacute;n",
     "hero.cta.how": "Ver c&oacute;mo funciona",
     "hero.bullet.one": "Visi&oacute;n por computador avanzada centrada en la precisi&oacute;n y la estabilidad operativa.",
     "hero.bullet.two": "Seguimiento individual en lugar de instant&aacute;neas para conteos fiables en flujos r&aacute;pidos.",

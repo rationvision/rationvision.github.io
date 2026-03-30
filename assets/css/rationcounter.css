@@ -11,7 +11,7 @@
 
       --header-h: 72px;
 
-      --container: 1120px;
+      --container: 1320px;
       --radius: 18px;
       --radius-sm: 14px;
       --shadow: 0 14px 40px rgba(0,0,0,.08);
@@ -67,7 +67,7 @@
     .container{
       max-width: var(--container);
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 clamp(24px, 2.4vw, 36px);
     }
     .section{
       padding: clamp(50px, 5vw, 80px) 0;
@@ -495,13 +495,14 @@
       z-index: 1;
       display: grid;
       grid-template-columns: minmax(0, .95fr) minmax(320px, 1.05fr);
-      gap: clamp(24px, 5vw, 56px);
+      gap: clamp(40px, 7vw, 92px);
       align-items: center;
       padding: clamp(26px, 4vw, 52px) 0 clamp(30px, 4.5vw, 56px);
     }
 
     .hero-copy{
-      max-width: 560px;
+      max-width: 640px;
+      padding-right: clamp(10px, 2vw, 28px);
     }
 
     .hero-title{
@@ -815,7 +816,7 @@
     .hero-device{
       position: relative;
       z-index: 1;
-      width: min(106%, 520px);
+      width: min(100%, 500px);
       max-width: 100%;
       height: auto;
       display: block;
@@ -848,7 +849,7 @@
       box-shadow: 0 10px 24px rgba(21,55,85,.08);
     }
     .hero-details-copy{
-      max-width: 760px;
+      max-width: 920px;
     }
     .hero-details-title{
       margin: 0 0 12px;
@@ -1417,6 +1418,7 @@
       }
       .hero-copy{
         max-width: none;
+        padding-right: 0;
       }
       .hero-title{
         font-size: clamp(30px, 8.5vw, 48px);

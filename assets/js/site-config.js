@@ -3,6 +3,6 @@ window.RATION_CONFIG = {
   hideFeedingSystems: true,
   // Set to true to hide the contact form section on the home page.
   hideHomeContactForm: true,
-  // Set to true to hide the spec sheet line on the RationFeed page.
+  // Set to true to hide the spec sheet line on the RationFeed and RationCOUNTER pages.
   hideRationfeedSpecSheet: true
 };

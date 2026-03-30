@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#153755" />
+  <link rel="icon" href="favicon.ico" />
+
+  <title>RationCOUNTER: Reliable fish counts with welfare-first design</title>
+  <meta name="description" content="RationCOUNTER delivers dependable fish counting and biomass relevant reporting during transfers and grading, with fish welfare built into the design." />
+
+  <link rel="stylesheet" href="assets/css/rationcounter.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FRGMW17TQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2FRGMW17TQ');
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header" id="siteHeader" data-open="false" data-scrolled="false">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Ration home">
+          <img class="brand-logo" src="assets/ration-logo.png" alt="Ration logo" loading="eager" decoding="async" />
+        </a>
+
+        <div class="nav-cta" aria-label="Header actions">
+          <div class="product-menu" data-product-menu data-open="false">
+            <button class="btn ghost product-menu-toggle" type="button" data-product-toggle aria-expanded="false" aria-controls="productMenuDesktop">
+              <span data-i18n="cta.products">View Products</span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="product-menu-list" id="productMenuDesktop" aria-label="Products menu">
+              <a class="product-menu-link" href="rationfeed.html" data-i18n="product.menu.feed">RationFeed</a>
+              <a class="product-menu-link" href="rationcounter.html" data-i18n="product.menu.counter">RationCounter</a>
+            </div>
+          </div>
+          <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
+          <a class="btn ghost" href="#" data-i18n="cta.news">News</a>
+          <a class="btn primary" href="mailto:sales@ration.is?subject=RationCOUNTER%20contact%20request" data-i18n="cta.demo">Contact Us</a>
+          <div class="lang-switch" aria-label="Language selector">
+            <span class="lang-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.9"/>
+                <path d="M3.5 12h17" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+                <path d="M12 3.5c2.6 2.3 4.1 5.3 4.1 8.5S14.6 18.2 12 20.5c-2.6-2.3-4.1-5.3-4.1-8.5S9.4 5.8 12 3.5Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <label class="sr-only" for="langSelect">Language</label>
+            <select id="langSelect" class="lang-select">
+              <option value="en">EN</option>
+              <option value="no">NO</option>
+              <option value="es">ES</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="menu-btn" type="button" id="menuBtn"
+          aria-expanded="false" aria-controls="mobileDrawer" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="#153755" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="container">
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a class="mobile-link" href="#how" data-navlink data-i18n="nav.how">How it works</a>
+          <a class="mobile-link" href="#features" data-navlink data-i18n="nav.features">Features</a>
+          <a class="mobile-link" href="#welfare" data-navlink data-i18n="nav.welfare">Welfare</a>
+
+          <div class="mobile-cta" aria-label="Mobile actions">
+            <div class="product-menu mobile-product-menu" data-product-menu data-open="false">
+              <button class="btn ghost product-menu-toggle" type="button" data-product-toggle aria-expanded="false" aria-controls="productMenuMobile">
+                <span data-i18n="cta.products">View Products</span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="product-menu-list" id="productMenuMobile" aria-label="Products menu">
+                <a class="product-menu-link" href="rationfeed.html" data-i18n="product.menu.feed">RationFeed</a>
+                <a class="product-menu-link" href="rationcounter.html" data-i18n="product.menu.counter">RationCounter</a>
+              </div>
+            </div>
+            <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
+            <a class="btn ghost" href="#" data-i18n="cta.news">News</a>
+            <a class="btn primary" href="mailto:sales@ration.is?subject=RationCOUNTER%20contact%20request" data-i18n="cta.demo">Contact Us</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="overview">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1 class="hero-title" data-i18n-html="hero.title"><span class="hero-title-line">Reliable fish counts</span><span class="hero-title-line">with welfare-first design</span></h1>
+            <p class="hero-subhead" data-i18n-html="hero.body">
+              <span class="hero-subhead-line"><span class="hero-product">RationCOUNTER</span> is built for accurate fish counting</span><span class="hero-subhead-line">and biomass relevant reporting during transfers and grading.</span>
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="#how" data-i18n="hero.cta.learn">Learn more</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <img class="hero-device" src="assets/fishcounter_photorealistic_render.png" alt="RationCOUNTER dry fish counter with controlled channel and touchscreen interface" loading="eager" decoding="async" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-nav-section" aria-label="Section navigation">
+      <div class="container">
+        <nav class="nav-desktop hero-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="#how" data-navlink data-i18n="nav.how">How it works</a>
+          <a class="nav-link" href="#features" data-navlink data-i18n="nav.features">Features</a>
+          <a class="nav-link" href="#welfare" data-navlink data-i18n="nav.welfare">Welfare</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="hero-details-section" aria-label="RationCOUNTER introduction">
+      <div class="container">
+        <div class="hero-details-panel">
+          <div class="hero-details-copy">
+            <h2 class="hero-details-title" data-i18n="hero.details.title">Reliable fish counts with welfare-first design</h2>
+            <p class="hero-details-body" data-i18n="hero.details.body">
+              RationCOUNTER is built for accurate fish counting and biomass-relevant reporting during transfers and grading, while supporting smooth handling and good fish welfare.
+            </p>
+
+            <div class="hero-actions hero-details-actions">
+              <a class="btn primary" href="mailto:sales@ration.is?subject=RationCOUNTER%20demo%20request" data-i18n="hero.cta.demo">Request a demo</a>
+              <a class="btn ghost" href="#how" data-i18n="hero.cta.how">See how it works</a>
+            </div>
+
+            <ul class="mini-list hero-details-list" aria-label="Key outcomes">
+              <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="hero.bullet.one">Advanced computer vision focused on precision and operational stability.</span></li>
+              <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="hero.bullet.two">Individual tracking instead of snapshots for reliable counts in fast flow.</span></li>
+              <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="hero.bullet.three">Designed for smooth handling with short time out of water and controlled passage geometry.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="challenge">
+      <div class="container">
+        <p class="kicker" data-i18n="challenge.kicker">The challenge</p>
+        <h2 data-i18n="challenge.title">When the real fish number is uncertain, decisions get weaker</h2>
+        <p class="lead" data-i18n="challenge.lead">Accurate counts are the foundation for feeding, density control, transfer planning, and biomass reporting in land-based aquaculture.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 data-i18n="challenge.card1.title">Transfers create the best counting opportunity</h3>
+            <p data-i18n="challenge.card1.body">Transfers and grading create a moment when each fish can be observed, but fish still move fast and in dense flow. That makes dependable counting one of the hardest computer vision tasks in aquaculture.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="challenge.card2.title">The count must be practical and trustworthy</h3>
+            <p data-i18n="challenge.card2.body">If operators cannot trust the number, feeding, density management, and reporting all get weaker. Stable counting needs good imaging, controlled passage, and robust tracking without double counts or missed fish.</p>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top: 18px;">
+          <div class="card">
+            <h3 data-i18n="challenge.metric1.value">60 fps</h3>
+            <p data-i18n="challenge.metric1.label">Real-time analysis</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="challenge.metric2.value">400-600</h3>
+            <p data-i18n="challenge.metric2.label">Fish per minute prototype throughput</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="challenge.metric3.value">&lt;1%</h3>
+            <p data-i18n="challenge.metric3.label">Target counting error</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solution">
+      <div class="container">
+        <p class="kicker" data-i18n="solution.kicker">Solution</p>
+        <h2 data-i18n="solution.title">Dry fish counting with precise tracking and biomass-relevant reporting</h2>
+        <p class="lead" data-i18n="solution.lead">RationCOUNTER is designed for transfers and grading, where fish pass through a controlled dry channel and are analyzed individually in real time.</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3 data-i18n="solution.card1.title">Track each fish to avoid double counts</h3>
+            <p data-i18n="solution.card1.body">The system tracks individuals between frames instead of relying on simple frame-by-frame snapshots. That improves robustness when flow is fast and fish spacing changes.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="solution.card2.title">Biomass and size distribution</h3>
+            <p data-i18n="solution.card2.body">Session summaries include total count, throughput, and size-distribution information that supports biomass estimates, planning, and consistent reporting.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="solution.card3.title">Built for real farm operations</h3>
+            <p data-i18n="solution.card3.body">The mechanical design, imaging zone, and operator workflow are built around smooth handling, verification, and dependable daily use rather than lab-only conditions.</p>
+          </div>
+        </div>
+
+        <div class="section" style="padding-bottom: 0;">
+          <div class="media-card" aria-label="RationCOUNTER interface placeholder">
+            <div class="media-text">
+              <h3 data-i18n="solution.media.title">Interface view placeholder for live sessions and exported reports</h3>
+              <p data-i18n="solution.media.body">This placeholder represents the operator interface area for live counts, throughput, size distribution, and reporting outputs. Replace it with a production screenshot when one is available.</p>
+            </div>
+
+            <figure class="media-figure">
+              <img src="assets/ui-placeholder.svg" alt="Placeholder interface illustration for RationCOUNTER" loading="lazy" decoding="async" />
+              <figcaption class="caption" data-i18n="solution.media.caption">Placeholder image for the future RationCOUNTER user interface</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="how">
+      <div class="container">
+        <p class="kicker" data-i18n="how.kicker">How it works</p>
+        <h2 data-i18n="how.title">From installation to verified results</h2>
+        <p class="lead" data-i18n="how.lead">A straightforward deployment process designed to fit existing handling lines for transfers and grading.</p>
+
+        <div class="steps" role="list">
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">1</div>
+            <div>
+              <h3 data-i18n="how.step1.title">Install on the handling line</h3>
+              <p data-i18n="how.step1.body">Mount the counter where fish are transferred or graded. The dry passage geometry is designed to support smooth, consistent movement through the counting zone.</p>
+              <p class="spec-line" style="margin-top: 10px; color: var(--muted);" data-i18n-html="how.step1.spec">
+                <strong>Spec sheet:</strong>
+                <a href="spec-sheet.pdf" target="_blank" rel="noopener">Download detailed specifications</a>
+                <span class="small">(add your PDF next to this HTML file)</span>
+              </p>
+            </div>
+          </div>
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">2</div>
+            <div>
+              <h3 data-i18n="how.step2.title">Count and measure in real time</h3>
+              <p data-i18n="how.step2.body">Fish are imaged at high frame rate and analyzed as they pass the counting zone. Individual tracking supports stable counts even when flow conditions are demanding.</p>
+            </div>
+          </div>
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">3</div>
+            <div>
+              <h3 data-i18n="how.step3.title">Review, export, and report</h3>
+              <p data-i18n="how.step3.body">Operators can review live sessions and export summaries with count, throughput, and size-distribution metrics for reporting and production planning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <p class="kicker" data-i18n="features.kicker">Features</p>
+        <h2 data-i18n="features.title">Purpose-built for accurate, dependable fish counts</h2>
+        <p class="lead" data-i18n="features.lead">RationCOUNTER combines controlled fish passage, advanced vision, and operator-friendly reporting to make counts more stable and verifiable.</p>
+
+        <div class="grid-3">
+          <div class="card"><h3 data-i18n="features.card1.title">High-precision counting</h3><p data-i18n="features.card1.body">Designed for verifiable counts with a target accuracy under 1% in typical operating conditions.</p></div>
+          <div class="card"><h3 data-i18n="features.card2.title">Individual tracking</h3><p data-i18n="features.card2.body">Tracks fish between frames to reduce double counts and missed individuals in high-throughput flow.</p></div>
+          <div class="card"><h3 data-i18n="features.card3.title">Biomass reporting</h3><p data-i18n="features.card3.body">Session summaries include size-distribution and biomass-relevant metrics for planning and reporting.</p></div>
+          <div class="card"><h3 data-i18n="features.card4.title">Out-of-water imaging</h3><p data-i18n="features.card4.body">Controlled dry passage improves visibility and consistency for more robust computer vision analysis.</p></div>
+          <div class="card"><h3 data-i18n="features.card5.title">Operator-friendly workflow</h3><p data-i18n="features.card5.body">Live session status, clear outputs, and exportable results keep the system practical for daily use.</p></div>
+          <div class="card"><h3 data-i18n="features.card6.title">Built for operations</h3><p data-i18n="features.card6.body">Stable mechanical design, smooth flow, and support for uptime-focused deployment at real sites.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="welfare">
+      <div class="container">
+        <p class="kicker" data-i18n="welfare.kicker">Fish welfare</p>
+        <h2 data-i18n="welfare.title">Fish welfare by design</h2>
+        <p class="lead" data-i18n="welfare.lead">Fish welfare is a core design consideration in RationCOUNTER, from passage geometry to operational stability.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 data-i18n="welfare.card1.title">Smooth, continuous handling</h3>
+            <p data-i18n="welfare.card1.body">The counter is designed to support smooth flow with minimal obstruction, short handling time, and controlled geometry through the counting zone.</p>
+            <h3 data-i18n="welfare.card2.title">Consistent conditions for operators and fish</h3>
+            <p data-i18n="welfare.card2.body">Stable operation without sudden starts and stops supports dependable counting while helping teams handle fish more consistently during transfers and grading.</p>
+            <div class="hero-actions" style="margin-top: 18px;">
+              <a class="btn primary" href="#contact" data-i18n="welfare.cta">Talk to us</a>
+            </div>
+          </div>
+
+          <div class="media-card" aria-label="RationCOUNTER product render">
+            <div class="media-text">
+              <h3 data-i18n="welfare.media.title">Controlled dry passage outside water</h3>
+              <p data-i18n="welfare.media.body">Fish pass individually through a controlled channel outside of water, where each fish can be observed and analyzed in real time with high precision and practical handling conditions.</p>
+            </div>
+
+            <figure class="media-figure">
+              <img src="assets/fishcounter_photorealistic_render.png" alt="RationCOUNTER product render" loading="lazy" decoding="async" />
+              <figcaption class="caption" data-i18n="welfare.media.caption">Designed for smooth passage and precise counting</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="container">
+        <p class="kicker" data-i18n="support.kicker">Support</p>
+        <h2 data-i18n="support.title">Service and support built around uptime</h2>
+        <p class="lead" data-i18n="support.lead">We aim to make deployment straightforward and operation stable, with software improvements and assistance over time.</p>
+
+        <div class="grid-3">
+          <div class="card"><h3 data-i18n="support.card1.title">Commissioning</h3><p data-i18n="support.card1.body">Installation guidance and configuration to match your handling line geometry and operating conditions.</p></div>
+          <div class="card"><h3 data-i18n="support.card2.title">Remote support</h3><p data-i18n="support.card2.body">Fast troubleshooting and assistance with clear logs, session data, and responsive follow-up.</p></div>
+          <div class="card"><h3 data-i18n="support.card3.title">Continuous improvement</h3><p data-i18n="support.card3.body">Ongoing software improvements focused on accuracy, stability, and operator experience.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact">
+      <div class="container">
+        <h2 data-i18n="contact.title">Contact for information or a demo</h2>
+        <p class="lead" data-i18n-html="contact.lead">Email <strong>sales@ration.is</strong> to discuss your setup, get a proposal, or schedule a demo.</p>
+
+        <div class="hero-actions" style="margin-top: 12px;">
+          <a class="btn primary" href="mailto:sales@ration.is?subject=RationCOUNTER%20information%20request" data-i18n="contact.cta">Email sales@ration.is</a>
+          <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-banner" aria-label="Footer">
+    <div class="container">
+      <div class="footer-banner-grid">
+        <div class="footer-brand-block">
+          <img class="footer-logo-large" src="assets/logos/ration_white_cropped.png" alt="Ration logo" loading="lazy" decoding="async" />
+          <p class="footer-address">
+            <strong>Ration ehf.</strong><br/>
+            &Aacute;rleynir 8<br/>
+            112 Reykjav&iacute;k<br/>
+            Iceland<br/>
+            <a href="mailto:info@ration.is">info@ration.is</a>
+          </p>
+          <a class="footer-linkedin" href="https://www.linkedin.com/company/rationvisiontechnology" aria-label="Ration on LinkedIn" target="_blank" rel="noopener noreferrer">
+            <img class="footer-linkedin-logo" src="assets/logos/linkedin_logo.png" alt="LinkedIn logo" loading="lazy" decoding="async" />
+            <span class="footer-linkedin-text">LinkedIn</span>
+          </a>
+        </div>
+
+        <div class="footer-about">
+          <h3 data-i18n="footer.about.title">About Ration</h3>
+          <p data-i18n="footer.about.body">To improve modern aquaculture outcomes by combining deep industry knowledge, robust technology, and close collaboration with producers, strengthening fish welfare, reducing waste, and supporting sustainable growth.</p>
+          <p class="footer-about-cta" data-i18n="footer.about.cta">Let's build better aquaculture together.</p>
+        </div>
+
+        <div class="footer-partners">
+          <h3 data-i18n="footer.partnerships.title">Collaboration &amp; Partnerships</h3>
+          <div class="partners-grid" aria-label="Partners">
+            <img class="partner-logo mikra" src="assets/logos/mikra.png" alt="Mikra logo" loading="lazy" decoding="async" />
+            <img class="partner-logo" src="assets/logos/visk.png" alt="V&Iacute;SK logo" loading="lazy" decoding="async" />
+            <img class="partner-logo tall" src="assets/logos/matvaelasjodur.png" alt="Matv&aelig;lasj&oacute;&eth;ur logo" loading="lazy" decoding="async" />
+            <img class="partner-logo tall" src="assets/logos/tdf.png" alt="Technology Development Fund logo" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="small" data-i18n-html="footer.copyright">&copy; <span id="year"></span> Ration. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/rationcounter.js"></script>
+</body>
+</html>

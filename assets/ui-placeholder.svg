@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Placeholder image representing the Fish Counter user interface">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2f4f7"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#0b1220" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#g)"/>
+
+  <!-- Device frame -->
+  <g filter="url(#shadow)">
+    <rect x="220" y="90" width="760" height="620" rx="26" fill="#111827"/>
+    <rect x="246" y="118" width="708" height="564" rx="18" fill="#ffffff"/>
+  </g>
+
+  <!-- Top bar -->
+  <rect x="246" y="118" width="708" height="72" rx="18" fill="#f6f7fb"/>
+  <circle cx="284" cy="154" r="10" fill="#ff7a00"/>
+  <text x="308" y="160" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="22" fill="#111827">Ration Fish Counter</text>
+
+  <!-- Left info panel -->
+  <rect x="270" y="214" width="340" height="220" rx="14" fill="#f6f7fb"/>
+  <text x="294" y="252" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="16" fill="#6b7280">Live count</text>
+  <text x="294" y="318" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="74" font-weight="700" fill="#111827">12,480</text>
+
+  <g>
+    <rect x="294" y="352" width="146" height="44" rx="10" fill="#ff7a00"/>
+    <text x="337" y="381" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="16" font-weight="600" fill="#ffffff">Start</text>
+    <rect x="454" y="352" width="146" height="44" rx="10" fill="#111827"/>
+    <text x="502" y="381" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="16" font-weight="600" fill="#ffffff">Stop</text>
+  </g>
+
+  <!-- Right status panel -->
+  <rect x="634" y="214" width="296" height="220" rx="14" fill="#f6f7fb"/>
+  <text x="658" y="252" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="16" fill="#6b7280">Session</text>
+  <text x="658" y="292" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#111827">Throughput</text>
+  <text x="658" y="322" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="34" font-weight="700" fill="#111827">520</text>
+  <text x="735" y="322" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="16" fill="#6b7280">fish/min</text>
+
+  <text x="658" y="364" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#111827">Avg weight</text>
+  <text x="658" y="394" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="34" font-weight="700" fill="#111827">62</text>
+  <text x="706" y="394" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="16" fill="#6b7280">g</text>
+
+  <!-- Chart panel -->
+  <rect x="270" y="456" width="660" height="204" rx="14" fill="#f6f7fb"/>
+  <text x="294" y="494" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="16" fill="#6b7280">Size distribution</text>
+
+  <!-- Simple bars -->
+  <g fill="#111827" opacity="0.88">
+    <rect x="294" y="610" width="40" height="24" rx="6"/>
+    <rect x="348" y="584" width="40" height="50" rx="6"/>
+    <rect x="402" y="544" width="40" height="90" rx="6"/>
+    <rect x="456" y="514" width="40" height="120" rx="6"/>
+    <rect x="510" y="536" width="40" height="98" rx="6"/>
+    <rect x="564" y="568" width="40" height="66" rx="6"/>
+    <rect x="618" y="598" width="40" height="36" rx="6"/>
+  </g>
+
+  <text x="270" y="748" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#6b7280">UI image placeholder — replace with your real interface screenshot</text>
+</svg>

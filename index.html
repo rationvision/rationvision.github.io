@@ -45,7 +45,18 @@
               <option value="es">ES</option>
             </select>
           </div>
-          <a class="btn ghost" href="rationfeed.html" data-i18n="cta.feed">View RationFEED</a>
+          <div class="product-menu" data-product-menu data-open="false">
+            <button class="btn ghost product-menu-toggle" type="button" data-product-toggle aria-expanded="false" aria-controls="productMenuDesktop">
+              <span data-i18n="cta.products">Products</span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="product-menu-list" id="productMenuDesktop" aria-label="Products menu">
+              <a class="product-menu-link" href="rationfeed.html" data-i18n="product.menu.feed">RationFEED</a>
+              <a class="product-menu-link" href="rationcounter.html" data-i18n="product.menu.counter">RationCOUNTER</a>
+            </div>
+          </div>
           <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
           <a class="btn primary" href="#contact" data-i18n="cta.contact" data-contact-link>Contact us</a>
         </div>
@@ -65,11 +76,22 @@
           <a class="mobile-link" href="#products" data-navlink data-i18n="nav.products">View products</a>
           <a class="mobile-link" href="#about" data-navlink data-i18n="nav.about">About us</a>
           <a class="mobile-link" href="#contact" data-navlink data-i18n="nav.contact">Contact</a>
-<div class="mobile-cta" aria-label="Mobile actions">
+          <div class="mobile-cta" aria-label="Mobile actions">
             <a class="btn primary" href="#contact" data-i18n="cta.contact" data-contact-link>Contact us</a>
-            <a class="btn ghost" href="rationfeed.html" data-i18n="cta.feed">View RationFEED</a>
-          <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
+            <div class="product-menu mobile-product-menu" data-product-menu data-open="false">
+              <button class="btn ghost product-menu-toggle" type="button" data-product-toggle aria-expanded="false" aria-controls="productMenuMobile">
+                <span data-i18n="cta.products">Products</span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="product-menu-list" id="productMenuMobile" aria-label="Products menu">
+                <a class="product-menu-link" href="rationfeed.html" data-i18n="product.menu.feed">RationFEED</a>
+                <a class="product-menu-link" href="rationcounter.html" data-i18n="product.menu.counter">RationCOUNTER</a>
+              </div>
             </div>
+            <a class="btn ghost" href="service-support.html" data-i18n="cta.service">Service &amp; Support</a>
+          </div>
         </nav>
       </div>
     </div>
@@ -196,11 +218,11 @@
           </div>
 
           <div class="product-tile">
-            <a class="tile-media tile-media-link" href="#contact" aria-label="Go to contact section for RationCOUNTER" data-contact-link>
+            <a class="tile-media tile-media-link" href="rationcounter.html" aria-label="Go to RationCOUNTER page">
               <img src="assets/fishcounter_photorealistic_render.png" alt="" loading="lazy" decoding="async" />
             </a>
             <p class="small" data-i18n-html="product.counter">Counting and biomass estimation of live fish<br /><strong>RationCOUNTER</strong></p>
-            <a class="tile-link" href="#contact" aria-label="Learn more about RationCOUNTER" data-i18n="product.learn" data-contact-link>Learn more →</a>
+            <a class="tile-link" href="rationcounter.html" aria-label="Learn more about RationCOUNTER" data-i18n="product.learn">Learn more →</a>
           </div>
         </div>
       </div>

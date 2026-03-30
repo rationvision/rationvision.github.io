@@ -9,7 +9,7 @@ Config lives in `assets/js/site-config.js` as `window.RATION_CONFIG`.
 Available flags:
 - `hideFeedingSystems`: hides the feeding systems chip list on the RationFeed page. That is the list of feeding systems that we have connected to in the past.
 - `hideHomeContactForm`: hides the contact form section on the home page (and the CTA link to it).
-- `hideRationfeedSpecSheet`: hides the “Spec sheet: Download detailed specifications …” line on the RationFeed page.
+- `hideRationfeedSpecSheet`: hides the "Spec sheet: Download detailed specifications ..." line on both the RationFeed and RationCOUNTER pages.
 
 Set a flag to `true` to hide that element.
 
